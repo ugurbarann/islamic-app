@@ -1,0 +1,62 @@
+[
+  {
+    "cityId": "istanbul",
+    "districtIds": ["fatih", "uskudar", "kadikoy", "besiktas"],
+    "times": {
+      "imsak": "04:12",
+      "sunrise": "05:58",
+      "dhuhr": "13:10",
+      "asr": "17:05",
+      "maghrib": "20:21",
+      "isha": "21:58"
+    }
+  },
+  {
+    "cityId": "ankara",
+    "districtIds": ["cankaya", "kecioren", "mamak", "yenimahalle"],
+    "times": {
+      "imsak": "03:55",
+      "sunrise": "05:39",
+      "dhuhr": "12:55",
+      "asr": "16:51",
+      "maghrib": "20:09",
+      "isha": "21:43"
+    }
+  },
+  {
+    "cityId": "izmir",
+    "districtIds": ["konak", "karsiyaka", "bornova", "buca"],
+    "times": {
+      "imsak": "04:35",
+      "sunrise": "06:16",
+      "dhuhr": "13:22",
+      "asr": "17:13",
+      "maghrib": "20:26",
+      "isha": "21:55"
+    }
+  },
+  {
+    "cityId": "bursa",
+    "districtIds": ["osmangazi", "nilufer", "yildirim", "mudanya"],
+    "times": {
+      "imsak": "04:18",
+      "sunrise": "06:02",
+      "dhuhr": "13:09",
+      "asr": "17:02",
+      "maghrib": "20:14",
+      "isha": "21:47"
+    }
+  },
+  {
+    "cityId": "antalya",
+    "districtIds": ["muratpasa", "kepez", "konyaalti", "alanya"],
+    "times": {
+      "imsak": "04:28",
+      "sunrise": "06:07",
+      "dhuhr": "13:03",
+      "asr": "16:50",
+      "maghrib": "19:57",
+      "isha": "21:22"
+    }
+  }
+]

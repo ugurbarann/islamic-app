@@ -1,0 +1,64 @@
+workflows:
+  ios-validation:
+    name: iOS validation build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+      # Add these as secure Codemagic environment variables or place them in
+      # an environment group and reference it here with:
+      # groups:
+      #   - firebase_config
+      #
+      # Required for this iOS workflow:
+      # IOS_GOOGLE_SERVICE_INFO_PLIST_B64 -> ios/Runner/GoogleService-Info.plist
+      #
+      # Optional unless you later generate/use FlutterFire options:
+      # FIREBASE_OPTIONS_DART_B64 -> lib/firebase_options.dart
+      #
+      # Required for a later Android workflow:
+      # ANDROID_GOOGLE_SERVICES_JSON_B64 -> android/app/google-services.json
+    scripts:
+      - name: Restore private Firebase config
+        script: |
+          set -euo pipefail
+
+          if [ -n "${IOS_GOOGLE_SERVICE_INFO_PLIST_B64:-}" ]; then
+            mkdir -p ios/Runner
+            printf '%s' "$IOS_GOOGLE_SERVICE_INFO_PLIST_B64" | base64 --decode > ios/Runner/GoogleService-Info.plist
+          fi
+
+          if [ ! -f ios/Runner/GoogleService-Info.plist ]; then
+            echo "Missing ios/Runner/GoogleService-Info.plist. Add IOS_GOOGLE_SERVICE_INFO_PLIST_B64 as a secure Codemagic variable."
+            exit 1
+          fi
+
+          if [ -n "${FIREBASE_OPTIONS_DART_B64:-}" ]; then
+            mkdir -p lib
+            printf '%s' "$FIREBASE_OPTIONS_DART_B64" | base64 --decode > lib/firebase_options.dart
+          fi
+
+          # Android is not built in this workflow, but this is the correct restore
+          # path for a later Android workflow:
+          # if [ -n "${ANDROID_GOOGLE_SERVICES_JSON_B64:-}" ]; then
+          #   mkdir -p android/app
+          #   printf '%s' "$ANDROID_GOOGLE_SERVICES_JSON_B64" | base64 --decode > android/app/google-services.json
+          # fi
+      - name: Flutter pub get
+        script: flutter pub get
+      - name: Flutter analyze
+        script: flutter analyze
+      - name: iOS no-codesign release build
+        script: flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphoneos/Runner.app
+
+    # Later signed IPA/TestFlight build notes:
+    # 1. Add App Store Connect API key, signing certificate, and provisioning
+    #    profile through Codemagic's secure code signing settings.
+    # 2. Keep certificates, .p8 keys, .p12 files, provisioning profiles, and
+    #    Firebase service account JSON out of Git.
+    # 3. Replace the no-codesign command with a signed build, for example:
+    #    flutter build ipa --release
+    # 4. Add publishing.app_store_connect only after signing is configured.

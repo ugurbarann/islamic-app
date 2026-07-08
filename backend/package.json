@@ -1,0 +1,23 @@
+{
+  "name": "islamic-app-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:daily-content": "node scripts/generate-daily-content-seed.mjs",
+    "prepare:wallpapers": "node scripts/prepare-wallpaper-assets.mjs",
+    "upload:daily-content": "node scripts/upload-daily-content.mjs seeds/daily_content_2026-06-21_30_days.json",
+    "upload:wallpapers": "node scripts/upload-wallpapers.mjs",
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "firebase-admin": "^14.0.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.2"
+  }
+}

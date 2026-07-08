@@ -1,0 +1,50 @@
+[
+  {
+    "id": "istanbul_suleymaniye",
+    "cityId": "istanbul",
+    "name": "Süleymaniye Camii",
+    "address": "Süleymaniye, Fatih/İstanbul",
+    "latitude": 41.0162,
+    "longitude": 28.9638
+  },
+  {
+    "id": "istanbul_mihrimah",
+    "cityId": "istanbul",
+    "name": "Mihrimah Sultan Camii",
+    "address": "Üsküdar/İstanbul",
+    "latitude": 41.0278,
+    "longitude": 29.0153
+  },
+  {
+    "id": "ankara_kocatepe",
+    "cityId": "ankara",
+    "name": "Kocatepe Camii",
+    "address": "Kültür, Çankaya/Ankara",
+    "latitude": 39.9165,
+    "longitude": 32.8607
+  },
+  {
+    "id": "izmir_hisar",
+    "cityId": "izmir",
+    "name": "Hisar Camii",
+    "address": "Konak/İzmir",
+    "latitude": 38.4227,
+    "longitude": 27.1348
+  },
+  {
+    "id": "bursa_ulu",
+    "cityId": "bursa",
+    "name": "Bursa Ulu Camii",
+    "address": "Nalbantoğlu, Osmangazi/Bursa",
+    "latitude": 40.1840,
+    "longitude": 29.0610
+  },
+  {
+    "id": "antalya_muratpasa",
+    "cityId": "antalya",
+    "name": "Murat Paşa Camii",
+    "address": "Muratpaşa/Antalya",
+    "latitude": 36.8892,
+    "longitude": 30.7047
+  }
+]

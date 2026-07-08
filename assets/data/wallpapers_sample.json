@@ -1,0 +1,222 @@
+{
+  "categories": [
+    {
+      "id": "recommended",
+      "title": "Önerilen"
+    },
+    {
+      "id": "al_aqsa",
+      "title": "Mescid-i Aksa"
+    },
+    {
+      "id": "masjid",
+      "title": "Mescid"
+    },
+    {
+      "id": "kaaba",
+      "title": "Kâbe"
+    },
+    {
+      "id": "nature",
+      "title": "Doğa"
+    },
+    {
+      "id": "calligraphy",
+      "title": "Hat"
+    }
+  ],
+  "wallpapers": [
+    {
+      "id": "wp_serene_white_mosque",
+      "categoryId": "recommended",
+      "title": "Önerilen",
+      "localAssetPath": "assets/wallpapers/serene_white_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/serene_white_mosque.jpg",
+      "colorHex": "C9B29D"
+    },
+    {
+      "id": "wp_al_aqsa_sunrise",
+      "categoryId": "al_aqsa",
+      "title": "Mescid-i Aksa Sabahı",
+      "localAssetPath": "assets/wallpapers/al_aqsa_sunrise.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/al_aqsa_sunrise.jpg",
+      "colorHex": "C39A5B"
+    },
+    {
+      "id": "wp_al_aqsa_blue_hour",
+      "categoryId": "al_aqsa",
+      "title": "Mescid-i Aksa Mavi Saat",
+      "localAssetPath": "assets/wallpapers/al_aqsa_blue_hour.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/al_aqsa_blue_hour.jpg",
+      "colorHex": "53677F"
+    },
+    {
+      "id": "wp_al_aqsa_arcade",
+      "categoryId": "al_aqsa",
+      "title": "Mescid-i Aksa Kemerleri",
+      "localAssetPath": "assets/wallpapers/al_aqsa_arcade.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/al_aqsa_arcade.jpg",
+      "colorHex": "9B8A68"
+    },
+    {
+      "id": "wp_al_aqsa_moonlight",
+      "categoryId": "al_aqsa",
+      "title": "Mescid-i Aksa Gece Huzuru",
+      "localAssetPath": "assets/wallpapers/al_aqsa_moonlight.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/al_aqsa_moonlight.jpg",
+      "colorHex": "30466A"
+    },
+    {
+      "id": "wp_kaaba_blue_hour",
+      "categoryId": "kaaba",
+      "title": "Kâbe Mavi Saat",
+      "localAssetPath": "assets/wallpapers/kaaba_blue_hour.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/kaaba_blue_hour.jpg",
+      "colorHex": "67677C"
+    },
+    {
+      "id": "wp_medina_courtyard",
+      "categoryId": "masjid",
+      "title": "Medine Avlusu",
+      "localAssetPath": "assets/wallpapers/medina_courtyard.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/medina_courtyard.jpg",
+      "colorHex": "A69583"
+    },
+    {
+      "id": "wp_ottoman_tiles",
+      "categoryId": "masjid",
+      "title": "Osmanlı Mavisi",
+      "localAssetPath": "assets/wallpapers/ottoman_tiles.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/ottoman_tiles.jpg",
+      "colorHex": "7C7A68"
+    },
+    {
+      "id": "wp_mountain_lake_mosque",
+      "categoryId": "nature",
+      "title": "Dağ Gölü Mescidi",
+      "localAssetPath": "assets/wallpapers/mountain_lake_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/mountain_lake_mosque.jpg",
+      "colorHex": "4C5833"
+    },
+    {
+      "id": "wp_white_arch_calligraphy",
+      "categoryId": "calligraphy",
+      "title": "Beyaz Hat Nişi",
+      "localAssetPath": "assets/wallpapers/white_arch_calligraphy.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/white_arch_calligraphy.jpg",
+      "colorHex": "D9D0C8"
+    },
+    {
+      "id": "wp_desert_crescent",
+      "categoryId": "nature",
+      "title": "Çöl Hilali",
+      "localAssetPath": "assets/wallpapers/desert_crescent.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/desert_crescent.jpg",
+      "colorHex": "936B49"
+    },
+    {
+      "id": "wp_modern_reflection",
+      "categoryId": "masjid",
+      "title": "Modern Mescid",
+      "localAssetPath": "assets/wallpapers/modern_reflection.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/modern_reflection.jpg",
+      "colorHex": "88939E"
+    },
+    {
+      "id": "wp_kaaba_dawn",
+      "categoryId": "kaaba",
+      "title": "Kâbe Şafak",
+      "localAssetPath": "assets/wallpapers/kaaba_dawn.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/kaaba_dawn.jpg",
+      "colorHex": "9A8975"
+    },
+    {
+      "id": "wp_moonlit_mosque",
+      "categoryId": "masjid",
+      "title": "Hilalli Gece",
+      "localAssetPath": "assets/wallpapers/moonlit_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/moonlit_mosque.jpg",
+      "colorHex": "46556E"
+    },
+    {
+      "id": "wp_arch_minaret",
+      "categoryId": "masjid",
+      "title": "Minareli Kemer",
+      "localAssetPath": "assets/wallpapers/arch_minaret.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/arch_minaret.jpg",
+      "colorHex": "B6A896"
+    },
+    {
+      "id": "wp_quran_beads",
+      "categoryId": "recommended",
+      "title": "Sessiz Sabah",
+      "localAssetPath": "assets/wallpapers/quran_beads.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/quran_beads.jpg",
+      "colorHex": "887D73"
+    },
+    {
+      "id": "wp_turquoise_dome_rain",
+      "categoryId": "masjid",
+      "title": "Yağmur Sonrası Kubbe",
+      "localAssetPath": "assets/wallpapers/turquoise_dome_rain.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/turquoise_dome_rain.jpg",
+      "colorHex": "727A7D"
+    },
+    {
+      "id": "wp_prayer_rug_dawn",
+      "categoryId": "recommended",
+      "title": "Seccade ve Şafak",
+      "localAssetPath": "assets/wallpapers/prayer_rug_dawn.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/prayer_rug_dawn.jpg",
+      "colorHex": "A29FA4"
+    },
+    {
+      "id": "wp_fog_mosque",
+      "categoryId": "masjid",
+      "title": "Sisli Mescid",
+      "localAssetPath": "assets/wallpapers/fog_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/fog_mosque.jpg",
+      "colorHex": "868D9E"
+    },
+    {
+      "id": "wp_coastal_mosque",
+      "categoryId": "nature",
+      "title": "Sahil Mescidi",
+      "localAssetPath": "assets/wallpapers/coastal_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/coastal_mosque.jpg",
+      "colorHex": "7B8381"
+    },
+    {
+      "id": "wp_mihrab_lanterns",
+      "categoryId": "calligraphy",
+      "title": "Mihrab Işığı",
+      "localAssetPath": "assets/wallpapers/mihrab_lanterns.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/mihrab_lanterns.jpg",
+      "colorHex": "C8B39B"
+    },
+    {
+      "id": "wp_winter_mosque",
+      "categoryId": "nature",
+      "title": "Kış Sessizliği",
+      "localAssetPath": "assets/wallpapers/winter_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/winter_mosque.jpg",
+      "colorHex": "787E9A"
+    },
+    {
+      "id": "wp_garden_path_mosque",
+      "categoryId": "nature",
+      "title": "Bahçe Yolu",
+      "localAssetPath": "assets/wallpapers/garden_path_mosque.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/garden_path_mosque.jpg",
+      "colorHex": "555833"
+    },
+    {
+      "id": "wp_geometric_ceiling",
+      "categoryId": "calligraphy",
+      "title": "Mavi Geometri",
+      "localAssetPath": "assets/wallpapers/geometric_ceiling.jpg",
+      "thumbnailAssetPath": "assets/wallpapers/thumbs/geometric_ceiling.jpg",
+      "colorHex": "B0B6C2"
+    }
+  ]
+}

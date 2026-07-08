@@ -1,0 +1,666 @@
+[
+  {
+    "id": "adana",
+    "name": "Adana",
+    "ezanVaktiCityId": "500",
+    "districts": [
+      { "id": "adana_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "adiyaman",
+    "name": "Adıyaman",
+    "ezanVaktiCityId": "501",
+    "districts": [
+      { "id": "adiyaman_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "afyonkarahisar",
+    "name": "Afyonkarahisar",
+    "ezanVaktiCityId": "502",
+    "districts": [
+      { "id": "afyonkarahisar_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "agri",
+    "name": "Ağrı",
+    "ezanVaktiCityId": "503",
+    "districts": [
+      { "id": "agri_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "aksaray",
+    "name": "Aksaray",
+    "ezanVaktiCityId": "504",
+    "districts": [
+      { "id": "aksaray_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "amasya",
+    "name": "Amasya",
+    "ezanVaktiCityId": "505",
+    "districts": [
+      { "id": "amasya_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "ankara",
+    "name": "Ankara",
+    "ezanVaktiCityId": "506",
+    "districts": [
+      { "id": "cankaya", "name": "Çankaya", "latitude": 39.9179, "longitude": 32.8627, "ezanVaktiDistrictId": "9206" },
+      { "id": "kecioren", "name": "Keçiören", "latitude": 39.9878, "longitude": 32.8644, "ezanVaktiDistrictId": "9206" },
+      { "id": "mamak", "name": "Mamak", "latitude": 39.9334, "longitude": 32.9108, "ezanVaktiDistrictId": "9206" },
+      { "id": "yenimahalle", "name": "Yenimahalle", "latitude": 39.9710, "longitude": 32.8110, "ezanVaktiDistrictId": "9206" }
+    ]
+  },
+  {
+    "id": "antalya",
+    "name": "Antalya",
+    "ezanVaktiCityId": "507",
+    "districts": [
+      { "id": "muratpasa", "name": "Muratpaşa", "latitude": 36.8841, "longitude": 30.7056, "ezanVaktiDistrictId": "9225" },
+      { "id": "kepez", "name": "Kepez", "latitude": 36.9157, "longitude": 30.7133, "ezanVaktiDistrictId": "9225" },
+      { "id": "konyaalti", "name": "Konyaaltı", "latitude": 36.8704, "longitude": 30.6346, "ezanVaktiDistrictId": "9225" },
+      { "id": "alanya", "name": "Alanya", "latitude": 36.5438, "longitude": 31.9998, "ezanVaktiDistrictId": "9224" }
+    ]
+  },
+  {
+    "id": "ardahan",
+    "name": "Ardahan",
+    "ezanVaktiCityId": "508",
+    "districts": [
+      { "id": "ardahan_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "artvin",
+    "name": "Artvin",
+    "ezanVaktiCityId": "509",
+    "districts": [
+      { "id": "artvin_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "aydin",
+    "name": "Aydın",
+    "ezanVaktiCityId": "510",
+    "districts": [
+      { "id": "aydin_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "balikesir",
+    "name": "Balıkesir",
+    "ezanVaktiCityId": "511",
+    "districts": [
+      { "id": "balikesir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bartin",
+    "name": "Bartın",
+    "ezanVaktiCityId": "512",
+    "districts": [
+      { "id": "bartin_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "batman",
+    "name": "Batman",
+    "ezanVaktiCityId": "513",
+    "districts": [
+      { "id": "batman_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bayburt",
+    "name": "Bayburt",
+    "ezanVaktiCityId": "514",
+    "districts": [
+      { "id": "bayburt_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bilecik",
+    "name": "Bilecik",
+    "ezanVaktiCityId": "515",
+    "districts": [
+      { "id": "bilecik_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bingol",
+    "name": "Bingöl",
+    "ezanVaktiCityId": "516",
+    "districts": [
+      { "id": "bingol_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bitlis",
+    "name": "Bitlis",
+    "ezanVaktiCityId": "517",
+    "districts": [
+      { "id": "bitlis_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bolu",
+    "name": "Bolu",
+    "ezanVaktiCityId": "518",
+    "districts": [
+      { "id": "bolu_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "burdur",
+    "name": "Burdur",
+    "ezanVaktiCityId": "519",
+    "districts": [
+      { "id": "burdur_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "bursa",
+    "name": "Bursa",
+    "ezanVaktiCityId": "520",
+    "districts": [
+      { "id": "osmangazi", "name": "Osmangazi", "latitude": 40.1885, "longitude": 29.0610, "ezanVaktiDistrictId": "9335" },
+      { "id": "nilufer", "name": "Nilüfer", "latitude": 40.2130, "longitude": 28.9840, "ezanVaktiDistrictId": "9335" },
+      { "id": "yildirim", "name": "Yıldırım", "latitude": 40.1865, "longitude": 29.1096, "ezanVaktiDistrictId": "9335" },
+      { "id": "mudanya", "name": "Mudanya", "latitude": 40.3760, "longitude": 28.8838, "ezanVaktiDistrictId": "9343" }
+    ]
+  },
+  {
+    "id": "canakkale",
+    "name": "Çanakkale",
+    "ezanVaktiCityId": "521",
+    "districts": [
+      { "id": "canakkale_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "cankiri",
+    "name": "Çankırı",
+    "ezanVaktiCityId": "522",
+    "districts": [
+      { "id": "cankiri_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "corum",
+    "name": "Çorum",
+    "ezanVaktiCityId": "523",
+    "districts": [
+      { "id": "corum_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "denizli",
+    "name": "Denizli",
+    "ezanVaktiCityId": "524",
+    "districts": [
+      { "id": "denizli_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "diyarbakir",
+    "name": "Diyarbakır",
+    "ezanVaktiCityId": "525",
+    "districts": [
+      { "id": "diyarbakir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "duzce",
+    "name": "Düzce",
+    "ezanVaktiCityId": "526",
+    "districts": [
+      { "id": "duzce_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "edirne",
+    "name": "Edirne",
+    "ezanVaktiCityId": "527",
+    "districts": [
+      { "id": "edirne_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "elazig",
+    "name": "Elazığ",
+    "ezanVaktiCityId": "528",
+    "districts": [
+      { "id": "elazig_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "erzincan",
+    "name": "Erzincan",
+    "ezanVaktiCityId": "529",
+    "districts": [
+      { "id": "erzincan_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "erzurum",
+    "name": "Erzurum",
+    "ezanVaktiCityId": "530",
+    "districts": [
+      { "id": "erzurum_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "eskisehir",
+    "name": "Eskişehir",
+    "ezanVaktiCityId": "531",
+    "districts": [
+      { "id": "eskisehir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "gaziantep",
+    "name": "Gaziantep",
+    "ezanVaktiCityId": "532",
+    "districts": [
+      { "id": "gaziantep_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "giresun",
+    "name": "Giresun",
+    "ezanVaktiCityId": "533",
+    "districts": [
+      { "id": "giresun_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "gumushane",
+    "name": "Gümüşhane",
+    "ezanVaktiCityId": "534",
+    "districts": [
+      { "id": "gumushane_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "hakkari",
+    "name": "Hakkari",
+    "ezanVaktiCityId": "535",
+    "districts": [
+      { "id": "hakkari_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "hatay",
+    "name": "Hatay",
+    "ezanVaktiCityId": "536",
+    "districts": [
+      { "id": "hatay_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "igdir",
+    "name": "Iğdır",
+    "ezanVaktiCityId": "537",
+    "districts": [
+      { "id": "igdir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "isparta",
+    "name": "Isparta",
+    "ezanVaktiCityId": "538",
+    "districts": [
+      { "id": "isparta_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "istanbul",
+    "name": "İstanbul",
+    "ezanVaktiCityId": "539",
+    "districts": [
+      { "id": "fatih", "name": "Fatih", "latitude": 41.0167, "longitude": 28.9497, "ezanVaktiDistrictId": "9541" },
+      { "id": "uskudar", "name": "Üsküdar", "latitude": 41.0255, "longitude": 29.0156, "ezanVaktiDistrictId": "9541" },
+      { "id": "kadikoy", "name": "Kadıköy", "latitude": 40.9903, "longitude": 29.0290, "ezanVaktiDistrictId": "9541" },
+      { "id": "besiktas", "name": "Beşiktaş", "latitude": 41.0438, "longitude": 29.0094, "ezanVaktiDistrictId": "9541" }
+    ]
+  },
+  {
+    "id": "izmir",
+    "name": "İzmir",
+    "ezanVaktiCityId": "540",
+    "districts": [
+      { "id": "konak", "name": "Konak", "latitude": 38.4192, "longitude": 27.1287, "ezanVaktiDistrictId": "9560" },
+      { "id": "karsiyaka", "name": "Karşıyaka", "latitude": 38.4592, "longitude": 27.1106, "ezanVaktiDistrictId": "9560" },
+      { "id": "bornova", "name": "Bornova", "latitude": 38.4697, "longitude": 27.2178, "ezanVaktiDistrictId": "9560" },
+      { "id": "buca", "name": "Buca", "latitude": 38.3844, "longitude": 27.1744, "ezanVaktiDistrictId": "9560" }
+    ]
+  },
+  {
+    "id": "kahramanmaras",
+    "name": "Kahramanmaraş",
+    "ezanVaktiCityId": "541",
+    "districts": [
+      { "id": "kahramanmaras_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "karabuk",
+    "name": "Karabük",
+    "ezanVaktiCityId": "542",
+    "districts": [
+      { "id": "karabuk_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "karaman",
+    "name": "Karaman",
+    "ezanVaktiCityId": "543",
+    "districts": [
+      { "id": "karaman_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kars",
+    "name": "Kars",
+    "ezanVaktiCityId": "544",
+    "districts": [
+      { "id": "kars_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kastamonu",
+    "name": "Kastamonu",
+    "ezanVaktiCityId": "545",
+    "districts": [
+      { "id": "kastamonu_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kayseri",
+    "name": "Kayseri",
+    "ezanVaktiCityId": "546",
+    "districts": [
+      { "id": "kayseri_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kilis",
+    "name": "Kilis",
+    "ezanVaktiCityId": "547",
+    "districts": [
+      { "id": "kilis_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kirikkale",
+    "name": "Kırıkkale",
+    "ezanVaktiCityId": "548",
+    "districts": [
+      { "id": "kirikkale_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kirklareli",
+    "name": "Kırklareli",
+    "ezanVaktiCityId": "549",
+    "districts": [
+      { "id": "kirklareli_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kirsehir",
+    "name": "Kırşehir",
+    "ezanVaktiCityId": "550",
+    "districts": [
+      { "id": "kirsehir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kocaeli",
+    "name": "Kocaeli",
+    "ezanVaktiCityId": "551",
+    "districts": [
+      { "id": "kocaeli_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "konya",
+    "name": "Konya",
+    "ezanVaktiCityId": "552",
+    "districts": [
+      { "id": "konya_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "kutahya",
+    "name": "Kütahya",
+    "ezanVaktiCityId": "553",
+    "districts": [
+      { "id": "kutahya_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "malatya",
+    "name": "Malatya",
+    "ezanVaktiCityId": "554",
+    "districts": [
+      { "id": "malatya_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "manisa",
+    "name": "Manisa",
+    "ezanVaktiCityId": "555",
+    "districts": [
+      { "id": "manisa_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "mardin",
+    "name": "Mardin",
+    "ezanVaktiCityId": "556",
+    "districts": [
+      { "id": "mardin_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "mersin",
+    "name": "Mersin",
+    "ezanVaktiCityId": "557",
+    "districts": [
+      { "id": "mersin_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "mugla",
+    "name": "Muğla",
+    "ezanVaktiCityId": "558",
+    "districts": [
+      { "id": "mugla_merkez", "name": "Merkez", "latitude": 37.2153, "longitude": 28.3636 },
+      { "id": "bodrum", "name": "Bodrum", "latitude": 37.0344, "longitude": 27.4305 }
+    ]
+  },
+  {
+    "id": "mus",
+    "name": "Muş",
+    "ezanVaktiCityId": "559",
+    "districts": [
+      { "id": "mus_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "nevsehir",
+    "name": "Nevşehir",
+    "ezanVaktiCityId": "560",
+    "districts": [
+      { "id": "nevsehir_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "nigde",
+    "name": "Niğde",
+    "ezanVaktiCityId": "561",
+    "districts": [
+      { "id": "nigde_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "ordu",
+    "name": "Ordu",
+    "ezanVaktiCityId": "562",
+    "districts": [
+      { "id": "ordu_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "osmaniye",
+    "name": "Osmaniye",
+    "ezanVaktiCityId": "563",
+    "districts": [
+      { "id": "osmaniye_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "rize",
+    "name": "Rize",
+    "ezanVaktiCityId": "564",
+    "districts": [
+      { "id": "rize_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "sakarya",
+    "name": "Sakarya",
+    "ezanVaktiCityId": "565",
+    "districts": [
+      { "id": "sakarya_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "samsun",
+    "name": "Samsun",
+    "ezanVaktiCityId": "566",
+    "districts": [
+      { "id": "samsun_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "sanliurfa",
+    "name": "Şanlıurfa",
+    "ezanVaktiCityId": "567",
+    "districts": [
+      { "id": "sanliurfa_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "siirt",
+    "name": "Siirt",
+    "ezanVaktiCityId": "568",
+    "districts": [
+      { "id": "siirt_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "sinop",
+    "name": "Sinop",
+    "ezanVaktiCityId": "569",
+    "districts": [
+      { "id": "sinop_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "sirnak",
+    "name": "Şırnak",
+    "ezanVaktiCityId": "570",
+    "districts": [
+      { "id": "sirnak_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "sivas",
+    "name": "Sivas",
+    "ezanVaktiCityId": "571",
+    "districts": [
+      { "id": "sivas_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "tekirdag",
+    "name": "Tekirdağ",
+    "ezanVaktiCityId": "572",
+    "districts": [
+      { "id": "tekirdag_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "tokat",
+    "name": "Tokat",
+    "ezanVaktiCityId": "573",
+    "districts": [
+      { "id": "tokat_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "trabzon",
+    "name": "Trabzon",
+    "ezanVaktiCityId": "574",
+    "districts": [
+      { "id": "trabzon_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "tunceli",
+    "name": "Tunceli",
+    "ezanVaktiCityId": "575",
+    "districts": [
+      { "id": "tunceli_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "usak",
+    "name": "Uşak",
+    "ezanVaktiCityId": "576",
+    "districts": [
+      { "id": "usak_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "van",
+    "name": "Van",
+    "ezanVaktiCityId": "577",
+    "districts": [
+      { "id": "van_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "yalova",
+    "name": "Yalova",
+    "ezanVaktiCityId": "578",
+    "districts": [
+      { "id": "yalova_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "yozgat",
+    "name": "Yozgat",
+    "ezanVaktiCityId": "579",
+    "districts": [
+      { "id": "yozgat_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  },
+  {
+    "id": "zonguldak",
+    "name": "Zonguldak",
+    "ezanVaktiCityId": "580",
+    "districts": [
+      { "id": "zonguldak_merkez", "name": "Merkez", "latitude": 0.0, "longitude": 0.0 }
+    ]
+  }
+]

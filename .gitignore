@@ -1,0 +1,53 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/key.properties
+
+# Backend
+node_modules/
+backend/node_modules/
+*.log
+
+# Local secrets and private Firebase config
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# Signing keys, certificates, provisioning profiles
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+*.csr
+*.pem
+*.key
+
+# Firebase Admin / service account files
+*service-account*.json
+*service_account*.json
+*firebase-adminsdk*.json
+credentials*.json
+
+# Codex local attachments
+.codex-remote-attachments/
+
+# IDE
+.idea/
+*.iml

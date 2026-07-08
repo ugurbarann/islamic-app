@@ -1,0 +1,1161 @@
+{
+  "categories": [
+    {
+      "id": "daily",
+      "title": "Günün Bilgisi",
+      "articles": [
+        {
+          "id": "daily_001",
+          "title": "Selamın Önemi",
+          "summary": "Selam, güven ve dua taşıyan güzel bir başlangıçtır.",
+          "body": "Selam vermek, karşıdaki kişiye esenlik dilemek ve gönüller arasında sıcak bir bağ kurmak anlamına gelir. Günlük hayatta kısa bir söz gibi görünse de Müslümanlar arasında kardeşliği, nezaketi ve güveni güçlendiren önemli bir sünnettir."
+        },
+        {
+          "id": "daily_002",
+          "title": "Besmele ile Başlamak",
+          "summary": "Besmele, yapılan işe bilinç ve bereket niyeti kazandırır.",
+          "body": "Besmele, kulun bir işe Allah'ın adıyla ve O'nun yardımını isteyerek başlamasıdır. Yemek, okumak, çalışmak ve güzel bir işe adım atmak gibi günlük davranışlarda besmele, kalbi toparlayan sade ama güçlü bir hatırlatmadır."
+        },
+        {
+          "id": "daily_003",
+          "title": "Şükür Bilinci",
+          "summary": "Şükür, nimeti fark etmek ve nimetin sahibini unutmamaktır.",
+          "body": "Şükür yalnızca dil ile teşekkür etmek değil, sahip olunan nimetleri Allah'ın razı olacağı şekilde kullanmaktır. İnsan şükrettikçe hayatındaki küçük güzellikleri daha iyi fark eder ve kalbi kanaatle güçlenir."
+        },
+        {
+          "id": "daily_004",
+          "title": "Sabır ve Sebat",
+          "summary": "Sabır, zorluk karşısında da doğru yolda kalabilmektir.",
+          "body": "Sabır, pasifçe beklemekten ibaret değildir; doğru olanı korumak, öfkeye yenilmemek ve umudu kaybetmemektir. Mümin için sabır, hem imtihan anında hem de ibadet ve güzel ahlakta süreklilik anlamı taşır."
+        },
+        {
+          "id": "daily_005",
+          "title": "Tövbenin Kapısı",
+          "summary": "Tövbe, hatadan dönüp Allah'a yönelmenin adıdır.",
+          "body": "Tövbe, insanın kusurunu fark etmesi, pişmanlık duyması ve daha temiz bir yola yönelmesidir. Allah'ın rahmetinden ümit kesmemek, tövbenin en önemli adımlarından biridir."
+        },
+        {
+          "id": "daily_006",
+          "title": "İhlas Nedir?",
+          "summary": "İhlas, ameli yalnız Allah rızası için yapmaktır.",
+          "body": "İhlas, yapılan iyiliğin gösterişten ve karşılık beklentisinden uzak olmasıdır. Küçük bir amel bile ihlasla yapıldığında kalbi arındırır ve kulluğun özünü güçlendirir."
+        },
+        {
+          "id": "daily_007",
+          "title": "Güzel Söz Sadakadır",
+          "summary": "Yumuşak ve hayırlı söz, kalpleri incitmeden iyiliğe çağırır.",
+          "body": "Güzel söz, insanı onaran ve ilişkileri yumuşatan bir iyilik çeşididir. Bazen bir tebessüm, bir dua veya kırıcı olmayan bir uyarı, kalpte uzun süre kalan hayırlı bir iz bırakır."
+        },
+        {
+          "id": "daily_008",
+          "title": "Komşu Hakkı",
+          "summary": "Komşuluk, yakın çevreye karşı sorumluluk bilincidir.",
+          "body": "İslam ahlakında komşuya iyilik etmek, güven vermek ve rahatsızlık vermemek önemli bir erdemdir. Komşuluk hakkı, yalnız büyük yardımlarla değil, nazik davranmak ve ihtiyaç anında yanında olmakla da korunur."
+        },
+        {
+          "id": "daily_009",
+          "title": "Anne Baba Duası",
+          "summary": "Anne babaya iyilik, kulluğun en güzel alanlarından biridir.",
+          "body": "Anne babaya saygı göstermek, onlara güzel söz söylemek ve ihtiyaçlarında yanlarında olmak Kur'an ahlakının temel öğütlerindendir. Onlar için dua etmek, vefanın ve merhametin sade bir göstergesidir."
+        },
+        {
+          "id": "daily_010",
+          "title": "Emanete Riayet",
+          "summary": "Emanet, güvenilen şeyi koruma sorumluluğudur.",
+          "body": "Emanet yalnızca bir eşya veya para değildir; söz, görev, zaman ve insan ilişkileri de emanettir. Mümin, kendisine güvenenleri hayal kırıklığına uğratmamaya özen gösterir."
+        },
+        {
+          "id": "daily_011",
+          "title": "Dua ile Yakınlık",
+          "summary": "Dua, kulun Rabbine içten yönelişidir.",
+          "body": "Dua, yalnız ihtiyaç anında değil, sevinçte ve huzurda da Allah'ı anmanın güzel bir yoludur. İnsan dua ederken aczini fark eder, kalbi yumuşar ve Allah'a yakınlık bilinci güçlenir."
+        },
+        {
+          "id": "daily_012",
+          "title": "Kul Hakkı Hassasiyeti",
+          "summary": "Kul hakkı, insanlarla ilişkide adalet ve incelik ister.",
+          "body": "Kul hakkı; mal, söz, zaman, itibar ve emek gibi birçok alanda ortaya çıkabilir. Mümin, başkasını incitmemeye, hakkı teslim etmeye ve helallik bilinciyle yaşamaya dikkat eder."
+        }
+      ]
+    },
+    {
+      "id": "prophets",
+      "title": "Peygamberler Tarihi",
+      "articles": [
+        {
+          "id": "prophets_001",
+          "title": "Hz. Âdem",
+          "summary": "İnsanlığın ilk atası ve ilk peygamberi olarak bilinir.",
+          "body": "Hz. Âdem kıssası, insanın yeryüzündeki sorumluluğunu, imtihanını ve tövbenin değerini hatırlatır. Onun hayatı, hatadan sonra Allah'a yönelmenin ve rahmetten ümit kesmemenin güçlü bir örneğidir."
+        },
+        {
+          "id": "prophets_002",
+          "title": "Hz. İdris",
+          "summary": "Doğruluk ve sabırla anılan seçkin peygamberlerdendir.",
+          "body": "Hz. İdris, Kur'an'da doğruluk ve yüce makamla anılır. Onun hatırası, bilgi, hikmet ve takva ile yükselen bir hayatın önemini düşündürür."
+        },
+        {
+          "id": "prophets_003",
+          "title": "Hz. Nuh",
+          "summary": "Uzun yıllar tebliğde sabır gösteren peygamberdir.",
+          "body": "Hz. Nuh, kavmini Allah'a kulluğa davet ederken büyük zorluklarla karşılaştı. Kıssası, sebatı, duayı, aile imtihanını ve Allah'ın emrine güvenmenin önemini anlatır."
+        },
+        {
+          "id": "prophets_004",
+          "title": "Hz. Hûd",
+          "summary": "Âd kavmini tevhide çağıran peygamberdir.",
+          "body": "Hz. Hûd, güç ve zenginlikle övünen kavmini Allah'a kulluğa ve adalete davet etti. Onun kıssası, kibir ve inkârın insanı hakikatten uzaklaştırabileceğini hatırlatır."
+        },
+        {
+          "id": "prophets_005",
+          "title": "Hz. Sâlih",
+          "summary": "Semûd kavmini uyarıp Allah'ın ayetlerine dikkat çeken peygamberdir.",
+          "body": "Hz. Sâlih, kavmini zulümden, taşkınlıktan ve inkârdan sakındırdı. Kıssası, ilahi uyarıları küçümsememenin ve emanete saygı göstermenin önemini gösterir."
+        },
+        {
+          "id": "prophets_006",
+          "title": "Hz. İbrahim",
+          "summary": "Tevhid mücadelesiyle ve teslimiyetiyle örnek olan peygamberdir.",
+          "body": "Hz. İbrahim, putperestliğe karşı tevhidi savundu ve Allah'a teslimiyetin en güzel örneklerinden biri oldu. Onun hayatı; akletmeyi, cesareti, misafirperverliği ve dua ile aile inşasını öne çıkarır."
+        },
+        {
+          "id": "prophets_007",
+          "title": "Hz. Lût",
+          "summary": "Kavmini ahlaki bozulmaya karşı uyaran peygamberdir.",
+          "body": "Hz. Lût, kavmini çirkin davranışlardan, zulümden ve sınır tanımazlıktan sakındırdı. Kıssası, toplum ahlakının korunması ve ilahi emirlerin ciddiye alınması gerektiğini hatırlatır."
+        },
+        {
+          "id": "prophets_008",
+          "title": "Hz. İsmail",
+          "summary": "Teslimiyeti, sabrı ve Kâbe hizmetiyle anılır.",
+          "body": "Hz. İsmail, babası Hz. İbrahim ile birlikte teslimiyet ve sadakat örneği sergiledi. Onun hayatı, aile içinde itaat, dua ve Allah için fedakârlık bilincini güçlendirir."
+        },
+        {
+          "id": "prophets_009",
+          "title": "Hz. İshak",
+          "summary": "Hz. İbrahim'e müjdelenen salih peygamberlerdendir.",
+          "body": "Hz. İshak, bereket ve peygamberlik zinciri içinde önemli bir yere sahiptir. Onun hatırası, Allah'ın vaadinin hak olduğunu ve nesiller boyunca hayırlı bir miras bırakmanın değerini düşündürür."
+        },
+        {
+          "id": "prophets_010",
+          "title": "Hz. Yakub",
+          "summary": "Sabır, aile imtihanı ve Allah'a güvenle anılır.",
+          "body": "Hz. Yakub, evlatlarıyla yaşadığı ağır imtihanlara rağmen Allah'tan ümidini kesmedi. Kıssası, hüzün içinde bile sabrı, duayı ve güzel beklentiyi korumanın önemini gösterir."
+        },
+        {
+          "id": "prophets_011",
+          "title": "Hz. Yusuf",
+          "summary": "İffet, sabır ve affedicilik örneği olan peygamberdir.",
+          "body": "Hz. Yusuf, kıskançlık, esaret, iftira ve zindan gibi imtihanlardan geçti. Hayatı, Allah'ın takdirine güvenmeyi, nefsin çağrısına direnebilmeyi ve güce ulaştığında affedici olmayı öğretir."
+        },
+        {
+          "id": "prophets_012",
+          "title": "Hz. Eyyûb",
+          "summary": "Hastalık ve sıkıntı karşısında sabrıyla tanınır.",
+          "body": "Hz. Eyyûb, ağır imtihanlara rağmen Rabbine bağlılığını korudu. Onun kıssası, zorluk zamanlarında dua etmeyi, sabrı ve Allah'ın rahmetinden umutlu olmayı hatırlatır."
+        },
+        {
+          "id": "prophets_013",
+          "title": "Hz. Şuayb",
+          "summary": "Ölçü ve tartıda adaleti öğütleyen peygamberdir.",
+          "body": "Hz. Şuayb, kavmini ticarette hile yapmaktan, insanların hakkını eksiltmekten ve bozgunculuktan sakındırdı. Kıssası, ekonomik hayatın da ahlak ve adaletle yürütülmesi gerektiğini gösterir."
+        },
+        {
+          "id": "prophets_014",
+          "title": "Hz. Musa",
+          "summary": "Firavun'a karşı tevhid ve adalet mücadelesi veren peygamberdir.",
+          "body": "Hz. Musa, Allah'ın emriyle Firavun'un zulmüne karşı durdu ve İsrailoğullarını özgürlüğe çağırdı. Onun hayatı, cesareti, sabrı, vahye bağlılığı ve toplumsal sorumluluğu öne çıkarır."
+        },
+        {
+          "id": "prophets_015",
+          "title": "Hz. Harun",
+          "summary": "Hz. Musa'ya destek olan, yumuşak sözlü peygamberdir.",
+          "body": "Hz. Harun, kardeşi Hz. Musa'nın yanında tebliğ görevinde önemli bir destek oldu. Onun örneği, kardeşlik, yardımcı olmak ve zor görevlerde dayanışma göstermek açısından değerlidir."
+        },
+        {
+          "id": "prophets_016",
+          "title": "Hz. Dâvûd",
+          "summary": "Hükümdarlık, hikmet ve güzel zikirle anılan peygamberdir.",
+          "body": "Hz. Dâvûd, adaletle hükmetmesi, güçlü kulluğu ve güzel sesiyle zikriyle bilinir. Kıssası, yönetimde adaletin, ibadette içtenliğin ve nimete şükrün önemini hatırlatır."
+        },
+        {
+          "id": "prophets_017",
+          "title": "Hz. Süleyman",
+          "summary": "Güç, ilim ve şükür bilinciyle anılan peygamber-hükümdardır.",
+          "body": "Hz. Süleyman'a büyük imkânlar verilmiş, o da bu nimetleri Allah'ın lütfu olarak görmüştür. Hayatı, makam ve servetin şükürle, adaletle ve hikmetle kullanılmasını öğretir."
+        },
+        {
+          "id": "prophets_018",
+          "title": "Hz. İlyas",
+          "summary": "Kavmini tevhid inancına çağıran peygamberdir.",
+          "body": "Hz. İlyas, putperestliğe yönelen kavmini Allah'a kulluğa davet etti. Onun kıssası, hakikati savunurken yalnız kalsak bile doğru yoldan ayrılmamayı hatırlatır."
+        },
+        {
+          "id": "prophets_019",
+          "title": "Hz. Elyesa",
+          "summary": "Salih kullar arasında anılan peygamberlerdendir.",
+          "body": "Hz. Elyesa, Kur'an'da hayırla anılan seçkin peygamberlerden biridir. Onun adı, Allah'ın razı olduğu çizgide sadakatle yaşamanın değerini düşündürür."
+        },
+        {
+          "id": "prophets_020",
+          "title": "Hz. Yunus",
+          "summary": "Dua ve dönüş kıssasıyla kalplere umut veren peygamberdir.",
+          "body": "Hz. Yunus, yaşadığı imtihan içinde Rabbine yönelerek dua etti. Kıssası, hatayı fark edip Allah'a sığınmanın, samimi yakarışın ve rahmet kapısının genişliğini gösterir."
+        },
+        {
+          "id": "prophets_021",
+          "title": "Hz. Zülkifl",
+          "summary": "Sabır ve doğrulukla anılan seçkin kullardandır.",
+          "body": "Hz. Zülkifl, Kur'an'da sabırlı ve hayırlı kullar arasında zikredilir. Onun hatırası, verilen söze sadık kalmayı ve kullukta sebat etmeyi hatırlatır."
+        },
+        {
+          "id": "prophets_022",
+          "title": "Hz. Zekeriyya",
+          "summary": "İleri yaşında bile duasını sürdüren peygamberdir.",
+          "body": "Hz. Zekeriyya, Allah'a içten dua eden ve rahmetinden ümit kesmeyen bir peygamberdir. Kıssası, imkânsız gibi görünen durumlarda bile duayı bırakmamanın önemini gösterir."
+        },
+        {
+          "id": "prophets_023",
+          "title": "Hz. Yahya",
+          "summary": "Temiz ahlakı ve takvasıyla anılan peygamberdir.",
+          "body": "Hz. Yahya, küçük yaşlardan itibaren hikmet ve takva ile anılmıştır. Onun hayatı, iffeti, merhameti, anne babaya iyiliği ve güçlü ahlaki duruşu öne çıkarır."
+        },
+        {
+          "id": "prophets_024",
+          "title": "Hz. İsa",
+          "summary": "Mucizeleri ve rahmet çağrısıyla anılan peygamberdir.",
+          "body": "Hz. İsa, Allah'ın izniyle mucizeler göstermiş ve insanları kulluğa, merhamete ve arınmaya çağırmıştır. Onun kıssası, tevazuyu, Allah'a bağlılığı ve hakikati savunmayı hatırlatır."
+        },
+        {
+          "id": "prophets_025",
+          "title": "Hz. Muhammed",
+          "summary": "Son peygamber, rahmet ve güzel ahlak örneğidir.",
+          "body": "Hz. Muhammed sallallahu aleyhi ve sellem, Kur'an ahlakını yaşayan, insanlığa rahmet olarak gönderilen son peygamberdir. Onun hayatı; merhamet, adalet, sabır, güvenilirlik ve kulluğun en güzel örneğini sunar."
+        }
+      ]
+    },
+    {
+      "id": "sahaba",
+      "title": "Sahabe Hayatları",
+      "articles": [
+        {
+          "id": "sahaba_001",
+          "title": "Hz. Ebû Bekir",
+          "summary": "Sadakati ve teslimiyetiyle ümmete örnek olan ilk halifedir.",
+          "body": "Hz. Ebû Bekir, Peygamber Efendimize en zor zamanlarda destek olan sadık dosttur. Cömertliği, metaneti ve hakikate bağlılığı Müslümanlar için güçlü bir örnektir."
+        },
+        {
+          "id": "sahaba_002",
+          "title": "Hz. Ömer",
+          "summary": "Adaleti ve güçlü sorumluluk bilinciyle tanınır.",
+          "body": "Hz. Ömer, adalet hassasiyeti, kararlılığı ve yöneticilik sorumluluğuyla İslam tarihinde derin iz bırakmıştır. Onun hayatı, hak karşısında eğilmeyen bir duruşu ve kul hakkına titizliği hatırlatır."
+        },
+        {
+          "id": "sahaba_003",
+          "title": "Hz. Osman",
+          "summary": "Hayâsı, cömertliği ve Kur'an hizmetiyle bilinir.",
+          "body": "Hz. Osman, yumuşak huyluluğu, infakı ve Kur'an'a hizmetiyle öne çıkan seçkin sahabilerdendir. Onun hayatı, malı Allah yolunda kullanmanın ve hayânın insanı güzelleştiren değerini gösterir."
+        },
+        {
+          "id": "sahaba_004",
+          "title": "Hz. Ali",
+          "summary": "İlim, cesaret ve hikmetle anılan seçkin sahabidir.",
+          "body": "Hz. Ali, genç yaşta iman eden, ilmi ve cesaretiyle tanınan büyük sahabilerdendir. Onun sözleri ve duruşu, hikmetle hareket etmeyi ve adaleti korumayı hatırlatır."
+        },
+        {
+          "id": "sahaba_005",
+          "title": "Hz. Hatice",
+          "summary": "Peygamber Efendimize ilk destek olan müminlerin annesidir.",
+          "body": "Hz. Hatice, vahyin ilk günlerinde Peygamber Efendimize güven veren, malıyla ve kalbiyle destek olan mübarek bir şahsiyettir. Onun hayatı, sadakat, vefa ve aile içindeki güçlü desteğin değerini gösterir."
+        },
+        {
+          "id": "sahaba_006",
+          "title": "Hz. Âişe",
+          "summary": "İlmi, zekâsı ve rivayetleriyle ümmete ışık tutmuştur.",
+          "body": "Hz. Âişe, fıkıh, hadis ve siyer bilgisinde sahabe neslinin önemli âlimlerindendir. Onun hayatı, ilim öğrenme ve aktarma gayretinin toplum için ne kadar kıymetli olduğunu gösterir."
+        },
+        {
+          "id": "sahaba_007",
+          "title": "Hz. Fâtıma",
+          "summary": "Takvası, edebi ve aile hayatıyla örnek alınır.",
+          "body": "Hz. Fâtıma, Peygamber Efendimizin sevgili kızı ve temiz ahlakıyla tanınan mübarek bir şahsiyettir. Onun hayatı, tevazu, sabır ve aile içinde merhametli olmanın önemini hatırlatır."
+        },
+        {
+          "id": "sahaba_008",
+          "title": "Bilâl-i Habeşî",
+          "summary": "Ezanın sesi ve iman direnişinin sembolüdür.",
+          "body": "Bilâl-i Habeşî, ağır baskılara rağmen imanından vazgeçmeyen büyük sahabilerdendir. Onun hayatı, insan onurunun, sabrın ve Allah'a bağlılığın unutulmaz bir örneğidir."
+        },
+        {
+          "id": "sahaba_009",
+          "title": "Mus'ab bin Umeyr",
+          "summary": "Genç yaşta tebliğ ve fedakârlık örneği göstermiştir.",
+          "body": "Mus'ab bin Umeyr, İslam'ı Medine'ye taşıyan öncü davetçilerden biridir. Rahat bir hayatı bırakıp hak yolunda gayret göstermesi, gençler için zarif ve güçlü bir örnektir."
+        },
+        {
+          "id": "sahaba_010",
+          "title": "Selmân-ı Fârisî",
+          "summary": "Hakikati arayışı ve hikmetiyle tanınır.",
+          "body": "Selmân-ı Fârisî, uzun bir arayıştan sonra İslam'a ulaşan seçkin sahabilerdendir. Onun hayatı, samimi arayışın, ilme açıklığın ve hakikati bulunca ona sarılmanın değerini gösterir."
+        },
+        {
+          "id": "sahaba_011",
+          "title": "Ebû Zer el-Gıfârî",
+          "summary": "Zühdü ve doğruluğuyla öne çıkan sahabilerdendir.",
+          "body": "Ebû Zer, sade yaşamı ve hak sözü söylemekten çekinmeyen tavrıyla bilinir. Onun hayatı, dünyaya aşırı bağlanmamanın ve adalet duygusunu diri tutmanın önemini hatırlatır."
+        },
+        {
+          "id": "sahaba_012",
+          "title": "Abdurrahman bin Avf",
+          "summary": "Ticareti ve cömertliğiyle hayır kapıları açmıştır.",
+          "body": "Abdurrahman bin Avf, çalışkanlığı ve infakıyla tanınan zengin sahabilerdendir. Onun hayatı, helal kazancın bereketini ve servetin hayır için kullanılabileceğini gösterir."
+        },
+        {
+          "id": "sahaba_013",
+          "title": "Sa'd bin Ebî Vakkas",
+          "summary": "Cesareti ve duasıyla tanınan öncü sahabilerdendir.",
+          "body": "Sa'd bin Ebî Vakkas, ilk Müslümanlardan biri olup cesareti ve bağlılığıyla bilinir. Onun hayatı, genç yaşta doğru tercihler yapmanın ve iman yolunda kararlı olmanın önemini gösterir."
+        },
+        {
+          "id": "sahaba_014",
+          "title": "Talha bin Ubeydullah",
+          "summary": "Fedakârlığı ve sadakatiyle anılan cennetle müjdelenen sahabilerdendir.",
+          "body": "Talha bin Ubeydullah, zor anlarda Peygamber Efendimizi korumak için büyük fedakârlık göstermiştir. Onun hayatı, dostluğun, cesaretin ve sözünde durmanın kıymetini hatırlatır."
+        },
+        {
+          "id": "sahaba_015",
+          "title": "Zübeyr bin Avvâm",
+          "summary": "Cesur duruşu ve İslam'a erken bağlılığıyla bilinir.",
+          "body": "Zübeyr bin Avvâm, genç yaşta iman eden ve İslam toplumunun kuruluş döneminde önemli görevler üstlenen sahabilerdendir. Onun hayatı, cesaretin imanla birleştiğinde nasıl güçlü bir sorumluluğa dönüştüğünü gösterir."
+        },
+        {
+          "id": "sahaba_016",
+          "title": "Ebû Ubeyde bin Cerrâh",
+          "summary": "Emanet bilinci ve tevazusuyla tanınır.",
+          "body": "Ebû Ubeyde bin Cerrâh, güvenilirliği ve tevazusuyla öne çıkan büyük sahabilerdendir. Onun hayatı, liderliğin gösterişle değil, emanet bilinci ve ahlakla değer kazandığını hatırlatır."
+        },
+        {
+          "id": "sahaba_017",
+          "title": "Hâlid bin Velîd",
+          "summary": "Askerî dehası ve dönüşüm hikâyesiyle bilinir.",
+          "body": "Hâlid bin Velîd, İslam'a girdikten sonra yeteneğini Allah yolunda kullanan önemli komutanlardandır. Onun hayatı, geçmişten dönüp hayırlı bir istikamete yönelmenin mümkün olduğunu gösterir."
+        },
+        {
+          "id": "sahaba_018",
+          "title": "Enes bin Mâlik",
+          "summary": "Peygamber hizmetinde bulunmuş ve çok hadis rivayet etmiştir.",
+          "body": "Enes bin Mâlik, küçük yaşta Peygamber Efendimizin hizmetinde bulunmuş ve onun güzel ahlakını yakından görmüştür. Onun hatıraları, merhametli eğitim ve güzel muamelenin önemini anlatır."
+        },
+        {
+          "id": "sahaba_019",
+          "title": "Muâz bin Cebel",
+          "summary": "İlim ve fıkıh bilgisiyle öne çıkan sahabilerdendir.",
+          "body": "Muâz bin Cebel, helal-haram bilgisi ve öğreticiliğiyle tanınmıştır. Onun hayatı, ilmi öğrenmenin, öğretmenin ve sorumlulukla temsil etmenin değerini gösterir."
+        },
+        {
+          "id": "sahaba_020",
+          "title": "Ümmü Seleme",
+          "summary": "Hikmeti, sabrı ve sağlam görüşüyle tanınır.",
+          "body": "Ümmü Seleme, hicret, sabır ve aile hayatındaki güçlü duruşuyla bilinen müminlerin annelerindendir. Onun hayatı, zorluklar içinde metaneti ve hikmetli düşünmeyi hatırlatır."
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "İslam Tarihi",
+      "articles": [
+        {
+          "id": "history_001",
+          "title": "Hicretin Anlamı",
+          "summary": "Hicret, yeni bir toplum inşasının başlangıcıdır.",
+          "body": "Mekke'den Medine'ye hicret, yalnızca bir yolculuk değil, inanç özgürlüğü ve kardeşlik temelli yeni bir hayatın başlangıcıdır. Müslümanlar bu süreçte dayanışma, fedakârlık ve sabırla güçlü bir toplum oluşturdular."
+        },
+        {
+          "id": "history_002",
+          "title": "Medine Vesikası",
+          "summary": "Farklı toplulukların birlikte yaşaması için önemli bir sözleşmedir.",
+          "body": "Medine'de farklı inanç ve kabilelerden insanların haklarını düzenleyen bir toplumsal sözleşme oluşturuldu. Bu tecrübe, adalet, güvenlik ve ortak sorumluluk ilkeleri açısından İslam tarihinin önemli örneklerindendir."
+        },
+        {
+          "id": "history_003",
+          "title": "Mescid-i Nebevî'nin İnşası",
+          "summary": "Mescid, ibadet kadar eğitim ve toplumsal buluşma merkeziydi.",
+          "body": "Medine'de inşa edilen Mescid-i Nebevî, namaz kılınan bir yer olmanın yanında ilim, istişare ve kardeşlik merkezi hâline geldi. Bu yapı, İslam toplumunda mescidin hayatın merkezindeki yerini gösterir."
+        },
+        {
+          "id": "history_004",
+          "title": "Muhacir ve Ensar Kardeşliği",
+          "summary": "İslam toplumunun dayanışma ruhunu gösteren örneklerden biridir.",
+          "body": "Mekke'den hicret eden muhacirler ile Medineli ensar arasında kurulan kardeşlik, paylaşmanın ve fedakârlığın canlı bir örneğidir. Bu birliktelik, iman bağının kan ve mal sınırlarını aşan güçlü bir kardeşlik kurabileceğini gösterdi."
+        },
+        {
+          "id": "history_005",
+          "title": "Bedir Günü",
+          "summary": "Bedir, azlığın iman ve sebatla güç bulduğu dönüm noktalarındandır.",
+          "body": "Bedir, Müslümanların varlık mücadelesinde önemli bir aşama oldu. Bu olay, sayı ve imkân az olsa da Allah'a güven, disiplin ve samimiyetle büyük sonuçlar elde edilebileceğini hatırlatır."
+        },
+        {
+          "id": "history_006",
+          "title": "Uhud'dan Dersler",
+          "summary": "Uhud, itaat, sabır ve hatadan ders alma bilinci verir.",
+          "body": "Uhud hadisesi, zafer ve imtihanın iç içe geçebileceğini gösteren önemli bir tecrübedir. Müslümanlar bu olaydan emre bağlılık, sabır ve toplumsal sorumluluk konusunda derin dersler çıkardılar."
+        },
+        {
+          "id": "history_007",
+          "title": "Hendek Savunması",
+          "summary": "İstişare ve ortak akıl zor zamanlarda güç verir.",
+          "body": "Hendek sürecinde Müslümanlar, istişareyle farklı bir savunma yöntemi uyguladılar. Bu olay, aklı kullanmanın, birlik olmanın ve zor şartlarda metanet göstermenin önemini ortaya koyar."
+        },
+        {
+          "id": "history_008",
+          "title": "Hudeybiye Anlaşması",
+          "summary": "Hudeybiye, sabırla gelen stratejik bir kazanımdır.",
+          "body": "Hudeybiye Anlaşması ilk bakışta ağır görünse de zamanla İslam daveti için büyük kapılar açtı. Bu olay, kısa vadeli duygular yerine hikmetli ve sabırlı kararların değerini gösterir."
+        },
+        {
+          "id": "history_009",
+          "title": "Mekke'nin Fethi",
+          "summary": "Fetih, affedicilik ve tevazuyla taçlanan büyük bir dönüm noktasıdır.",
+          "body": "Mekke'nin fethi, güç elde edildiğinde intikam yerine merhametin seçilmesini gösteren büyük bir örnektir. Peygamber Efendimizin affediciliği, İslam ahlakının en parlak sahnelerinden biridir."
+        },
+        {
+          "id": "history_010",
+          "title": "Veda Hutbesi",
+          "summary": "Veda Hutbesi insan onuru, emanet ve adalet mesajları taşır.",
+          "body": "Veda Hutbesi, can, mal ve onur dokunulmazlığını vurgulayan evrensel ahlaki ilkeler içerir. Müslümanlar için bu hutbe, kul hakkı, kadınlara iyi davranma ve kardeşlik bilinci açısından güçlü bir rehberdir."
+        },
+        {
+          "id": "history_011",
+          "title": "Dört Halife Dönemi",
+          "summary": "Raşid halifeler dönemi adalet, istişare ve sorumluluk örnekleri taşır.",
+          "body": "Hz. Ebû Bekir, Hz. Ömer, Hz. Osman ve Hz. Ali dönemleri İslam toplumunun yayılması ve kurumlaşması açısından önemli gelişmelere sahne oldu. Bu dönem, yöneticiliğin bir imtiyaz değil, ağır bir emanet olduğunu hatırlatır."
+        },
+        {
+          "id": "history_012",
+          "title": "İlim Yolculukları",
+          "summary": "İslam medeniyeti ilmi koruma ve aktarma gayretiyle büyüdü.",
+          "body": "Hadis, fıkıh, tefsir ve diğer ilimlerde âlimler uzun yolculuklar yaparak bilgiyi titizlikle öğrendi ve aktardı. Bu gayret, ilmin emek, ahlak ve güvenilirlik gerektirdiğini gösterir."
+        }
+      ]
+    },
+    {
+      "id": "asmaul_husna",
+      "title": "Esmaül Hüsna",
+      "articles": [
+        {
+          "id": "asmaul_001",
+          "title": "Allah'ın Güzel İsimleri",
+          "summary": "Esmaül Hüsna, Allah'ı tanımaya vesile olan güzel isimlerdir.",
+          "body": "Esmaül Hüsna, Allah'ın rahmetini, kudretini, ilmini, hikmetini ve yüceliğini tefekkür etmeye yardımcı olur. Bu isimleri öğrenmek, duayı derinleştirir ve kulun Rabbini daha bilinçli anmasına vesile olur."
+        },
+        {
+          "id": "asmaul_002",
+          "title": "İsimlerle Dua Etmek",
+          "summary": "Allah'a güzel isimleriyle yönelmek duaya derinlik katar.",
+          "body": "Dua ederken Allah'ın güzel isimlerini anmak, kulun ihtiyacını ve yönelişini daha bilinçli ifade etmesine yardımcı olur. Rahmet isterken Er-Rahmân'ı, bağışlanma isterken El-Gafûr'u anmak kalbi toparlayan güzel bir edeptir."
+        },
+        {
+          "id": "asmaul_003",
+          "title": "Esmaül Hüsna ile Tefekkür",
+          "summary": "Her isim, kalbe ayrı bir kulluk penceresi açar.",
+          "body": "Esmaül Hüsna'yı okumak yalnız ezber yapmak değildir; her ismin hayata yansıyan anlamını düşünmek de önemlidir. Bu tefekkür, insanı merhamete, adalete, şükre ve tevazuya yaklaştırır."
+        }
+      ]
+    }
+  ],
+  "esmaulHusna": [
+    {
+      "id": 1,
+      "arabicName": "الله",
+      "turkishName": "Allah",
+      "meaning": "Bütün ilahî isimleri kendinde toplayan yüce isim.",
+      "explanation": "Varlığı zorunlu olan, ibadete layık tek Rabbin özel ismidir."
+    },
+    {
+      "id": 2,
+      "arabicName": "الرَّحْمَنُ",
+      "turkishName": "Er-Rahmân",
+      "meaning": "Rahmeti bütün varlıkları kuşatan.",
+      "explanation": "Dünyada mümin olsun olmasın bütün yaratılmışlara merhametle muamele eder."
+    },
+    {
+      "id": 3,
+      "arabicName": "الرَّحِيمُ",
+      "turkishName": "Er-Rahîm",
+      "meaning": "Müminlere özel rahmeti bol olan.",
+      "explanation": "Ahirette mümin kullarına lütuf ve bağışlamasıyla muamele eder."
+    },
+    {
+      "id": 4,
+      "arabicName": "الْمَلِكُ",
+      "turkishName": "El-Melik",
+      "meaning": "Mülkün ve hükümranlığın gerçek sahibi.",
+      "explanation": "Bütün kâinatın sahibi ve mutlak yöneticisi yalnızca Allah'tır."
+    },
+    {
+      "id": 5,
+      "arabicName": "الْقُدُّوسُ",
+      "turkishName": "El-Kuddûs",
+      "meaning": "Her türlü eksiklikten uzak ve tertemiz olan.",
+      "explanation": "Allah zatında, sıfatlarında ve fiillerinde bütün noksanlıklardan münezzehtir."
+    },
+    {
+      "id": 6,
+      "arabicName": "السَّلاَمُ",
+      "turkishName": "Es-Selâm",
+      "meaning": "Esenlik veren ve her kusurdan uzak olan.",
+      "explanation": "Kullarına güven, huzur ve selamet kapılarını açan Rabbimizdir."
+    },
+    {
+      "id": 7,
+      "arabicName": "الْمُؤْمِنُ",
+      "turkishName": "El-Mü'min",
+      "meaning": "Güven veren ve iman nurunu lütfeden.",
+      "explanation": "Kullarını korkulardan emin kılar ve kalplere iman güveni yerleştirir."
+    },
+    {
+      "id": 8,
+      "arabicName": "الْمُهَيْمِنُ",
+      "turkishName": "El-Müheymin",
+      "meaning": "Gözetip koruyan, her şeyi denetimi altında tutan.",
+      "explanation": "Hiçbir şey O'nun bilgisi ve gözetimi dışında değildir."
+    },
+    {
+      "id": 9,
+      "arabicName": "الْعَزِيزُ",
+      "turkishName": "El-Azîz",
+      "meaning": "Mutlak üstün, izzet ve güç sahibi.",
+      "explanation": "Hiçbir güç O'na galip gelemez; dilediğini yüceltir."
+    },
+    {
+      "id": 10,
+      "arabicName": "الْجَبَّارُ",
+      "turkishName": "El-Cebbâr",
+      "meaning": "Eksikleri tamamlayan, iradesi karşı konulmaz olan.",
+      "explanation": "Kırıkları onarır, zayıfları güçlendirir ve hükmünü eksiksiz gerçekleştirir."
+    },
+    {
+      "id": 11,
+      "arabicName": "الْمُتَكَبِّرُ",
+      "turkishName": "El-Mütekebbir",
+      "meaning": "Büyüklükte eşi olmayan.",
+      "explanation": "Gerçek yücelik yalnız O'na aittir; yaratılmışların büyüklüğü sınırlıdır."
+    },
+    {
+      "id": 12,
+      "arabicName": "الْخَالِقُ",
+      "turkishName": "El-Hâlık",
+      "meaning": "Yoktan var eden, yaratmanın sahibi.",
+      "explanation": "Bütün varlıkları ölçü, hikmet ve kudretiyle yaratandır."
+    },
+    {
+      "id": 13,
+      "arabicName": "الْبَارِئُ",
+      "turkishName": "El-Bâri'",
+      "meaning": "Yarattıklarını uyumlu ve kusursuz biçimde var eden.",
+      "explanation": "Her varlığa kendine uygun yapı ve düzen veren Allah'tır."
+    },
+    {
+      "id": 14,
+      "arabicName": "الْمُصَوِّرُ",
+      "turkishName": "El-Musavvir",
+      "meaning": "Varlıklara şekil ve suret veren.",
+      "explanation": "Her canlıya ve her varlığa dilediği biçimi veren Rabbimizdir."
+    },
+    {
+      "id": 15,
+      "arabicName": "الْغَفَّارُ",
+      "turkishName": "El-Gaffâr",
+      "meaning": "Çok bağışlayan, günahları örten.",
+      "explanation": "Samimi tövbe eden kullarının kusurlarını tekrar tekrar bağışlar."
+    },
+    {
+      "id": 16,
+      "arabicName": "الْقَهَّارُ",
+      "turkishName": "El-Kahhâr",
+      "meaning": "Her şeye galip gelen, mutlak hüküm sahibi.",
+      "explanation": "Hiçbir varlık O'nun kudreti ve iradesi karşısında bağımsız değildir."
+    },
+    {
+      "id": 17,
+      "arabicName": "الْوَهَّابُ",
+      "turkishName": "El-Vehhâb",
+      "meaning": "Karşılıksız bol bol ihsan eden.",
+      "explanation": "Kullarına hak etmedikleri nice nimetleri lütfuyla bağışlar."
+    },
+    {
+      "id": 18,
+      "arabicName": "الرَّزَّاقُ",
+      "turkishName": "Er-Rezzâk",
+      "meaning": "Bütün canlıların rızkını veren.",
+      "explanation": "Maddi ve manevi rızık kapılarını hikmetiyle açan Allah'tır."
+    },
+    {
+      "id": 19,
+      "arabicName": "الْفَتَّاحُ",
+      "turkishName": "El-Fettâh",
+      "meaning": "Kapıları açan, hükmüyle açıklığa kavuşturan.",
+      "explanation": "Sıkıntıları giderir, hayır kapılarını açar ve hak ile batılı ayırır."
+    },
+    {
+      "id": 20,
+      "arabicName": "الْعَلِيمُ",
+      "turkishName": "El-Alîm",
+      "meaning": "Her şeyi hakkıyla bilen.",
+      "explanation": "Gizliyi, açığı, geçmişi, geleceği ve kalplerden geçenleri bilir."
+    },
+    {
+      "id": 21,
+      "arabicName": "الْقَابِضُ",
+      "turkishName": "El-Kâbıd",
+      "meaning": "Dilediğinde daraltan ve tutan.",
+      "explanation": "Rızkı, imkânı veya hali hikmetiyle daraltarak kulunu terbiye eder."
+    },
+    {
+      "id": 22,
+      "arabicName": "الْبَاسِطُ",
+      "turkishName": "El-Bâsıt",
+      "meaning": "Dilediğinde genişleten ve ferahlık veren.",
+      "explanation": "Rızıkta, ilimde, gönülde ve imkânda genişlik lütfeden Allah'tır."
+    },
+    {
+      "id": 23,
+      "arabicName": "الْخَافِضُ",
+      "turkishName": "El-Hâfıd",
+      "meaning": "Dilediğini alçaltan.",
+      "explanation": "Kibirlenenleri ve haksızlıkta ısrar edenleri hikmetiyle düşürür."
+    },
+    {
+      "id": 24,
+      "arabicName": "الرَّافِعُ",
+      "turkishName": "Er-Râfi'",
+      "meaning": "Dilediğini yükselten.",
+      "explanation": "İman, ilim, güzel ahlak ve salih amelle kullarını yüceltir."
+    },
+    {
+      "id": 25,
+      "arabicName": "الْمُعِزُّ",
+      "turkishName": "El-Muizz",
+      "meaning": "İzzet ve şeref veren.",
+      "explanation": "Dilediği kullarını iman ve güzel ahlakla değerli kılar."
+    },
+    {
+      "id": 26,
+      "arabicName": "المُذِلُّ",
+      "turkishName": "El-Müzill",
+      "meaning": "Dilediğini zillete düşüren.",
+      "explanation": "Hakkı inkâr ve zulümde ısrar edenlerin sahte üstünlüğünü giderir."
+    },
+    {
+      "id": 27,
+      "arabicName": "السَّمِيعُ",
+      "turkishName": "Es-Semî'",
+      "meaning": "Her şeyi işiten.",
+      "explanation": "Açık sözü de kalpten yükselen en gizli yakarışı da işitir."
+    },
+    {
+      "id": 28,
+      "arabicName": "الْبَصِيرُ",
+      "turkishName": "El-Basîr",
+      "meaning": "Her şeyi gören.",
+      "explanation": "Karanlıkta, uzakta veya gizlide olan hiçbir şey O'ndan saklı değildir."
+    },
+    {
+      "id": 29,
+      "arabicName": "الْحَكَمُ",
+      "turkishName": "El-Hakem",
+      "meaning": "Mutlak hüküm veren.",
+      "explanation": "Hükmünde adalet ve hikmet bulunan, son kararı gerçek anlamda veren Allah'tır."
+    },
+    {
+      "id": 30,
+      "arabicName": "الْعَدْلُ",
+      "turkishName": "El-Adl",
+      "meaning": "Mutlak adalet sahibi.",
+      "explanation": "Hiç kimseye zulmetmez; her şeyi yerli yerince takdir eder."
+    },
+    {
+      "id": 31,
+      "arabicName": "اللَّطِيفُ",
+      "turkishName": "El-Latîf",
+      "meaning": "Lütfu ince ve gizli olan.",
+      "explanation": "Kullarına fark etmedikleri yollardan merhamet ve kolaylık ulaştırır."
+    },
+    {
+      "id": 32,
+      "arabicName": "الْخَبِيرُ",
+      "turkishName": "El-Habîr",
+      "meaning": "Her şeyin iç yüzünden haberdar olan.",
+      "explanation": "Görünenin ardındaki niyeti, sebebi ve sonucu eksiksiz bilir."
+    },
+    {
+      "id": 33,
+      "arabicName": "الْحَلِيمُ",
+      "turkishName": "El-Halîm",
+      "meaning": "Acele cezalandırmayan, yumuşaklıkla muamele eden.",
+      "explanation": "Kullarına mühlet verir, tövbe ve dönüş kapısını açık tutar."
+    },
+    {
+      "id": 34,
+      "arabicName": "الْعَظِيمُ",
+      "turkishName": "El-Azîm",
+      "meaning": "Büyüklüğü sınırsız olan.",
+      "explanation": "Zatı, sıfatları ve kudreti bakımından her türlü tasavvurun üstündedir."
+    },
+    {
+      "id": 35,
+      "arabicName": "الْغَفُورُ",
+      "turkishName": "El-Gafûr",
+      "meaning": "Çok bağışlayan.",
+      "explanation": "Samimiyetle yönelen kullarını bağışlaması çok geniş olan Rabbimizdir."
+    },
+    {
+      "id": 36,
+      "arabicName": "الشَّكُورُ",
+      "turkishName": "Eş-Şekûr",
+      "meaning": "Az amele çok karşılık veren.",
+      "explanation": "Kullarının ihlasla yaptığı küçük iyilikleri bile zayi etmez."
+    },
+    {
+      "id": 37,
+      "arabicName": "الْعَلِيُّ",
+      "turkishName": "El-Aliyy",
+      "meaning": "Yücelerin yücesi.",
+      "explanation": "Her makamın, her kudretin ve her üstünlüğün üstünde olan Allah'tır."
+    },
+    {
+      "id": 38,
+      "arabicName": "الْكَبِيرُ",
+      "turkishName": "El-Kebîr",
+      "meaning": "Büyüklüğü mutlak olan.",
+      "explanation": "Her şey O'nun karşısında küçük ve muhtaçtır."
+    },
+    {
+      "id": 39,
+      "arabicName": "الْحَفِيظُ",
+      "turkishName": "El-Hafîz",
+      "meaning": "Koruyan ve gözeten.",
+      "explanation": "Yaratılmışları korur, amelleri kaydeder ve düzeni muhafaza eder."
+    },
+    {
+      "id": 40,
+      "arabicName": "المُقِيتُ",
+      "turkishName": "El-Mukît",
+      "meaning": "Rızık ve güç veren.",
+      "explanation": "Her varlığın ihtiyacını bilen ve ona uygun kuvveti verendir."
+    },
+    {
+      "id": 41,
+      "arabicName": "الْحسِيبُ",
+      "turkishName": "El-Hasîb",
+      "meaning": "Hesap gören ve kullarına yeten.",
+      "explanation": "Kullarının amellerini eksiksiz bilir ve onlara gerçek anlamda yeter."
+    },
+    {
+      "id": 42,
+      "arabicName": "الْجَلِيلُ",
+      "turkishName": "El-Celîl",
+      "meaning": "Azamet ve yücelik sahibi.",
+      "explanation": "Ululuk, heybet ve mükemmel sıfatlar O'na aittir."
+    },
+    {
+      "id": 43,
+      "arabicName": "الْكَرِيمُ",
+      "turkishName": "El-Kerîm",
+      "meaning": "İkramı ve cömertliği bol olan.",
+      "explanation": "Kullarına lütfu geniş, affı ve ihsanı sonsuz olan Rabbimizdir."
+    },
+    {
+      "id": 44,
+      "arabicName": "الرَّقِيبُ",
+      "turkishName": "Er-Rakîb",
+      "meaning": "Her şeyi gözetleyen.",
+      "explanation": "Davranışlarımızı, niyetlerimizi ve bütün halleri sürekli gözetir."
+    },
+    {
+      "id": 45,
+      "arabicName": "الْمُجِيبُ",
+      "turkishName": "El-Mücîb",
+      "meaning": "Dualara karşılık veren.",
+      "explanation": "Kullarının yakarışlarını işitir ve hikmetiyle cevap verir."
+    },
+    {
+      "id": 46,
+      "arabicName": "الْوَاسِعُ",
+      "turkishName": "El-Vâsi'",
+      "meaning": "Lütfu, ilmi ve rahmeti geniş olan.",
+      "explanation": "Hiçbir darlık O'nun hazinelerini ve rahmetini sınırlayamaz."
+    },
+    {
+      "id": 47,
+      "arabicName": "الْحَكِيمُ",
+      "turkishName": "El-Hakîm",
+      "meaning": "Her işi hikmetli olan.",
+      "explanation": "Yarattığı ve hükmettiği her şeyde derin bir hikmet vardır."
+    },
+    {
+      "id": 48,
+      "arabicName": "الْوَدُودُ",
+      "turkishName": "El-Vedûd",
+      "meaning": "Kullarını seven ve sevdiren.",
+      "explanation": "Salih kullarına muhabbet lütfeder, kalplere sevgi yerleştirir."
+    },
+    {
+      "id": 49,
+      "arabicName": "الْمَجِيدُ",
+      "turkishName": "El-Mecîd",
+      "meaning": "Şanı ve keremi yüce olan.",
+      "explanation": "Yücelik, izzet ve ikram bakımından en mükemmel olan Allah'tır."
+    },
+    {
+      "id": 50,
+      "arabicName": "الْبَاعِثُ",
+      "turkishName": "El-Bâis",
+      "meaning": "Dirilten ve gönderen.",
+      "explanation": "Ölüleri diriltecek, peygamberleri göndermiş ve kulları hesaba kaldıracaktır."
+    },
+    {
+      "id": 51,
+      "arabicName": "الشَّهِيدُ",
+      "turkishName": "Eş-Şehîd",
+      "meaning": "Her şeye şahit olan.",
+      "explanation": "Gizli açık bütün söz ve davranışlara eksiksiz şahittir."
+    },
+    {
+      "id": 52,
+      "arabicName": "الْحَقُّ",
+      "turkishName": "El-Hakk",
+      "meaning": "Varlığı gerçek ve değişmez olan.",
+      "explanation": "Gerçek hüküm, gerçek varlık ve mutlak hakikat O'na aittir."
+    },
+    {
+      "id": 53,
+      "arabicName": "الْوَكِيلُ",
+      "turkishName": "El-Vekîl",
+      "meaning": "Kendisine güvenilip dayanılan.",
+      "explanation": "İşlerini O'na havale eden kullarına en güzel şekilde yeter."
+    },
+    {
+      "id": 54,
+      "arabicName": "الْقَوِيُّ",
+      "turkishName": "El-Kaviyy",
+      "meaning": "Kudreti sınırsız güçlü olan.",
+      "explanation": "Hiçbir zayıflık, yorgunluk veya acizlik O'na yaklaşamaz."
+    },
+    {
+      "id": 55,
+      "arabicName": "الْمَتِينُ",
+      "turkishName": "El-Metîn",
+      "meaning": "Kuvveti sağlam ve sarsılmaz olan.",
+      "explanation": "Hükmü, kudreti ve desteği eksilmez ve sarsılmazdır."
+    },
+    {
+      "id": 56,
+      "arabicName": "الْوَلِيُّ",
+      "turkishName": "El-Veliyy",
+      "meaning": "Dost ve yardımcı olan.",
+      "explanation": "İman eden kullarının velisi, koruyucusu ve destekçisidir."
+    },
+    {
+      "id": 57,
+      "arabicName": "الْحَمِيدُ",
+      "turkishName": "El-Hamîd",
+      "meaning": "Her türlü hamde layık olan.",
+      "explanation": "Bütün övgüler gerçek anlamda O'na yönelir."
+    },
+    {
+      "id": 58,
+      "arabicName": "الْمُحْصِي",
+      "turkishName": "El-Muhsî",
+      "meaning": "Her şeyi sayıp bilen.",
+      "explanation": "En küçük ayrıntıyı bile bilgisi ve kaydı dışında bırakmaz."
+    },
+    {
+      "id": 59,
+      "arabicName": "الْمُبْدِئُ",
+      "turkishName": "El-Mübdi'",
+      "meaning": "Yaratmayı ilk başlatan.",
+      "explanation": "Her şeyi yoktan ve örneksiz olarak varlık sahasına çıkarandır."
+    },
+    {
+      "id": 60,
+      "arabicName": "الْمُعِيدُ",
+      "turkishName": "El-Muîd",
+      "meaning": "Yeniden diriltecek olan.",
+      "explanation": "Ölümden sonra yaratmayı tekrar edecek ve kulları hesaba kaldıracaktır."
+    },
+    {
+      "id": 61,
+      "arabicName": "الْمُحْيِي",
+      "turkishName": "El-Muhyî",
+      "meaning": "Hayat veren.",
+      "explanation": "Canlılara hayatı lütfeden ve kalpleri hidayetle dirilten Allah'tır."
+    },
+    {
+      "id": 62,
+      "arabicName": "اَلْمُمِيتُ",
+      "turkishName": "El-Mümît",
+      "meaning": "Ölümü yaratan.",
+      "explanation": "Her canlının ecelini takdir eden ve dünya hayatını sonlandırandır."
+    },
+    {
+      "id": 63,
+      "arabicName": "الْحَيُّ",
+      "turkishName": "El-Hayy",
+      "meaning": "Diri, hayatı ezelî ve ebedî olan.",
+      "explanation": "Hayatı kendinden olan, asla ölmeyen ve bütün hayatların kaynağıdır."
+    },
+    {
+      "id": 64,
+      "arabicName": "الْقَيُّومُ",
+      "turkishName": "El-Kayyûm",
+      "meaning": "Her şeyi ayakta tutan.",
+      "explanation": "Bütün varlıklar O'na muhtaçtır; O hiçbir şeye muhtaç değildir."
+    },
+    {
+      "id": 65,
+      "arabicName": "الْوَاجِدُ",
+      "turkishName": "El-Vâcid",
+      "meaning": "Dilediğini bulan, hiçbir şeye muhtaç olmayan.",
+      "explanation": "Hiçbir şey O'ndan kaybolmaz ve hiçbir ihtiyaç O'nu aciz bırakmaz."
+    },
+    {
+      "id": 66,
+      "arabicName": "الْمَاجِدُ",
+      "turkishName": "El-Mâcid",
+      "meaning": "Şanı, keremi ve yüceliği bol olan.",
+      "explanation": "Lütuf ve üstünlük bakımından sonsuz yüceliğe sahiptir."
+    },
+    {
+      "id": 67,
+      "arabicName": "الْواحِدُ",
+      "turkishName": "El-Vâhid",
+      "meaning": "Bir ve tek olan.",
+      "explanation": "Zatında, sıfatlarında ve ilahlığında ortağı olmayan Allah'tır."
+    },
+    {
+      "id": 68,
+      "arabicName": "الصَّمَدُ",
+      "turkishName": "Es-Samed",
+      "meaning": "Her şeyin kendisine muhtaç olduğu, kendisi muhtaç olmayan.",
+      "explanation": "Bütün ihtiyaçlar O'na arz edilir; O ise hiçbir şeye ihtiyaç duymaz."
+    },
+    {
+      "id": 69,
+      "arabicName": "الْقَادِرُ",
+      "turkishName": "El-Kâdir",
+      "meaning": "Her şeye gücü yeten.",
+      "explanation": "Dilediğini yapmaya kudreti tam olan Rabbimizdir."
+    },
+    {
+      "id": 70,
+      "arabicName": "الْمُقْتَدِرُ",
+      "turkishName": "El-Muktedir",
+      "meaning": "Kudreti her şeye hâkim olan.",
+      "explanation": "Hiçbir şey O'nun kudret sınırlarının dışında değildir."
+    },
+    {
+      "id": 71,
+      "arabicName": "الْمُقَدِّمُ",
+      "turkishName": "El-Mukaddim",
+      "meaning": "Dilediğini öne alan.",
+      "explanation": "Hikmetiyle bazı kulları, işleri ve zamanları öne geçirir."
+    },
+    {
+      "id": 72,
+      "arabicName": "الْمُؤَخِّرُ",
+      "turkishName": "El-Muahhir",
+      "meaning": "Dilediğini geriye bırakan.",
+      "explanation": "Her şeyi en uygun vaktinde takdir eder; geciktirmesi de hikmetlidir."
+    },
+    {
+      "id": 73,
+      "arabicName": "الأَوَّلُ",
+      "turkishName": "El-Evvel",
+      "meaning": "Başlangıcı olmayan ilk.",
+      "explanation": "Her şeyden önce var olan, varlığının başlangıcı bulunmayan Allah'tır."
+    },
+    {
+      "id": 74,
+      "arabicName": "الآخِرُ",
+      "turkishName": "El-Âhir",
+      "meaning": "Sonu olmayan son.",
+      "explanation": "Her şey yok olsa da baki kalacak olan yalnız O'dur."
+    },
+    {
+      "id": 75,
+      "arabicName": "الظَّاهِرُ",
+      "turkishName": "Ez-Zâhir",
+      "meaning": "Varlığı delilleriyle apaçık olan.",
+      "explanation": "Yaratılıştaki ayetler ve düzen O'nun varlığını gösterir."
+    },
+    {
+      "id": 76,
+      "arabicName": "الْبَاطِنُ",
+      "turkishName": "El-Bâtın",
+      "meaning": "Mahiyeti idrak edilemeyen, gizliyi bilen.",
+      "explanation": "O'nu gözler kuşatamaz; O ise her şeyin iç yüzünü bilir."
+    },
+    {
+      "id": 77,
+      "arabicName": "الْوَالِي",
+      "turkishName": "El-Vâlî",
+      "meaning": "Kâinatı yöneten ve tasarruf eden.",
+      "explanation": "Bütün varlık âlemi O'nun idaresi ve hükmü altındadır."
+    },
+    {
+      "id": 78,
+      "arabicName": "الْمُتَعَالِي",
+      "turkishName": "El-Müteâlî",
+      "meaning": "Her şeyden yüce ve aşkın olan.",
+      "explanation": "Yaratılmışlara ait eksikliklerden sonsuz derecede uzaktır."
+    },
+    {
+      "id": 79,
+      "arabicName": "الْبَرُّ",
+      "turkishName": "El-Berr",
+      "meaning": "İyiliği ve lütfu bol olan.",
+      "explanation": "Kullarına iyilik kapılarını açar, onları rahmetiyle kuşatır."
+    },
+    {
+      "id": 80,
+      "arabicName": "التَّوَابُ",
+      "turkishName": "Et-Tevvâb",
+      "meaning": "Tövbeleri çok kabul eden.",
+      "explanation": "Samimi dönüşleri kabul eder ve kullarına yeniden arınma imkânı verir."
+    },
+    {
+      "id": 81,
+      "arabicName": "المُنْتَقِمُ",
+      "turkishName": "El-Müntekim",
+      "meaning": "Zulümde ısrar edenlerden adaletle intikam alan.",
+      "explanation": "Haksızlığı karşılıksız bırakmaz; hükmü adalet ve hikmetledir."
+    },
+    {
+      "id": 82,
+      "arabicName": "العَفُوُّ",
+      "turkishName": "El-Afüvv",
+      "meaning": "Affı çok geniş olan.",
+      "explanation": "Kullarının günahlarını dilerse siler, izlerini bağışıyla giderir."
+    },
+    {
+      "id": 83,
+      "arabicName": "الرَّؤُوفُ",
+      "turkishName": "Er-Raûf",
+      "meaning": "Çok şefkatli olan.",
+      "explanation": "Kullarına karşı merhameti ince, derin ve kuşatıcıdır."
+    },
+    {
+      "id": 84,
+      "arabicName": "مَالِكُ الْمُلْكِ",
+      "turkishName": "Mâlikü'l-Mülk",
+      "meaning": "Mülkün gerçek sahibi.",
+      "explanation": "Egemenlik, servet, makam ve bütün varlık gerçek anlamda O'nundur."
+    },
+    {
+      "id": 85,
+      "arabicName": "ذُوالْجَلاَلِ وَالإكْرَامِ",
+      "turkishName": "Zü'l-Celâli ve'l-İkrâm",
+      "meaning": "Azamet ve ikram sahibi.",
+      "explanation": "Yücelik ve cömertlik sıfatları en mükemmel şekilde O'nda bulunur."
+    },
+    {
+      "id": 86,
+      "arabicName": "الْمُقْسِطُ",
+      "turkishName": "El-Muksit",
+      "meaning": "Adaletle hükmeden.",
+      "explanation": "Hakkı hak sahibine ulaştırır ve zulmü adaletiyle giderir."
+    },
+    {
+      "id": 87,
+      "arabicName": "الْجَامِعُ",
+      "turkishName": "El-Câmi'",
+      "meaning": "Toplayan, bir araya getiren.",
+      "explanation": "Kıyamet günü kulları toplayacak, kalpleri ve sebepleri de birleştirendir."
+    },
+    {
+      "id": 88,
+      "arabicName": "الْغَنِيُّ",
+      "turkishName": "El-Ganiyy",
+      "meaning": "Hiçbir şeye muhtaç olmayan.",
+      "explanation": "Bütün varlıklar O'na muhtaçtır; O ise mutlak zenginlik sahibidir."
+    },
+    {
+      "id": 89,
+      "arabicName": "الْمُغْنِي",
+      "turkishName": "El-Muğnî",
+      "meaning": "Zenginlik ve yeterlilik veren.",
+      "explanation": "Dilediği kullarına maddi ve manevi zenginlik lütfeder."
+    },
+    {
+      "id": 90,
+      "arabicName": "اَلْمَانِعُ",
+      "turkishName": "El-Mâni'",
+      "meaning": "Dilediğini engelleyen, koruyan.",
+      "explanation": "Zararı engeller, hikmetiyle bazı kapıları kapatır ve kullarını korur."
+    },
+    {
+      "id": 91,
+      "arabicName": "الضَّارَّ",
+      "turkishName": "Ed-Dârr",
+      "meaning": "Hikmetiyle zarar ve sıkıntı yaratabilen.",
+      "explanation": "İmtihan ve uyarı olarak bazı zorluklara izin verir; her hükmü hikmetlidir."
+    },
+    {
+      "id": 92,
+      "arabicName": "النَّافِعُ",
+      "turkishName": "En-Nâfi'",
+      "meaning": "Fayda ve hayır veren.",
+      "explanation": "Gerçek fayda, bereket ve iyilik O'nun dilemesiyle gerçekleşir."
+    },
+    {
+      "id": 93,
+      "arabicName": "النُّورُ",
+      "turkishName": "En-Nûr",
+      "meaning": "Nurlandıran ve hidayet veren.",
+      "explanation": "Göklerin ve yerin nurudur; kalpleri iman ve hidayetle aydınlatır."
+    },
+    {
+      "id": 94,
+      "arabicName": "الْهَادِي",
+      "turkishName": "El-Hâdî",
+      "meaning": "Doğru yola ileten.",
+      "explanation": "Kullarına hakikati gösterir, kalplere hidayet yollarını açar."
+    },
+    {
+      "id": 95,
+      "arabicName": "الْبَدِيعُ",
+      "turkishName": "El-Bedî'",
+      "meaning": "Eşsiz ve örneksiz yaratan.",
+      "explanation": "Kâinatı benzersiz güzellik ve düzen içinde var edendir."
+    },
+    {
+      "id": 96,
+      "arabicName": "الْبَاقِي",
+      "turkishName": "El-Bâkî",
+      "meaning": "Sonsuz ve kalıcı olan.",
+      "explanation": "Her şey fanidir; baki olan yalnız Allah'tır."
+    },
+    {
+      "id": 97,
+      "arabicName": "الْوَارِثُ",
+      "turkishName": "El-Vâris",
+      "meaning": "Her şey sonunda kendisine kalan.",
+      "explanation": "Bütün mülkler geçicidir; gerçek sahiplik sonunda O'na aittir."
+    },
+    {
+      "id": 98,
+      "arabicName": "الرَّشِيدُ",
+      "turkishName": "Er-Reşîd",
+      "meaning": "Doğru yolu gösteren, işleri isabetli olan.",
+      "explanation": "Kullarına olgunluk ve doğruluk yolunu gösterir; her işi hikmetlidir."
+    },
+    {
+      "id": 99,
+      "arabicName": "الصَّبُورُ",
+      "turkishName": "Es-Sabûr",
+      "meaning": "Çok sabırlı olan, acele cezalandırmayan.",
+      "explanation": "Kullarına mühlet verir; acele etmeden hikmet ve adaletle muamele eder."
+    }
+  ]
+}
