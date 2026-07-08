@@ -26,7 +26,6 @@ backend/.env.*
 !backend/.env.example
 lib/firebase_options.dart
 android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
 
 # Signing keys, certificates, provisioning profiles
 *.jks
