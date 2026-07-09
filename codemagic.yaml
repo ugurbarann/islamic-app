@@ -67,6 +67,8 @@ workflows:
     name: iOS signed IPA
     max_build_duration: 60
     instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: test1
     environment:
       flutter: stable
       xcode: latest
@@ -110,8 +112,10 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-
-    # Later TestFlight upload:
-    # Add publishing.app_store_connect after confirming the signed IPA builds.
-    # Keep App Store Connect API keys, certificates, and provisioning profiles
-    # in Codemagic secure storage only.
+    publishing:
+      app_store_connect:
+        auth: integration
+        # Uploads the IPA to App Store Connect. Leave TestFlight beta review
+        # disabled until the first upload is visible and app metadata is ready.
+        submit_to_testflight: false
+        submit_to_app_store: false
