@@ -48,7 +48,7 @@ workflows:
       - name: Flutter pub get
         script: flutter pub get
       - name: Flutter analyze
-        script: flutter analyze
+        script: flutter analyze lib test
       - name: iOS no-codesign release build
         script: flutter build ios --release --no-codesign
     artifacts:
@@ -102,7 +102,7 @@ workflows:
       - name: Flutter pub get
         script: flutter pub get
       - name: Flutter analyze
-        script: flutter analyze
+        script: flutter analyze lib test
       - name: Apply iOS signing profiles
         script: xcode-project use-profiles
       - name: Build signed IPA
