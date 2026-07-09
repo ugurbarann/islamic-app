@@ -34,6 +34,11 @@ workflows:
             exit 1
           fi
 
+          if grep -q "REPLACE_IN_CODEMAGIC" ios/Runner/GoogleService-Info.plist; then
+            echo "ios/Runner/GoogleService-Info.plist is still the placeholder. Check IOS_GOOGLE_SERVICE_INFO_PLIST_B64 in Codemagic environment variables."
+            exit 1
+          fi
+
           if [ -n "${FIREBASE_OPTIONS_DART_B64:-}" ]; then
             mkdir -p lib
             printf '%s' "$FIREBASE_OPTIONS_DART_B64" | base64 --decode > lib/firebase_options.dart
@@ -94,6 +99,11 @@ workflows:
 
           if [ ! -f ios/Runner/GoogleService-Info.plist ]; then
             echo "Missing ios/Runner/GoogleService-Info.plist. Add IOS_GOOGLE_SERVICE_INFO_PLIST_B64 as a secure Codemagic variable."
+            exit 1
+          fi
+
+          if grep -q "REPLACE_IN_CODEMAGIC" ios/Runner/GoogleService-Info.plist; then
+            echo "ios/Runner/GoogleService-Info.plist is still the placeholder. Check IOS_GOOGLE_SERVICE_INFO_PLIST_B64 in Codemagic environment variables."
             exit 1
           fi
 
