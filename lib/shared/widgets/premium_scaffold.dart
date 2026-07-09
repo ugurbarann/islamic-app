@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../app/theme/app_design_system.dart';
 import 'glass_panel.dart';
@@ -20,7 +21,18 @@ class PremiumScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title), actions: actions),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: context.canPop()
+            ? IconButton(
+                tooltip: 'Geri',
+                onPressed: () => context.pop(),
+                icon: const Icon(Icons.arrow_back_rounded),
+              )
+            : null,
+        title: Text(title),
+        actions: actions,
+      ),
       bottomNavigationBar: bottomNavigationBar,
       body: Stack(
         children: [

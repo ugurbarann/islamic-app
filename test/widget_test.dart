@@ -6,7 +6,7 @@ void main() {
   testWidgets('renders Turkish app shell', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: IslamicApp()));
 
-    expect(find.text('Ana'), findsWidgets);
+    expect(find.text('Giriş'), findsWidgets);
     expect(find.text('Bugün'), findsWidgets);
     expect(find.text('Kur\'an'), findsWidgets);
     expect(find.text('Keşfet'), findsWidgets);

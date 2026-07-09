@@ -90,8 +90,7 @@ class FloatingBottomNavigation extends StatelessWidget {
     _FloatingNavItemData(
       icon: Icons.home_outlined,
       selectedIcon: Icons.home_rounded,
-      label: 'Ana',
-      semanticLabel: 'Ana Sayfa',
+      label: 'Giriş',
     ),
     _FloatingNavItemData(
       icon: Icons.today_outlined,
@@ -121,13 +120,11 @@ class _FloatingNavItemData {
     required this.icon,
     required this.selectedIcon,
     required this.label,
-    this.semanticLabel,
   });
 
   final IconData icon;
   final IconData selectedIcon;
   final String label;
-  final String? semanticLabel;
 }
 
 class _FloatingNavItem extends StatelessWidget {
@@ -148,7 +145,7 @@ class _FloatingNavItem extends StatelessWidget {
     return Semantics(
       button: true,
       selected: selected,
-      label: item.semanticLabel ?? item.label,
+      label: item.label,
       child: InkWell(
         borderRadius: BorderRadius.circular(24),
         onTap: onTap,

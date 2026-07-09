@@ -70,6 +70,8 @@ class _DuasHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final canPop = context.canPop();
+
     return SizedBox(
       height: 150,
       child: Stack(
@@ -99,8 +101,31 @@ class _DuasHeader extends StatelessWidget {
               ),
             ),
           ),
+          if (canPop)
+            Positioned(
+              left: 0,
+              top: 4,
+              child: SizedBox(
+                width: 46,
+                height: 46,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: .94),
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: AppShadows.soft,
+                  ),
+                  child: IconButton(
+                    tooltip: 'Geri',
+                    onPressed: () => context.pop(),
+                    icon: const Icon(Icons.arrow_back_rounded),
+                    color: AppColors.ink,
+                    iconSize: 24,
+                  ),
+                ),
+              ),
+            ),
           Positioned(
-            left: 0,
+            left: canPop ? 58 : 0,
             top: 36,
             right: 86,
             child: Text(

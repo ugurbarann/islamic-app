@@ -111,6 +111,13 @@ class _PrayerHeader extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        if (context.canPop()) ...[
+          _RoundHeaderButton(
+            icon: Icons.arrow_back_rounded,
+            onTap: () => context.pop(),
+          ),
+          const SizedBox(width: 8),
+        ],
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

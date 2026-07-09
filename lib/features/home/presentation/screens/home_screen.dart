@@ -101,7 +101,7 @@ class _HeaderSection extends StatelessWidget {
             const Spacer(),
             _CircleIconButton(
               icon: Icons.notifications_none_rounded,
-              onPressed: () => context.go('/home/prayer/notifications'),
+              onPressed: () => context.push('/home/prayer/notifications'),
             ),
           ],
         ),
@@ -208,7 +208,7 @@ class _NextPrayerCard extends StatelessWidget {
       borderRadius: 24,
       padding: EdgeInsets.zero,
       shadow: false,
-      onTap: () => context.go('/home/prayer'),
+      onTap: () => context.push('/home/prayer'),
       child: SizedBox(
         height: 116,
         child: ClipRRect(
@@ -592,7 +592,7 @@ class _QuickActionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: () => context.go(action.route),
+      onTap: () => context.push(action.route),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 2),
         child: Column(
@@ -730,7 +730,7 @@ class _ExploreCard extends StatelessWidget {
       borderRadius: 18,
       padding: EdgeInsets.zero,
       shadow: false,
-      onTap: () => context.go(item.route),
+      onTap: () => context.push(item.route),
       child: SizedBox(
         height: 84,
         child: ClipRRect(

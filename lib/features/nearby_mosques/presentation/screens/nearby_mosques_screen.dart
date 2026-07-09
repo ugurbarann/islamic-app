@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../app/theme/app_design_system.dart';
@@ -205,6 +206,8 @@ class _MosqueHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final canPop = context.canPop();
+
     return SizedBox(
       height: 132,
       child: Stack(
@@ -222,6 +225,15 @@ class _MosqueHeader extends StatelessWidget {
               onTap: onFilter,
             ),
           ),
+          if (canPop)
+            Positioned(
+              left: 4,
+              top: 4,
+              child: _HeaderCircleButton(
+                icon: Icons.arrow_back_rounded,
+                onTap: () => context.pop(),
+              ),
+            ),
           Positioned(
             left: 4,
             right: 76,
