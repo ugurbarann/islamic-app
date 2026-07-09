@@ -6,6 +6,8 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
+      groups:
+        - ugur
       # Add these as secure Codemagic environment variables or place them in
       # an environment group and reference it here with:
       # groups:
@@ -77,6 +79,8 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
+      groups:
+        - ugur
       ios_signing:
         certificates:
           - u
