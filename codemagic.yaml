@@ -62,3 +62,58 @@ workflows:
     # 3. Replace the no-codesign command with a signed build, for example:
     #    flutter build ipa --release
     # 4. Add publishing.app_store_connect only after signing is configured.
+
+  ios-signed-ipa:
+    name: iOS signed IPA
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.islamicep.app
+        certificates:
+          - ios_distribution_certificate
+        provisioning_profiles:
+          - ios_app_store_profile
+      # Required:
+      # IOS_GOOGLE_SERVICE_INFO_PLIST_B64 -> ios/Runner/GoogleService-Info.plist
+      #
+      # Optional unless you later generate/use FlutterFire options:
+      # FIREBASE_OPTIONS_DART_B64 -> lib/firebase_options.dart
+    scripts:
+      - name: Restore private Firebase config
+        script: |
+          set -euo pipefail
+
+          if [ -n "${IOS_GOOGLE_SERVICE_INFO_PLIST_B64:-}" ]; then
+            mkdir -p ios/Runner
+            printf '%s' "$IOS_GOOGLE_SERVICE_INFO_PLIST_B64" | base64 --decode > ios/Runner/GoogleService-Info.plist
+          fi
+
+          if [ ! -f ios/Runner/GoogleService-Info.plist ]; then
+            echo "Missing ios/Runner/GoogleService-Info.plist. Add IOS_GOOGLE_SERVICE_INFO_PLIST_B64 as a secure Codemagic variable."
+            exit 1
+          fi
+
+          if [ -n "${FIREBASE_OPTIONS_DART_B64:-}" ]; then
+            mkdir -p lib
+            printf '%s' "$FIREBASE_OPTIONS_DART_B64" | base64 --decode > lib/firebase_options.dart
+          fi
+      - name: Flutter pub get
+        script: flutter pub get
+      - name: Flutter analyze
+        script: flutter analyze
+      - name: Apply iOS signing profiles
+        script: xcode-project use-profiles
+      - name: Build signed IPA
+        script: flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    # Later TestFlight upload:
+    # Add publishing.app_store_connect after confirming the signed IPA builds.
+    # Keep App Store Connect API keys, certificates, and provisioning profiles
+    # in Codemagic secure storage only.
