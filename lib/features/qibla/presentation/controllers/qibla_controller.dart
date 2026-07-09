@@ -23,8 +23,7 @@ String qiblaStatusMessage(QiblaStatus status) {
     QiblaStatus.calculating => 'Kıble yönü hesaplanıyor',
     QiblaStatus.ready => 'Kıble Yönü',
     QiblaStatus.locationPermissionRequired => 'Konum izni gerekli',
-    QiblaStatus.locationServiceDisabled =>
-      'Konum servisleri kapalı. Şehir seçerek devam edebilirsiniz.',
+    QiblaStatus.locationServiceDisabled => 'Konum servisleri kapalı',
     QiblaStatus.compassUnavailable => 'Pusula sensörü kullanılamıyor',
     QiblaStatus.unavailable => 'Kıble yönü hesaplanıyor',
   };

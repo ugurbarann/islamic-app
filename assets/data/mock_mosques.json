@@ -46,5 +46,29 @@
     "address": "Muratpaşa/Antalya",
     "latitude": 36.8892,
     "longitude": 30.7047
+  },
+  {
+    "id": "antalya_kemer_merkez",
+    "cityId": "antalya",
+    "name": "Kemer Merkez Camii",
+    "address": "Merkez Mah., Atatürk Cad. No:23, Kemer/Antalya",
+    "latitude": 36.602792,
+    "longitude": 30.559762
+  },
+  {
+    "id": "antalya_kemer_huzur",
+    "cityId": "antalya",
+    "name": "Huzur Camii",
+    "address": "Yeni, Kemer/Antalya",
+    "latitude": 36.6027349,
+    "longitude": 30.5586335
+  },
+  {
+    "id": "antalya_kemer_cami",
+    "cityId": "antalya",
+    "name": "Kemer Camii",
+    "address": "Yeni, 402. Sk., Kemer/Antalya",
+    "latitude": 36.601706,
+    "longitude": 30.5570002
   }
 ]

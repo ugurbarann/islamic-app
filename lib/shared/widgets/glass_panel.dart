@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class GlassPanel extends StatelessWidget {
@@ -49,9 +51,12 @@ class GlassPanel extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: radius,
-      child: Material(
-        color: Colors.transparent,
-        child: onTap == null ? panel : InkWell(onTap: onTap, child: panel),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+        child: Material(
+          color: Colors.transparent,
+          child: onTap == null ? panel : InkWell(onTap: onTap, child: panel),
+        ),
       ),
     );
   }

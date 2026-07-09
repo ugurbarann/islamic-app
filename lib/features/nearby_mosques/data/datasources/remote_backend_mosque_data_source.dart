@@ -76,10 +76,14 @@ class RemoteBackendMosqueDataSource {
       final address =
           _cleanText(item['address']) ??
           '${latitude.toStringAsFixed(5)}, ${longitude.toStringAsFixed(5)}';
+      final name = _displayName(_cleanText(item['name']), address);
+      if (name == null) {
+        continue;
+      }
       final mosque = Mosque(
         id: _cleanText(item['id']) ?? '$latitude,$longitude',
         cityId: 'remote',
-        name: _cleanText(item['name']) ?? 'Cami',
+        name: name,
         address: address,
         latitude: latitude,
         longitude: longitude,
@@ -94,6 +98,48 @@ class RemoteBackendMosqueDataSource {
     }
 
     return mosques;
+  }
+
+  String? _displayName(String? rawName, String address) {
+    final name = rawName?.replaceAll(RegExp(r'\s*/\s*'), ' / ').trim();
+    if (name == null || name.isEmpty) {
+      return '${_localityFromAddress(address) ?? 'Yakındaki'} Camii';
+    }
+
+    final normalized = name.toLowerCase();
+    if (normalized == 'czystanek') {
+      return null;
+    }
+
+    if (normalized == 'mosque' ||
+        normalized == 'masjid' ||
+        normalized == 'cami' ||
+        normalized == 'camii' ||
+        name == 'مسجد') {
+      return '${_localityFromAddress(address) ?? 'Yakındaki'} Camii';
+    }
+
+    return name;
+  }
+
+  String? _localityFromAddress(String address) {
+    final districtMatch = RegExp(
+      r'([A-Za-zÇĞİÖŞÜçğıöşü]+)\s*/\s*Antalya',
+    ).firstMatch(address);
+    if (districtMatch != null) {
+      return districtMatch.group(1);
+    }
+
+    final parts = address
+        .split(',')
+        .map((part) => part.trim())
+        .where((part) => part.isNotEmpty);
+    for (final part in parts) {
+      if (part.contains('/')) {
+        return part.split('/').first.trim();
+      }
+    }
+    return null;
   }
 
   double? _toDouble(Object? value) {

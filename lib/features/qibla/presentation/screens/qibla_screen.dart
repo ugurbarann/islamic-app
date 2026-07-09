@@ -2,6 +2,8 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../../../app/theme/app_design_system.dart';
 import '../../../../shared/widgets/app_components.dart';
@@ -617,29 +619,37 @@ class _QiblaInfoTile extends StatelessWidget {
   }
 }
 
-class _QiblaFallback extends StatelessWidget {
+class _QiblaFallback extends ConsumerWidget {
   const _QiblaFallback({required this.status});
 
   final QiblaStatus status;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isCompass = status == QiblaStatus.compassUnavailable;
+    final isPermission = status == QiblaStatus.locationPermissionRequired;
+    final isService = status == QiblaStatus.locationServiceDisabled;
+    final icon = isCompass
+        ? Icons.explore_off_outlined
+        : isPermission
+        ? Icons.location_searching_rounded
+        : Icons.location_off_outlined;
+    final helperText = isCompass
+        ? 'Telefonunuzu sekiz çizerek hareket ettirin. Devam etmezse cihaz pusulası kullanılamıyor olabilir.'
+        : isService
+        ? 'Kıbleyi hesaplamak için iPhone konum servisleri açık olmalı.'
+        : 'İzin ver düğmesine basınca iOS konum iznini isteyeceğiz. Daha önce reddettiyseniz Ayarlar ekranından açabilirsiniz.';
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: GlassPanel(
           borderRadius: 32,
+          color: Colors.white.withValues(alpha: .92),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                isCompass
-                    ? Icons.explore_off_outlined
-                    : Icons.location_off_outlined,
-                size: 58,
-                color: AppColors.primary,
-              ),
+              Icon(icon, size: 58, color: AppColors.primary),
               const SizedBox(height: 16),
               Text(
                 qiblaStatusMessage(status),
@@ -651,19 +661,61 @@ class _QiblaFallback extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                isCompass
-                    ? 'Telefonunuzu sekiz çizerek hareket ettirin'
-                    : 'Kıbleyi hesaplamak için konum bilgisi gerekir.',
+                helperText,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppColors.muted,
                   fontWeight: FontWeight.w600,
                 ),
               ),
+              const SizedBox(height: 18),
+              if (isPermission)
+                FilledButton.icon(
+                  onPressed: () => _requestLocationPermission(ref),
+                  icon: const Icon(Icons.my_location_rounded),
+                  label: const Text('Konuma İzin Ver'),
+                )
+              else if (isService)
+                FilledButton.icon(
+                  onPressed: () async {
+                    await Geolocator.openLocationSettings();
+                    ref.invalidate(qiblaDirectionProvider);
+                  },
+                  icon: const Icon(Icons.settings_rounded),
+                  label: const Text('Konum Servisini Aç'),
+                )
+              else
+                FilledButton.icon(
+                  onPressed: () {
+                    ref.invalidate(qiblaDirectionProvider);
+                    ref.invalidate(compassReadingProvider);
+                  },
+                  icon: const Icon(Icons.refresh_rounded),
+                  label: const Text('Tekrar Dene'),
+                ),
+              const SizedBox(height: 8),
+              TextButton.icon(
+                onPressed: () async {
+                  await openAppSettings();
+                  ref.invalidate(qiblaDirectionProvider);
+                  ref.invalidate(compassReadingProvider);
+                },
+                icon: const Icon(Icons.tune_rounded),
+                label: const Text('Ayarları Aç'),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _requestLocationPermission(WidgetRef ref) async {
+    final permission = await Permission.locationWhenInUse.request();
+    if (permission.isPermanentlyDenied || permission.isRestricted) {
+      await openAppSettings();
+    }
+    ref.invalidate(qiblaDirectionProvider);
+    ref.invalidate(compassReadingProvider);
   }
 }

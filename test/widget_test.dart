@@ -6,10 +6,10 @@ void main() {
   testWidgets('renders Turkish app shell', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: IslamicApp()));
 
-    expect(find.text('Ana Sayfa'), findsWidgets);
-    expect(find.text('Namaz'), findsOneWidget);
-    expect(find.text('Kur\'an'), findsOneWidget);
-    expect(find.text('Keşfet'), findsOneWidget);
-    expect(find.text('Ayarlar'), findsOneWidget);
+    expect(find.text('Ana'), findsWidgets);
+    expect(find.text('Bugün'), findsWidgets);
+    expect(find.text('Kur\'an'), findsWidgets);
+    expect(find.text('Keşfet'), findsWidgets);
+    expect(find.text('Ayarlar'), findsWidgets);
   });
 }

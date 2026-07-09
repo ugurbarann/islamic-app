@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -778,6 +780,7 @@ void _openDailyItem(BuildContext context, DailyContentItem item) {
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
+    barrierColor: const Color(0xFF081A2E).withValues(alpha: 0.38),
     backgroundColor: Colors.transparent,
     builder: (context) => _DailyItemDetailSheet(item: item),
   );
@@ -794,75 +797,103 @@ class _DailyItemDetailSheet extends StatelessWidget {
       top: false,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-        child: GlassPanel(
-          borderRadius: 30,
-          padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
-          shadow: false,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.sizeOf(context).height * .72,
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    children: [
-                      AppFeatureIcon(
-                        kind: _detailIconFor(item.type),
-                        size: 44,
-                        iconSize: 26,
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          item.title,
-                          style: Theme.of(context).textTheme.titleLarge
-                              ?.copyWith(
-                                color: AppColors.ink,
-                                fontWeight: FontWeight.w900,
-                              ),
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        icon: const Icon(Icons.close_rounded),
-                        color: AppColors.muted,
-                      ),
-                    ],
-                  ),
-                  if (item.reference != null || item.source != null) ...[
-                    const SizedBox(height: 12),
-                    Text(
-                      item.reference ?? item.source!,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 26, sigmaY: 26),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white.withValues(alpha: 0.96),
+                    const Color(0xFFEAF6FF).withValues(alpha: 0.92),
                   ],
-                  if (item.arabicText != null) ...[
-                    const SizedBox(height: 16),
-                    Text(
-                      item.arabicText!,
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
-                      style: AppTypography.arabic(
-                        context,
-                      ).copyWith(fontSize: 25, height: 1.55),
-                    ),
-                  ],
-                  const SizedBox(height: 16),
-                  Text(
-                    item.turkishText,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: AppColors.text,
-                      fontWeight: FontWeight.w700,
-                      height: 1.48,
-                    ),
+                ),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.92)),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.ink.withValues(alpha: 0.16),
+                    blurRadius: 28,
+                    offset: const Offset(0, 14),
                   ),
                 ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.sizeOf(context).height * .72,
+                  ),
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          children: [
+                            AppFeatureIcon(
+                              kind: _detailIconFor(item.type),
+                              size: 44,
+                              iconSize: 26,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                item.title,
+                                style: Theme.of(context).textTheme.titleLarge
+                                    ?.copyWith(
+                                      color: AppColors.ink,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              icon: const Icon(Icons.close_rounded),
+                              color: AppColors.muted,
+                            ),
+                          ],
+                        ),
+                        if (item.reference != null || item.source != null) ...[
+                          const SizedBox(height: 12),
+                          Text(
+                            item.reference ?? item.source!,
+                            style: Theme.of(context).textTheme.titleMedium
+                                ?.copyWith(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                          ),
+                        ],
+                        if (item.arabicText != null) ...[
+                          const SizedBox(height: 16),
+                          Text(
+                            item.arabicText!,
+                            textAlign: TextAlign.right,
+                            textDirection: TextDirection.rtl,
+                            style: AppTypography.arabic(
+                              context,
+                            ).copyWith(fontSize: 25, height: 1.55),
+                          ),
+                        ],
+                        const SizedBox(height: 16),
+                        Text(
+                          item.turkishText,
+                          style: Theme.of(context).textTheme.bodyLarge
+                              ?.copyWith(
+                                color: AppColors.text,
+                                fontWeight: FontWeight.w700,
+                                height: 1.48,
+                              ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

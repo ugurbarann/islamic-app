@@ -21,8 +21,8 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
   final RemoteBackendMosqueDataSource remoteDataSource;
   final LocalNearbyMosqueRepository localRepository;
 
-  static const _cachePrefix = 'nearby_mosques_cache_v1';
-  static const _lastRefreshPrefix = 'nearby_mosques_last_refresh_v1';
+  static const _cachePrefix = 'nearby_mosques_cache_v2';
+  static const _lastRefreshPrefix = 'nearby_mosques_last_refresh_v2';
   static const _cacheTtl = Duration(hours: 24);
   static const _manualRefreshCooldown = Duration(minutes: 15);
 
@@ -34,9 +34,11 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
     bool forceRefresh = false,
   }) async {
     final prefs = await SharedPreferences.getInstance();
-    final cacheKey = _cacheKey(fallbackLocation, radiusMeters, limit);
+    final origin = await _resolveOrigin(fallbackLocation);
+    final cacheKey = _cacheKey(fallbackLocation, origin, radiusMeters, limit);
     final lastRefreshKey = _lastRefreshKey(
       fallbackLocation,
+      origin,
       radiusMeters,
       limit,
     );
@@ -75,8 +77,6 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         return cachedResult;
       }
     }
-
-    final origin = await _resolveOrigin(fallbackLocation);
 
     try {
       final remoteMosques = await remoteDataSource.loadNearbyMosques(
@@ -128,18 +128,30 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
 
   String _cacheKey(
     SelectedPrayerLocation location,
+    _MosqueOrigin origin,
     int radiusMeters,
     int limit,
   ) {
-    return '$_cachePrefix.${location.city.id}.${location.district.id}.$radiusMeters.$limit';
+    return '$_cachePrefix.${location.city.id}.${location.district.id}.${_originSegment(origin)}.$radiusMeters.$limit';
   }
 
   String _lastRefreshKey(
     SelectedPrayerLocation location,
+    _MosqueOrigin origin,
     int radiusMeters,
     int limit,
   ) {
-    return '$_lastRefreshPrefix.${location.city.id}.${location.district.id}.$radiusMeters.$limit';
+    return '$_lastRefreshPrefix.${location.city.id}.${location.district.id}.${_originSegment(origin)}.$radiusMeters.$limit';
+  }
+
+  String _originSegment(_MosqueOrigin origin) {
+    if (!origin.usesDeviceLocation) {
+      return 'fallback';
+    }
+
+    final latitude = (origin.latitude * 1000).round();
+    final longitude = (origin.longitude * 1000).round();
+    return 'device.$latitude.$longitude';
   }
 
   DateTime? _nextRefreshAllowedAt(

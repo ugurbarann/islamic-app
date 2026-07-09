@@ -63,11 +63,12 @@
     "name": "Antalya",
     "ezanVaktiCityId": "507",
     "districts": [
-      { "id": "muratpasa", "name": "Muratpaşa", "latitude": 36.8841, "longitude": 30.7056, "ezanVaktiDistrictId": "9225" },
-      { "id": "kepez", "name": "Kepez", "latitude": 36.9157, "longitude": 30.7133, "ezanVaktiDistrictId": "9225" },
-      { "id": "konyaalti", "name": "Konyaaltı", "latitude": 36.8704, "longitude": 30.6346, "ezanVaktiDistrictId": "9225" },
-      { "id": "alanya", "name": "Alanya", "latitude": 36.5438, "longitude": 31.9998, "ezanVaktiDistrictId": "9224" }
-    ]
+        { "id": "muratpasa", "name": "Muratpaşa", "latitude": 36.8841, "longitude": 30.7056, "ezanVaktiDistrictId": "9225" },
+        { "id": "kepez", "name": "Kepez", "latitude": 36.9157, "longitude": 30.7133, "ezanVaktiDistrictId": "9225" },
+        { "id": "konyaalti", "name": "Konyaaltı", "latitude": 36.8704, "longitude": 30.6346, "ezanVaktiDistrictId": "9225" },
+        { "id": "kemer", "name": "Kemer", "latitude": 36.601948, "longitude": 30.559294, "ezanVaktiDistrictId": "9233" },
+        { "id": "alanya", "name": "Alanya", "latitude": 36.5438, "longitude": 31.9998, "ezanVaktiDistrictId": "9224" }
+      ]
   },
   {
     "id": "ardahan",
