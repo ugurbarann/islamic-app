@@ -72,7 +72,7 @@ workflows:
       xcode: latest
       ios_signing:
         certificates:
-          - ios_distribution_certificate
+          - u
         provisioning_profiles:
           - ios_app_store_profile
       # Required:
