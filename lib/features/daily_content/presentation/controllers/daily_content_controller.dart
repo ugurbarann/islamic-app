@@ -20,6 +20,10 @@ final todayDailyContentProvider = FutureProvider<DailyContentBundle>((ref) {
   return ref.watch(dailyContentRepositoryProvider).loadTodayContent();
 });
 
+final dailyContentBootstrapProvider = FutureProvider<void>((ref) {
+  return ref.watch(dailyContentRepositoryProvider).cacheUpcomingContent();
+});
+
 final dailyContentMetadataProvider = FutureProvider<DailyContentMetadata>((
   ref,
 ) {

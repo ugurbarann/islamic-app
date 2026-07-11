@@ -56,8 +56,8 @@ final selectedPrayerLocationControllerProvider =
 
 class SelectedPrayerLocationController
     extends AsyncNotifier<SelectedPrayerLocation> {
-  static const _initialLocationResolvedKey = 'initial_location_resolved_once';
-  static const _initialLocationDeniedKey = 'initial_location_permission_denied';
+  static const _initialLocationAttemptedKey =
+      'initial_location_attempted_once_v2';
 
   @override
   Future<SelectedPrayerLocation> build() {
@@ -104,9 +104,9 @@ class SelectedPrayerLocationController
 
   Future<void> resolveInitialLocationOnce() async {
     final prefs = await SharedPreferences.getInstance();
-    final alreadyResolved = prefs.getBool(_initialLocationResolvedKey) ?? false;
-    final permissionDenied = prefs.getBool(_initialLocationDeniedKey) ?? false;
-    if (alreadyResolved || permissionDenied) {
+    final alreadyAttempted =
+        prefs.getBool(_initialLocationAttemptedKey) ?? false;
+    if (alreadyAttempted) {
       return;
     }
 
@@ -114,19 +114,12 @@ class SelectedPrayerLocationController
         .read(currentLocationResolverProvider)
         .resolve();
     final resolvedLocation = resolution.location;
-    if (resolution.isResolved &&
-        resolution.usedGoogleAdministrativeLocation &&
-        resolvedLocation != null) {
+    if (resolution.isResolved && resolvedLocation != null) {
       await selectLocation(
         cityId: resolvedLocation.city.id,
         districtId: resolvedLocation.district.id,
       );
-      await prefs.setBool(_initialLocationResolvedKey, true);
-      return;
     }
-
-    if (resolution.status == CurrentLocationResolutionStatus.permissionDenied) {
-      await prefs.setBool(_initialLocationDeniedKey, true);
-    }
+    await prefs.setBool(_initialLocationAttemptedKey, true);
   }
 }

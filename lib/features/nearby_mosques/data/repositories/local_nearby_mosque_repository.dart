@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../../prayer_times/domain/entities/selected_prayer_location.dart';
 import '../../domain/entities/mosque_distance.dart';
@@ -47,9 +46,11 @@ class LocalNearbyMosqueRepository implements NearbyMosqueRepository {
   }
 
   Future<({double latitude, double longitude})?> _tryDeviceLocation() async {
-    final permission = await Permission.locationWhenInUse.status;
+    final permission = await Geolocator.checkPermission();
     final serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!permission.isGranted || !serviceEnabled) {
+    if ((permission != LocationPermission.whileInUse &&
+            permission != LocationPermission.always) ||
+        !serviceEnabled) {
       return null;
     }
 

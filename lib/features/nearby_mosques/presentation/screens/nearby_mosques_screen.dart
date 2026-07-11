@@ -194,6 +194,17 @@ class _MosqueList extends StatelessWidget {
         const SizedBox(height: 10),
         for (final mosqueDistance in mosques)
           _MosqueCard(mosqueDistance: mosqueDistance),
+        const SizedBox(height: 6),
+        TextButton(
+          onPressed: () => launchUrl(
+            Uri.parse('https://www.openstreetmap.org/copyright'),
+            mode: LaunchMode.externalApplication,
+          ),
+          child: const Text(
+            'Cami verileri: Google Maps Platform ve © OpenStreetMap katkıcıları',
+            textAlign: TextAlign.center,
+          ),
+        ),
       ],
     );
   }

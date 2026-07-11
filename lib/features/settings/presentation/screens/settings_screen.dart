@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../../app/theme/app_design_system.dart';
 import '../../../../shared/widgets/app_components.dart';
@@ -9,10 +11,15 @@ import '../../../../shared/widgets/premium_scaffold.dart';
 import '../../../daily_content/domain/entities/daily_content_metadata.dart';
 import '../../../daily_content/presentation/controllers/daily_content_controller.dart';
 import '../../../prayer_times/presentation/controllers/prayer_location_controller.dart';
+import '../../../prayer_times/domain/entities/current_location_resolution.dart';
 import '../../../quran/domain/entities/quran_reading_preferences.dart';
 import '../../../quran/presentation/controllers/quran_controller.dart';
 import '../../../tasbih/domain/entities/tasbih_preferences.dart';
 import '../../../tasbih/presentation/controllers/tasbih_controller.dart';
+
+final appPackageInfoProvider = FutureProvider<PackageInfo>((ref) {
+  return PackageInfo.fromPlatform();
+});
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -30,6 +37,7 @@ class SettingsScreen extends ConsumerWidget {
         ref.watch(tasbihPreferencesControllerProvider).asData?.value ??
         const TasbihPreferences();
     final cacheState = ref.watch(dailyContentCacheControllerProvider);
+    final packageInfo = ref.watch(appPackageInfoProvider).asData?.value;
 
     return AppPage(
       title: 'Ayarlar',
@@ -59,6 +67,12 @@ class SettingsScreen extends ConsumerWidget {
                       ? 'Namaz vakti konumunu seç'
                       : '${location.city.name} / ${location.district.name}',
                   onTap: () => context.push('/prayer/location'),
+                ),
+                _SettingsActionRow(
+                  icon: Icons.my_location_rounded,
+                  title: 'Geçerli Konumu Kullan',
+                  subtitle: 'Konum iznini iste ve il/ilçeyi güncelle',
+                  onTap: () => _useCurrentLocation(context, ref),
                 ),
               ],
             ),
@@ -181,13 +195,25 @@ class SettingsScreen extends ConsumerWidget {
                   onTap: () => context.push('/wallpapers'),
                 ),
                 _SettingsActionRow(
+                  icon: Icons.privacy_tip_outlined,
+                  title: 'Gizlilik Politikası',
+                  subtitle: 'Verilerin nasıl kullanıldığını görüntüle',
+                  onTap: () => context.push('/settings/privacy'),
+                ),
+                _SettingsActionRow(
+                  icon: Icons.source_outlined,
+                  title: 'Kaynaklar ve Lisanslar',
+                  subtitle: 'İçerik ve açık kaynak atıfları',
+                  onTap: () => context.push('/settings/sources'),
+                ),
+                _SettingsActionRow(
                   icon: Icons.info_outline_rounded,
                   title: 'Hakkında',
-                  subtitle: 'Sürüm 1.0.0 • Gizlilik Politikası',
+                  subtitle: 'Sürüm ${packageInfo?.version ?? '1.0.5'}',
                   onTap: () => showAboutDialog(
                     context: context,
                     applicationName: 'İslami Cep',
-                    applicationVersion: '1.0.0',
+                    applicationVersion: packageInfo?.version ?? '1.0.5',
                     applicationLegalese: 'Namaz, Kur’an, dua ve günlük içerik.',
                   ),
                 ),
@@ -195,6 +221,96 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> _useCurrentLocation(BuildContext context, WidgetRef ref) async {
+    final messenger = ScaffoldMessenger.of(context);
+    messenger.hideCurrentSnackBar();
+    messenger.showSnackBar(
+      const SnackBar(
+        content: Text('Konumunuz ve il/ilçe bilginiz belirleniyor...'),
+        duration: Duration(seconds: 20),
+      ),
+    );
+    final resolution = await ref
+        .read(selectedPrayerLocationControllerProvider.notifier)
+        .useCurrentLocation();
+    if (!context.mounted) {
+      return;
+    }
+    messenger.hideCurrentSnackBar();
+    final location = resolution.location;
+    switch (resolution.status) {
+      case CurrentLocationResolutionStatus.resolved:
+        messenger.showSnackBar(
+          SnackBar(
+            content: Text(
+              location == null
+                  ? 'Konum bulundu ancak il/ilçe eşleştirilemedi.'
+                  : '${location.city.name} / ${location.district.name} seçildi.',
+            ),
+          ),
+        );
+      case CurrentLocationResolutionStatus.permissionDenied:
+        messenger.showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Konum izni verilmedi. Tekrar dokunarak izin isteyebilirsiniz.',
+            ),
+          ),
+        );
+      case CurrentLocationResolutionStatus.permissionPermanentlyDenied:
+        await _showLocationSettingsDialog(
+          context,
+          title: 'Konum izni kapalı',
+          message:
+              'iPhone Ayarları’nda İslami Cep için Konum iznini “Uygulamayı Kullanırken” olarak açın.',
+          onOpen: Geolocator.openAppSettings,
+        );
+      case CurrentLocationResolutionStatus.serviceDisabled:
+        await _showLocationSettingsDialog(
+          context,
+          title: 'Konum servisleri kapalı',
+          message: 'Konumu kullanmak için iPhone Konum Servislerini açın.',
+          onOpen: Geolocator.openLocationSettings,
+        );
+      case CurrentLocationResolutionStatus.unresolved:
+        messenger.showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Konum belirlenemedi. Şehir ve ilçeyi elle seçebilirsiniz.',
+            ),
+          ),
+        );
+    }
+  }
+
+  Future<void> _showLocationSettingsDialog(
+    BuildContext context, {
+    required String title,
+    required String message,
+    required Future<bool> Function() onOpen,
+  }) {
+    return showDialog<void>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: const Text('Vazgeç'),
+          ),
+          FilledButton(
+            onPressed: () async {
+              Navigator.pop(dialogContext);
+              await onOpen();
+            },
+            child: const Text('Ayarları Aç'),
+          ),
+        ],
       ),
     );
   }

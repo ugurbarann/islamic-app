@@ -57,7 +57,12 @@ workflows:
       - name: Flutter analyze
         script: flutter analyze lib test
       - name: iOS no-codesign release build
-        script: flutter build ios --release --no-codesign
+        script: |
+          dart_defines=()
+          if [ -n "${MOSQUE_BACKEND_BASE_URL:-}" ]; then
+            dart_defines+=("--dart-define=MOSQUE_BACKEND_BASE_URL=${MOSQUE_BACKEND_BASE_URL}")
+          fi
+          flutter build ios --release --no-codesign "${dart_defines[@]}"
     artifacts:
       - build/ios/iphoneos/Runner.app
 
@@ -122,7 +127,12 @@ workflows:
       - name: Apply iOS signing profiles
         script: xcode-project use-profiles
       - name: Build signed IPA
-        script: flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
+        script: |
+          dart_defines=()
+          if [ -n "${MOSQUE_BACKEND_BASE_URL:-}" ]; then
+            dart_defines+=("--dart-define=MOSQUE_BACKEND_BASE_URL=${MOSQUE_BACKEND_BASE_URL}")
+          fi
+          flutter build ipa --release "${dart_defines[@]}" --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log

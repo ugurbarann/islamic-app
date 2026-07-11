@@ -3,6 +3,7 @@ import 'selected_prayer_location.dart';
 enum CurrentLocationResolutionStatus {
   resolved,
   permissionDenied,
+  permissionPermanentlyDenied,
   serviceDisabled,
   unresolved,
 }

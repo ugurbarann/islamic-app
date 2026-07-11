@@ -21,43 +21,20 @@ class DefaultDailyContentRepository implements DailyContentRepository {
 
   @override
   Future<DailyContentBundle> loadTodayContent() async {
-    final today = _dateKey(DateTime.now());
-    final windowStart = _dateKey(
-      DateTime.now().subtract(Duration(days: cacheWindowDays ~/ 2)),
-    );
-    final windowEnd = _dateKey(
-      DateTime.now().add(Duration(days: cacheWindowDays ~/ 2)),
-    );
-
-    List<DailyContentBundleModel> remoteBundles = const [];
-    try {
-      remoteBundles = await remoteDataSource.loadWindow(
-        startDateKey: windowStart,
-        endDateKey: windowEnd,
-      );
-    } on Object {
-      remoteBundles = const [];
-    }
-    if (remoteBundles.isNotEmpty) {
-      final cleaned = _cleanup(remoteBundles);
-      await cacheDataSource.saveBundles(cleaned);
-      final remoteToday = _findByDate(cleaned, today) ?? _latest(cleaned);
-      if (remoteToday != null) {
-        return _withFallbackMessageIfNeeded(remoteToday, today).toEntity();
-      }
-    }
-
-    final cached = _cleanup(await cacheDataSource.loadBundles());
+    final now = DateTime.now();
+    final today = _dateKey(now);
+    final cached = await _refreshUpcomingCache(now);
     if (cached.isNotEmpty) {
-      await cacheDataSource.saveBundles(cached);
-      final cachedToday = _findByDate(cached, today) ?? _latest(cached);
+      final cachedToday =
+          _findByDate(cached, today) ?? _bestAvailable(cached, today);
       if (cachedToday != null) {
         return _withFallbackMessageIfNeeded(cachedToday, today).toEntity();
       }
     }
 
     final local = await localDataSource.loadBundles();
-    final localToday = _findByDate(local, today) ?? _latest(local);
+    final localToday =
+        _findByDate(local, today) ?? _bestAvailable(local, today);
     if (localToday != null) {
       return _withFallbackMessageIfNeeded(localToday, today).toEntity();
     }
@@ -66,7 +43,16 @@ class DefaultDailyContentRepository implements DailyContentRepository {
   }
 
   @override
+  Future<void> cacheUpcomingContent() async {
+    await _refreshUpcomingCache(DateTime.now());
+  }
+
+  @override
   Future<DailyContentMetadata> loadMetadata() async {
+    final cacheMetadata = await cacheDataSource.loadMetadata();
+    if (cacheMetadata != null) {
+      return cacheMetadata;
+    }
     final cached = await cacheDataSource.loadBundles();
     if (cached.isEmpty) {
       return const DailyContentMetadata(source: 'bundled', contentVersion: 1);
@@ -79,17 +65,58 @@ class DefaultDailyContentRepository implements DailyContentRepository {
     return cacheDataSource.clear();
   }
 
-  List<DailyContentBundleModel> _cleanup(
+  Future<List<DailyContentBundleModel>> _refreshUpcomingCache(
+    DateTime now,
+  ) async {
+    final today = _dateKey(now);
+    final windowEnd = _dateKey(now.add(Duration(days: cacheWindowDays - 1)));
+    final cached = await cacheDataSource.loadBundles();
+    try {
+      final remote = await remoteDataSource.loadWindow(
+        startDateKey: today,
+        endDateKey: windowEnd,
+      );
+      if (remote.isEmpty) {
+        return _upcomingWindow(cached, today, windowEnd);
+      }
+      final merged = <String, DailyContentBundleModel>{
+        for (final bundle in cached) bundle.dateKey: bundle,
+        for (final bundle in remote) bundle.dateKey: bundle,
+      };
+      final upcoming = _upcomingWindow(
+        merged.values.toList(growable: false),
+        today,
+        windowEnd,
+      );
+      if (upcoming.isNotEmpty) {
+        await cacheDataSource.saveBundles(upcoming);
+      }
+      return upcoming;
+    } on Object {
+      return _upcomingWindow(cached, today, windowEnd);
+    }
+  }
+
+  List<DailyContentBundleModel> _upcomingWindow(
     List<DailyContentBundleModel> bundles,
+    String startDateKey,
+    String endDateKey,
   ) {
-    final sorted = [...bundles]
-      ..sort((first, second) {
-        return first.dateKey.compareTo(second.dateKey);
-      });
+    final sorted =
+        bundles
+            .where(
+              (bundle) =>
+                  bundle.dateKey.compareTo(startDateKey) >= 0 &&
+                  bundle.dateKey.compareTo(endDateKey) <= 0,
+            )
+            .toList()
+          ..sort((first, second) {
+            return first.dateKey.compareTo(second.dateKey);
+          });
     if (sorted.length <= cacheWindowDays) {
       return sorted;
     }
-    return sorted.sublist(sorted.length - cacheWindowDays);
+    return sorted.sublist(0, cacheWindowDays);
   }
 
   DailyContentBundleModel? _findByDate(
@@ -104,7 +131,10 @@ class DefaultDailyContentRepository implements DailyContentRepository {
     return null;
   }
 
-  DailyContentBundleModel? _latest(List<DailyContentBundleModel> bundles) {
+  DailyContentBundleModel? _bestAvailable(
+    List<DailyContentBundleModel> bundles,
+    String today,
+  ) {
     if (bundles.isEmpty) {
       return null;
     }
@@ -112,7 +142,10 @@ class DefaultDailyContentRepository implements DailyContentRepository {
       ..sort((first, second) {
         return first.dateKey.compareTo(second.dateKey);
       });
-    return sorted.last;
+    final notAfterToday = sorted
+        .where((bundle) => bundle.dateKey.compareTo(today) <= 0)
+        .toList(growable: false);
+    return notAfterToday.isNotEmpty ? notAfterToday.last : sorted.first;
   }
 
   DailyContentBundleModel _withFallbackMessageIfNeeded(

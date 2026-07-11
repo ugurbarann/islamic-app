@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/daily_content_bundle_model.dart';
+import '../../domain/entities/daily_content_metadata.dart';
 
 class DailyContentCacheDataSource {
   const DailyContentCacheDataSource();
@@ -45,6 +46,25 @@ class DailyContentCacheDataSource {
         'cachedUntil': bundles.isEmpty ? null : bundles.last.dateKey,
       }),
     );
+  }
+
+  Future<DailyContentMetadata?> loadMetadata() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_metadataKey);
+    if (jsonString == null) {
+      return null;
+    }
+    try {
+      final json = jsonDecode(jsonString) as Map<String, dynamic>;
+      return DailyContentMetadata(
+        source: json['source'] as String? ?? 'cache',
+        contentVersion: json['contentVersion'] as int? ?? 1,
+        lastSyncAt: DateTime.tryParse(json['lastSyncAt'] as String? ?? ''),
+        cachedUntil: DateTime.tryParse(json['cachedUntil'] as String? ?? ''),
+      );
+    } on Object {
+      return null;
+    }
   }
 
   Future<void> clear() async {

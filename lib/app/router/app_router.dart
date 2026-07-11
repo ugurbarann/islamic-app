@@ -26,6 +26,8 @@ import '../../features/quran/presentation/screens/quran_screen.dart';
 import '../../features/quran/presentation/screens/quran_search_screen.dart';
 import '../../features/quran/presentation/screens/surah_detail_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
+import '../../features/settings/presentation/screens/privacy_policy_screen.dart';
+import '../../features/settings/presentation/screens/sources_licenses_screen.dart';
 import '../../features/tasbih/presentation/screens/tasbih_screen.dart';
 import '../../features/wallpapers/presentation/screens/wallpaper_detail_screen.dart';
 import '../../features/wallpapers/presentation/screens/wallpapers_screen.dart';
@@ -214,6 +216,16 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: '/settings',
                 builder: (context, state) => const SettingsScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'privacy',
+                    builder: (context, state) => const PrivacyPolicyScreen(),
+                  ),
+                  GoRoute(
+                    path: 'sources',
+                    builder: (context, state) => const SourcesLicensesScreen(),
+                  ),
+                ],
               ),
             ],
           ),

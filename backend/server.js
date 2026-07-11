@@ -59,10 +59,10 @@ app.get("/api/nearby-mosques", async (req, res) => {
           "Content-Type": "application/json",
           "X-Goog-Api-Key": googleMapsApiKey,
           "X-Goog-FieldMask":
-            "places.id,places.displayName,places.formattedAddress,places.shortFormattedAddress,places.addressComponents,places.plusCode,places.location",
+            "places.id,places.displayName,places.formattedAddress,places.shortFormattedAddress,places.addressComponents,places.plusCode,places.location,places.primaryType,places.types",
         },
         body: JSON.stringify({
-          includedTypes: ["mosque"],
+          includedPrimaryTypes: ["mosque"],
           maxResultCount: limit,
           languageCode: "tr",
           rankPreference: "DISTANCE",
@@ -191,6 +191,12 @@ function stripAdministrativeSuffix(value) {
 }
 
 function toMosque(place, originLat, originLng) {
+  if (place.primaryType && place.primaryType !== "mosque") {
+    return null;
+  }
+  if (Array.isArray(place.types) && !place.types.includes("mosque")) {
+    return null;
+  }
   const latitude = Number(place.location?.latitude);
   const longitude = Number(place.location?.longitude);
   if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {

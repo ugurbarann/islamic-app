@@ -7,7 +7,7 @@ import { getFirestore } from "firebase-admin/firestore";
 const seedPath = process.argv[2];
 if (!seedPath) {
   console.error(
-    "Usage: node scripts/upload-daily-content.mjs seeds/daily_content_2026-06-21_30_days.json",
+    "Usage: node scripts/upload-daily-content.mjs seeds/daily_content_YYYY-MM-DD_30_days.json",
   );
   process.exit(1);
 }

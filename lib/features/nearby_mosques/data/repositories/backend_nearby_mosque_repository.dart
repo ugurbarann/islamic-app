@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../prayer_times/domain/entities/selected_prayer_location.dart';
@@ -290,12 +289,14 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
       return _MosqueOrigin.fromFallback(fallbackLocation);
     }
 
-    var permission = await Permission.locationWhenInUse.status;
-    if (permission.isDenied) {
-      permission = await Permission.locationWhenInUse.request();
+    var permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
     }
 
-    if (!permission.isGranted) {
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.deniedForever ||
+        permission == LocationPermission.unableToDetermine) {
       return _MosqueOrigin.fromFallback(fallbackLocation);
     }
 

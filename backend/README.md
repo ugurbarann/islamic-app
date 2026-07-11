@@ -55,17 +55,21 @@ The Google Places API key must only live in `backend/.env`. Do not put it in Flu
 
 ## Daily Content Firebase Upload
 
-Generate a 30-day daily content seed from the app's bundled verified content:
+Generate a 30-day daily content seed from the app's bundled verified content.
+When no date is supplied, generation starts from the current UTC date:
 
 ```bash
-npm run generate:daily-content -- 2026-06-21 30
+npm run generate:daily-content -- 2026-07-11 30 --update-local
 ```
 
 This writes:
 
 ```text
-backend/seeds/daily_content_2026-06-21_30_days.json
+backend/seeds/daily_content_2026-07-11_30_days.json
 ```
+
+`--update-local` also refreshes the app's bundled offline fallback. Keep only
+the current seed in source control to avoid uploading stale sample content.
 
 To upload it to Firestore, download a Firebase service account private key from:
 
@@ -85,6 +89,14 @@ The uploader writes one document per day into:
 ```text
 daily_content/{YYYY-MM-DD}
 ```
+
+## Production mobile configuration
+
+Deploy this backend over HTTPS, then add its public base URL to Codemagic's
+secure `ugur` environment group as `MOSQUE_BACKEND_BASE_URL`. Both iOS
+workflows pass that value to Flutter at build time. The mobile app uses public
+OpenStreetMap endpoints only as a best-effort fallback when the backend is not
+configured or temporarily unavailable.
 
 ## Wallpaper Firebase Upload
 

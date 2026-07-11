@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../domain/entities/current_location_resolution.dart';
 import '../../domain/entities/selected_prayer_location.dart';
@@ -28,20 +27,29 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
       );
     }
 
-    final permission = await Permission.locationWhenInUse.request();
-    if (!permission.isGranted) {
+    var permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+    }
+    if (permission == LocationPermission.deniedForever) {
+      return const CurrentLocationResolution(
+        status: CurrentLocationResolutionStatus.permissionPermanentlyDenied,
+      );
+    }
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.unableToDetermine) {
       return const CurrentLocationResolution(
         status: CurrentLocationResolutionStatus.permissionDenied,
       );
     }
 
     try {
-      final position = await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(
-          accuracy: LocationAccuracy.low,
-          timeLimit: Duration(seconds: 8),
-        ),
-      );
+      final position = await _currentOrLastKnownPosition();
+      if (position == null) {
+        return const CurrentLocationResolution(
+          status: CurrentLocationResolutionStatus.unresolved,
+        );
+      }
       final locations = await locationDataSource.loadLocations();
       final googleLocation = await _resolveWithGoogle(
         locations,
@@ -70,6 +78,19 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
       return const CurrentLocationResolution(
         status: CurrentLocationResolutionStatus.unresolved,
       );
+    }
+  }
+
+  Future<Position?> _currentOrLastKnownPosition() async {
+    try {
+      return await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.medium,
+          timeLimit: Duration(seconds: 12),
+        ),
+      );
+    } on Object {
+      return Geolocator.getLastKnownPosition();
     }
   }
 

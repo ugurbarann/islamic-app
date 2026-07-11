@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../../../shared/widgets/app_components.dart';
 import '../../../../shared/widgets/premium_scaffold.dart';
@@ -19,6 +20,7 @@ class CityDistrictSelectionScreen extends ConsumerStatefulWidget {
 class _CityDistrictSelectionScreenState
     extends ConsumerState<CityDistrictSelectionScreen> {
   String? _locationMessage;
+  CurrentLocationResolutionStatus? _locationStatus;
   bool _isResolvingLocation = false;
 
   @override
@@ -49,6 +51,7 @@ class _CityDistrictSelectionScreenState
               _LocationPromptCard(
                 isResolving: _isResolvingLocation,
                 message: _locationMessage,
+                status: _locationStatus,
                 onUseLocation: _useCurrentLocation,
               ),
               const SizedBox(height: 20),
@@ -120,6 +123,7 @@ class _CityDistrictSelectionScreenState
 
     setState(() {
       _isResolvingLocation = false;
+      _locationStatus = resolution.status;
       _locationMessage = _messageForResolution(resolution);
     });
   }
@@ -133,7 +137,9 @@ class _CityDistrictSelectionScreenState
         }
         return '${location.city.name} / ${location.district.name} seçildi.';
       case CurrentLocationResolutionStatus.permissionDenied:
-        return 'Konum izni verilmedi. Şehir seçerek devam edebilirsiniz.';
+        return 'Konum izni verilmedi. Tekrar deneyebilir veya şehir seçebilirsiniz.';
+      case CurrentLocationResolutionStatus.permissionPermanentlyDenied:
+        return 'Konum izni daha önce kapatılmış. iPhone Ayarları’ndan İslami Cep için konumu açın.';
       case CurrentLocationResolutionStatus.serviceDisabled:
         return 'Konum servisleri kapalı. Şehir seçerek devam edebilirsiniz.';
       case CurrentLocationResolutionStatus.unresolved:
@@ -147,10 +153,12 @@ class _LocationPromptCard extends StatelessWidget {
     required this.isResolving,
     required this.onUseLocation,
     this.message,
+    this.status,
   });
 
   final bool isResolving;
   final String? message;
+  final CurrentLocationResolutionStatus? status;
   final VoidCallback onUseLocation;
 
   @override
@@ -194,6 +202,19 @@ class _LocationPromptCard extends StatelessWidget {
               const SizedBox(height: 12),
               Text(message!),
             ],
+            if (status ==
+                CurrentLocationResolutionStatus.permissionPermanentlyDenied)
+              TextButton.icon(
+                onPressed: Geolocator.openAppSettings,
+                icon: const Icon(Icons.settings_outlined),
+                label: const Text('Uygulama Ayarlarını Aç'),
+              )
+            else if (status == CurrentLocationResolutionStatus.serviceDisabled)
+              TextButton.icon(
+                onPressed: Geolocator.openLocationSettings,
+                icon: const Icon(Icons.location_on_outlined),
+                label: const Text('Konum Servislerini Aç'),
+              ),
           ],
         ),
       ),

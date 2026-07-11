@@ -3,7 +3,6 @@ import 'dart:math';
 
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../domain/entities/compass_reading.dart';
 import '../../domain/entities/qibla_direction.dart';
@@ -23,8 +22,12 @@ class DeviceQiblaRepository implements QiblaRepository {
       return const QiblaDirection(status: QiblaStatus.locationServiceDisabled);
     }
 
-    final permission = await Permission.locationWhenInUse.request();
-    if (!permission.isGranted) {
+    var permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+    }
+    if (permission != LocationPermission.whileInUse &&
+        permission != LocationPermission.always) {
       return const QiblaDirection(
         status: QiblaStatus.locationPermissionRequired,
       );

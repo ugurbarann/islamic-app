@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../../../app/theme/app_design_system.dart';
 import '../../../../shared/widgets/app_components.dart';
@@ -696,7 +695,7 @@ class _QiblaFallback extends ConsumerWidget {
               const SizedBox(height: 8),
               TextButton.icon(
                 onPressed: () async {
-                  await openAppSettings();
+                  await Geolocator.openAppSettings();
                   ref.invalidate(qiblaDirectionProvider);
                   ref.invalidate(compassReadingProvider);
                 },
@@ -711,9 +710,9 @@ class _QiblaFallback extends ConsumerWidget {
   }
 
   Future<void> _requestLocationPermission(WidgetRef ref) async {
-    final permission = await Permission.locationWhenInUse.request();
-    if (permission.isPermanentlyDenied || permission.isRestricted) {
-      await openAppSettings();
+    final permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.deniedForever) {
+      await Geolocator.openAppSettings();
     }
     ref.invalidate(qiblaDirectionProvider);
     ref.invalidate(compassReadingProvider);

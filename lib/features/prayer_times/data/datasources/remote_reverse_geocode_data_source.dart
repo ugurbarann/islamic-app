@@ -47,8 +47,59 @@ class RemoteReverseGeocodeDataSource {
       }
     }
 
+    try {
+      final response = await _dio.getUri<Map<String, dynamic>>(
+        Uri.parse(AppConfig.reverseGeocodeBaseUrl).replace(
+          path: '/reverse',
+          queryParameters: {
+            'lat': latitude.toString(),
+            'lon': longitude.toString(),
+            'format': 'jsonv2',
+            'addressdetails': '1',
+            'accept-language': 'tr',
+          },
+        ),
+        options: Options(
+          headers: const {'User-Agent': 'IslamiCep/1.0.5'},
+          sendTimeout: const Duration(seconds: 5),
+          receiveTimeout: const Duration(seconds: 10),
+        ),
+      );
+      final addressValue = response.data?['address'];
+      final address = addressValue is Map
+          ? addressValue.cast<String, dynamic>()
+          : null;
+      if (address != null) {
+        return ResolvedAdministrativeLocation(
+          city: _firstText([
+            address['province'],
+            address['state'],
+            address['city'],
+          ]),
+          district: _firstText([
+            address['district'],
+            address['county'],
+            address['town'],
+            address['municipality'],
+          ]),
+        );
+      }
+    } on Object catch (error) {
+      lastError = error;
+    }
+
     if (lastError != null) {
       throw lastError;
+    }
+    return null;
+  }
+
+  String? _firstText(List<Object?> values) {
+    for (final value in values) {
+      final text = value?.toString().trim();
+      if (text != null && text.isNotEmpty) {
+        return text;
+      }
     }
     return null;
   }

@@ -286,14 +286,6 @@ class _ExploreItem {
 
   static const items = [
     _ExploreItem(
-      title: 'Namaz Vakitleri',
-      subtitle: 'Günlük vakitler ve hatırlatıcılar',
-      route: '/prayer',
-      icon: AppFeatureIconKind.calendar,
-      primary: Color(0xFF236FCB),
-      softColor: Color(0xFFEAF5FF),
-    ),
-    _ExploreItem(
       title: 'İslami Bilgiler',
       subtitle: 'Kısa yazılar ve tarih',
       route: '/knowledge',
@@ -302,12 +294,44 @@ class _ExploreItem {
       softColor: Color(0xFFEFFAF5),
     ),
     _ExploreItem(
+      title: 'Cuma Hatırlatıcısı',
+      subtitle: 'Cuma gününü kaçırma',
+      route: '/friday-reminder',
+      icon: AppFeatureIconKind.calendar,
+      primary: Color(0xFFD5B137),
+      softColor: Color(0xFFFFFAE8),
+    ),
+    _ExploreItem(
+      title: 'Yakındaki Camiler',
+      subtitle: 'En yakın camiler',
+      route: '/mosques',
+      icon: AppFeatureIconKind.mosque,
+      primary: Color(0xFF1B8B9A),
+      softColor: Color(0xFFEAFBFD),
+    ),
+    _ExploreItem(
       title: 'Esmaül Hüsna',
       subtitle: 'Allah’ın 99 ismi',
       route: '/knowledge/esmaul-husna',
       icon: AppFeatureIconKind.esma,
       primary: Color(0xFFD4A12E),
       softColor: Color(0xFFFFF7E4),
+    ),
+    _ExploreItem(
+      title: 'Duvar Kağıtları',
+      subtitle: 'İslami duvar kağıtları',
+      route: '/wallpapers',
+      icon: AppFeatureIconKind.wallpaper,
+      primary: Color(0xFFC56A5A),
+      softColor: Color(0xFFFFF1ED),
+    ),
+    _ExploreItem(
+      title: 'Namaz Vakitleri',
+      subtitle: 'Günlük vakitler ve hatırlatıcılar',
+      route: '/prayer',
+      icon: AppFeatureIconKind.calendar,
+      primary: Color(0xFF236FCB),
+      softColor: Color(0xFFEAF5FF),
     ),
     _ExploreItem(
       title: 'Kıble',
@@ -332,30 +356,6 @@ class _ExploreItem {
       icon: AppFeatureIconKind.tasbih,
       primary: Color(0xFF236FCB),
       softColor: Color(0xFFEAF5FF),
-    ),
-    _ExploreItem(
-      title: 'Yakındaki Camiler',
-      subtitle: 'En yakın camiler',
-      route: '/mosques',
-      icon: AppFeatureIconKind.mosque,
-      primary: Color(0xFF1B8B9A),
-      softColor: Color(0xFFEAFBFD),
-    ),
-    _ExploreItem(
-      title: 'Duvar Kağıtları',
-      subtitle: 'İslami duvar kağıtları',
-      route: '/wallpapers',
-      icon: AppFeatureIconKind.wallpaper,
-      primary: Color(0xFFC56A5A),
-      softColor: Color(0xFFFFF1ED),
-    ),
-    _ExploreItem(
-      title: 'Cuma Hatırlatıcısı',
-      subtitle: 'Cuma gününü kaçırma',
-      route: '/friday-reminder',
-      icon: AppFeatureIconKind.calendar,
-      primary: Color(0xFFD5B137),
-      softColor: Color(0xFFFFFAE8),
     ),
   ];
 }

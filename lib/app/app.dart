@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'bootstrap/notification_bootstrap_provider.dart';
 import '../features/prayer_times/presentation/controllers/prayer_location_controller.dart';
 import '../features/prayer_times/presentation/controllers/prayer_notification_controller.dart';
+import '../features/daily_content/presentation/controllers/daily_content_controller.dart';
 import '../features/settings/presentation/controllers/app_theme_controller.dart';
 import 'router/app_router.dart';
 import 'theme/app_theme.dart';
@@ -18,11 +19,19 @@ class IslamicApp extends ConsumerStatefulWidget {
 
 class _IslamicAppState extends ConsumerState<IslamicApp> {
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(initialPrayerLocationBootstrapProvider.future);
+      ref.read(dailyContentBootstrapProvider.future);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final router = ref.watch(appRouterProvider);
     final themePreference = ref.watch(appThemeControllerProvider).asData?.value;
     ref.watch(notificationBootstrapProvider);
-    ref.watch(initialPrayerLocationBootstrapProvider);
     ref.listen(selectedPrayerLocationControllerProvider, (_, _) {
       ref.read(prayerNotificationControllerProvider.notifier).reschedule();
     });
