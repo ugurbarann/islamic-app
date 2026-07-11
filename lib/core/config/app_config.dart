@@ -7,7 +7,7 @@ class AppConfig {
 
   static const mosqueBackendBaseUrl = String.fromEnvironment(
     'MOSQUE_BACKEND_BASE_URL',
-    defaultValue: '',
+    defaultValue: 'https://islami-cep-backend-ji2bzlbyhq-ew.a.run.app',
   );
 
   static const reverseGeocodeBaseUrl = String.fromEnvironment(

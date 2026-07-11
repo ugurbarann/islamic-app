@@ -110,7 +110,7 @@ gcloud config set project islami-cep-m2548
 gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com secretmanager.googleapis.com
 gcloud secrets create google-maps-api-key --replication-policy=automatic
 gcloud secrets versions add google-maps-api-key --data-file=-
-gcloud run deploy islami-cep-backend --source . --region europe-west1 --allow-unauthenticated --set-secrets GOOGLE_MAPS_API_KEY=google-maps-api-key:latest --min 0 --max 3
+gcloud run deploy islami-cep-backend --source . --region europe-west1 --allow-unauthenticated --set-secrets GOOGLE_MAPS_API_KEY=google-maps-api-key:latest --min 0 --max 1 --memory 256Mi --cpu 1 --concurrency 20
 ```
 
 Run these commands from the `backend` directory. The secret-version command
