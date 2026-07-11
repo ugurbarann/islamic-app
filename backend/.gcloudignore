@@ -1,0 +1,9 @@
+.gcloudignore
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+seeds/
+scripts/
+README.md

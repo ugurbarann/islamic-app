@@ -98,6 +98,26 @@ workflows pass that value to Flutter at build time. The mobile app uses public
 OpenStreetMap endpoints only as a best-effort fallback when the backend is not
 configured or temporarily unavailable.
 
+### Deploy to Google Cloud Run
+
+The backend is ready for a source deployment to the existing
+`islami-cep-m2548` Google Cloud project. Cloud Run supplies `PORT=8080`
+automatically; do not upload `.env` or a Firebase service-account JSON.
+
+```powershell
+gcloud auth login
+gcloud config set project islami-cep-m2548
+gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com secretmanager.googleapis.com
+gcloud secrets create google-maps-api-key --replication-policy=automatic
+gcloud secrets versions add google-maps-api-key --data-file=-
+gcloud run deploy islami-cep-backend --source . --region europe-west1 --allow-unauthenticated --set-secrets GOOGLE_MAPS_API_KEY=google-maps-api-key:latest --min 0 --max 3
+```
+
+Run these commands from the `backend` directory. The secret-version command
+waits for the API key on standard input; paste it there so it is not stored in
+the command history. After deployment, copy the generated HTTPS service URL to
+Codemagic's secure `MOSQUE_BACKEND_BASE_URL` variable and rebuild the IPA.
+
 ## Wallpaper Firebase Upload
 
 The Flutter app currently uses bundled optimized wallpaper assets. Remote
