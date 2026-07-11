@@ -1,6 +1,6 @@
 {
   "collection": "daily_content",
-  "generatedAt": "2026-07-11T14:13:47.294Z",
+  "generatedAt": "2026-07-11T16:44:55.780Z",
   "startDateKey": "2026-07-11",
   "endDateKey": "2026-08-09",
   "count": 30,
@@ -10,7 +10,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.288Z",
+        "lastSyncAt": "2026-07-11T16:44:55.776Z",
         "cachedUntil": "2026-08-25"
       },
       "items": [
@@ -65,7 +65,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-11",
           "title": "Selamın Önemi",
-          "turkishText": "Selam vermek, karşıdaki kişiye esenlik dilemek ve gönüller arasında sıcak bir bağ kurmak anlamına gelir. Günlük hayatta kısa bir söz gibi görünse de Müslümanlar arasında kardeşliği, nezaketi ve güveni güçlendiren önemli bir sünnettir.",
+          "turkishText": "Selamın Önemi, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Selam, güven ve dua taşıyan güzel bir başlangıçtır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nSelam vermek, karşıdaki kişiye esenlik dilemek ve gönüller arasında sıcak bir bağ kurmak anlamına gelir. Günlük hayatta kısa bir söz gibi görünse de Müslümanlar arasında kardeşliği, nezaketi ve güveni güçlendiren önemli bir sünnettir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBu konuyu hayata taşımak için önce küçük ve sürdürülebilir bir adım belirlemek gerekir. Günün başında niyeti tazelemek, akşam olduğunda davranışları kısaca gözden geçirmek ve kırılan bir kalp varsa geciktirmeden telafi etmeye çalışmak iyi bir başlangıçtır.\n\nSelamın Önemi konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak selamın önemi, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -96,7 +96,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.290Z",
+        "lastSyncAt": "2026-07-11T16:44:55.777Z",
         "cachedUntil": "2026-08-26"
       },
       "items": [
@@ -151,7 +151,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-12",
           "title": "Besmele ile Başlamak",
-          "turkishText": "Besmele, kulun bir işe Allah'ın adıyla ve O'nun yardımını isteyerek başlamasıdır. Yemek, okumak, çalışmak ve güzel bir işe adım atmak gibi günlük davranışlarda besmele, kalbi toparlayan sade ama güçlü bir hatırlatmadır.",
+          "turkishText": "Besmele ile Başlamak, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Besmele, yapılan işe bilinç ve bereket niyeti kazandırır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nBesmele, kulun bir işe Allah'ın adıyla ve O'nun yardımını isteyerek başlamasıdır. Yemek, okumak, çalışmak ve güzel bir işe adım atmak gibi günlük davranışlarda besmele, kalbi toparlayan sade ama güçlü bir hatırlatmadır. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBilgi ancak davranışa dönüştüğünde kalıcı bir eğitim hâline gelir. Bu sebeple insan, bir hafta boyunca bu ahlakı özellikle takip edebilir; acele ettiği, öfkelendiği veya çıkarıyla karşı karşıya kaldığı anlarda nasıl davrandığını dürüstçe değerlendirebilir.\n\nBesmele ile Başlamak konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak besmele ile başlamak, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -182,7 +182,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.777Z",
         "cachedUntil": "2026-08-27"
       },
       "items": [
@@ -237,7 +237,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-13",
           "title": "Şükür Bilinci",
-          "turkishText": "Şükür yalnızca dil ile teşekkür etmek değil, sahip olunan nimetleri Allah'ın razı olacağı şekilde kullanmaktır. İnsan şükrettikçe hayatındaki küçük güzellikleri daha iyi fark eder ve kalbi kanaatle güçlenir.",
+          "turkishText": "Şükür Bilinci, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Şükür, nimeti fark etmek ve nimetin sahibini unutmamaktır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nŞükür yalnızca dil ile teşekkür etmek değil, sahip olunan nimetleri Allah'ın razı olacağı şekilde kullanmaktır. İnsan şükrettikçe hayatındaki küçük güzellikleri daha iyi fark eder ve kalbi kanaatle güçlenir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nGünlük hayatın yoğunluğu güzel ilkeleri unutturabilir. Hatırlatıcı bir not koymak, aile içinde bu konu üzerine konuşmak ve her gün yalnız bir davranışı bilinçli biçimde düzeltmek, teorik bilgiyi yaşayan bir ahlaka dönüştürür.\n\nŞükür Bilinci konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak şükür bilinci, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -268,7 +268,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.777Z",
         "cachedUntil": "2026-08-28"
       },
       "items": [
@@ -323,7 +323,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-14",
           "title": "Sabır ve Sebat",
-          "turkishText": "Sabır, pasifçe beklemekten ibaret değildir; doğru olanı korumak, öfkeye yenilmemek ve umudu kaybetmemektir. Mümin için sabır, hem imtihan anında hem de ibadet ve güzel ahlakta süreklilik anlamı taşır.",
+          "turkishText": "Sabır ve Sebat, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Sabır, zorluk karşısında da doğru yolda kalabilmektir. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nSabır, pasifçe beklemekten ibaret değildir; doğru olanı korumak, öfkeye yenilmemek ve umudu kaybetmemektir. Mümin için sabır, hem imtihan anında hem de ibadet ve güzel ahlakta süreklilik anlamı taşır. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBu konuyu hayata taşımak için önce küçük ve sürdürülebilir bir adım belirlemek gerekir. Günün başında niyeti tazelemek, akşam olduğunda davranışları kısaca gözden geçirmek ve kırılan bir kalp varsa geciktirmeden telafi etmeye çalışmak iyi bir başlangıçtır.\n\nSabır ve Sebat konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak sabır ve sebat, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -354,7 +354,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-08-29"
       },
       "items": [
@@ -409,7 +409,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-15",
           "title": "Tövbenin Kapısı",
-          "turkishText": "Tövbe, insanın kusurunu fark etmesi, pişmanlık duyması ve daha temiz bir yola yönelmesidir. Allah'ın rahmetinden ümit kesmemek, tövbenin en önemli adımlarından biridir.",
+          "turkishText": "Tövbenin Kapısı, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Tövbe, hatadan dönüp Allah'a yönelmenin adıdır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nTövbe, insanın kusurunu fark etmesi, pişmanlık duyması ve daha temiz bir yola yönelmesidir. Allah'ın rahmetinden ümit kesmemek, tövbenin en önemli adımlarından biridir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBilgi ancak davranışa dönüştüğünde kalıcı bir eğitim hâline gelir. Bu sebeple insan, bir hafta boyunca bu ahlakı özellikle takip edebilir; acele ettiği, öfkelendiği veya çıkarıyla karşı karşıya kaldığı anlarda nasıl davrandığını dürüstçe değerlendirebilir.\n\nTövbenin Kapısı konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak tövbenin kapısı, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -440,7 +440,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-08-30"
       },
       "items": [
@@ -495,7 +495,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-16",
           "title": "İhlas Nedir?",
-          "turkishText": "İhlas, yapılan iyiliğin gösterişten ve karşılık beklentisinden uzak olmasıdır. Küçük bir amel bile ihlasla yapıldığında kalbi arındırır ve kulluğun özünü güçlendirir.",
+          "turkishText": "İhlas Nedir?, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. İhlas, ameli yalnız Allah rızası için yapmaktır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nİhlas, yapılan iyiliğin gösterişten ve karşılık beklentisinden uzak olmasıdır. Küçük bir amel bile ihlasla yapıldığında kalbi arındırır ve kulluğun özünü güçlendirir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nGünlük hayatın yoğunluğu güzel ilkeleri unutturabilir. Hatırlatıcı bir not koymak, aile içinde bu konu üzerine konuşmak ve her gün yalnız bir davranışı bilinçli biçimde düzeltmek, teorik bilgiyi yaşayan bir ahlaka dönüştürür.\n\nİhlas Nedir? konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak ihlas nedir?, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -526,7 +526,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-08-31"
       },
       "items": [
@@ -581,7 +581,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-17",
           "title": "Güzel Söz Sadakadır",
-          "turkishText": "Güzel söz, insanı onaran ve ilişkileri yumuşatan bir iyilik çeşididir. Bazen bir tebessüm, bir dua veya kırıcı olmayan bir uyarı, kalpte uzun süre kalan hayırlı bir iz bırakır.",
+          "turkishText": "Güzel Söz Sadakadır, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Yumuşak ve hayırlı söz, kalpleri incitmeden iyiliğe çağırır. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nGüzel söz, insanı onaran ve ilişkileri yumuşatan bir iyilik çeşididir. Bazen bir tebessüm, bir dua veya kırıcı olmayan bir uyarı, kalpte uzun süre kalan hayırlı bir iz bırakır. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBu konuyu hayata taşımak için önce küçük ve sürdürülebilir bir adım belirlemek gerekir. Günün başında niyeti tazelemek, akşam olduğunda davranışları kısaca gözden geçirmek ve kırılan bir kalp varsa geciktirmeden telafi etmeye çalışmak iyi bir başlangıçtır.\n\nGüzel Söz Sadakadır konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak güzel söz sadakadır, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -612,7 +612,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-01"
       },
       "items": [
@@ -667,7 +667,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-18",
           "title": "Komşu Hakkı",
-          "turkishText": "İslam ahlakında komşuya iyilik etmek, güven vermek ve rahatsızlık vermemek önemli bir erdemdir. Komşuluk hakkı, yalnız büyük yardımlarla değil, nazik davranmak ve ihtiyaç anında yanında olmakla da korunur.",
+          "turkishText": "Komşu Hakkı, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Komşuluk, yakın çevreye karşı sorumluluk bilincidir. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nİslam ahlakında komşuya iyilik etmek, güven vermek ve rahatsızlık vermemek önemli bir erdemdir. Komşuluk hakkı, yalnız büyük yardımlarla değil, nazik davranmak ve ihtiyaç anında yanında olmakla da korunur. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBilgi ancak davranışa dönüştüğünde kalıcı bir eğitim hâline gelir. Bu sebeple insan, bir hafta boyunca bu ahlakı özellikle takip edebilir; acele ettiği, öfkelendiği veya çıkarıyla karşı karşıya kaldığı anlarda nasıl davrandığını dürüstçe değerlendirebilir.\n\nKomşu Hakkı konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak komşu hakkı, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -698,7 +698,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-02"
       },
       "items": [
@@ -753,7 +753,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-19",
           "title": "Anne Baba Duası",
-          "turkishText": "Anne babaya saygı göstermek, onlara güzel söz söylemek ve ihtiyaçlarında yanlarında olmak Kur'an ahlakının temel öğütlerindendir. Onlar için dua etmek, vefanın ve merhametin sade bir göstergesidir.",
+          "turkishText": "Anne Baba Duası, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Anne babaya iyilik, kulluğun en güzel alanlarından biridir. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nAnne babaya saygı göstermek, onlara güzel söz söylemek ve ihtiyaçlarında yanlarında olmak Kur'an ahlakının temel öğütlerindendir. Onlar için dua etmek, vefanın ve merhametin sade bir göstergesidir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nGünlük hayatın yoğunluğu güzel ilkeleri unutturabilir. Hatırlatıcı bir not koymak, aile içinde bu konu üzerine konuşmak ve her gün yalnız bir davranışı bilinçli biçimde düzeltmek, teorik bilgiyi yaşayan bir ahlaka dönüştürür.\n\nAnne Baba Duası konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak anne baba duası, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -784,7 +784,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-03"
       },
       "items": [
@@ -839,7 +839,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-20",
           "title": "Emanete Riayet",
-          "turkishText": "Emanet yalnızca bir eşya veya para değildir; söz, görev, zaman ve insan ilişkileri de emanettir. Mümin, kendisine güvenenleri hayal kırıklığına uğratmamaya özen gösterir.",
+          "turkishText": "Emanete Riayet, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Emanet, güvenilen şeyi koruma sorumluluğudur. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nEmanet yalnızca bir eşya veya para değildir; söz, görev, zaman ve insan ilişkileri de emanettir. Mümin, kendisine güvenenleri hayal kırıklığına uğratmamaya özen gösterir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBu konuyu hayata taşımak için önce küçük ve sürdürülebilir bir adım belirlemek gerekir. Günün başında niyeti tazelemek, akşam olduğunda davranışları kısaca gözden geçirmek ve kırılan bir kalp varsa geciktirmeden telafi etmeye çalışmak iyi bir başlangıçtır.\n\nEmanete Riayet konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak emanete riayet, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -870,7 +870,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.291Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-04"
       },
       "items": [
@@ -925,7 +925,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-21",
           "title": "Dua ile Yakınlık",
-          "turkishText": "Dua, yalnız ihtiyaç anında değil, sevinçte ve huzurda da Allah'ı anmanın güzel bir yoludur. İnsan dua ederken aczini fark eder, kalbi yumuşar ve Allah'a yakınlık bilinci güçlenir.",
+          "turkishText": "Dua ile Yakınlık, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Dua, kulun Rabbine içten yönelişidir. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nDua, yalnız ihtiyaç anında değil, sevinçte ve huzurda da Allah'ı anmanın güzel bir yoludur. İnsan dua ederken aczini fark eder, kalbi yumuşar ve Allah'a yakınlık bilinci güçlenir. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nBilgi ancak davranışa dönüştüğünde kalıcı bir eğitim hâline gelir. Bu sebeple insan, bir hafta boyunca bu ahlakı özellikle takip edebilir; acele ettiği, öfkelendiği veya çıkarıyla karşı karşıya kaldığı anlarda nasıl davrandığını dürüstçe değerlendirebilir.\n\nDua ile Yakınlık konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak dua ile yakınlık, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -956,7 +956,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-05"
       },
       "items": [
@@ -1011,7 +1011,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-22",
           "title": "Kul Hakkı Hassasiyeti",
-          "turkishText": "Kul hakkı; mal, söz, zaman, itibar ve emek gibi birçok alanda ortaya çıkabilir. Mümin, başkasını incitmemeye, hakkı teslim etmeye ve helallik bilinciyle yaşamaya dikkat eder.",
+          "turkishText": "Kul Hakkı Hassasiyeti, İslam ahlakının yalnız sözde bırakılmaması gereken temel konularından biridir. Kul hakkı, insanlarla ilişkide adalet ve incelik ister. Bu ilke, insanın Rabbiyle bağını güçlendirdiği gibi ailesiyle, komşularıyla ve toplumla kurduğu ilişkiye de yön verir.\n\nKul hakkı; mal, söz, zaman, itibar ve emek gibi birçok alanda ortaya çıkabilir. Mümin, başkasını incitmemeye, hakkı teslim etmeye ve helallik bilinciyle yaşamaya dikkat eder. Buradaki asıl ölçü, davranışın alışkanlıkla ve gösteriş için değil, bilinçli bir kulluk niyetiyle yapılmasıdır. İyi bir davranışın değeri yalnız görünen sonucunda değil; niyette, kullanılan dilde ve başkasının hakkını gözetme biçiminde de ortaya çıkar.\n\nKur'an ve sünnet, güzel ahlakı ibadetten ayrı bir alan olarak görmez. Namaz, dua ve zikir kalbi eğitirken bu eğitimin doğruluk, merhamet, sabır ve güvenilirlik olarak insan ilişkilerine yansıması beklenir. Kişi kendisini yalnız rahat zamanlarda değil, öfkelendiğinde, yorulduğunda ve menfaatiyle sınandığında da değerlendirmelidir.\n\nGünlük hayatın yoğunluğu güzel ilkeleri unutturabilir. Hatırlatıcı bir not koymak, aile içinde bu konu üzerine konuşmak ve her gün yalnız bir davranışı bilinçli biçimde düzeltmek, teorik bilgiyi yaşayan bir ahlaka dönüştürür.\n\nKul Hakkı Hassasiyeti konusunda dengeli olmak da önemlidir. İnsan kendi kusurunu görmeden başkasına öğüt vermemeli, bir hatayı düzeltirken kırıcı ve üstünlük taslayan bir dil kullanmamalıdır. Samimi bir tövbe, helallik isteme ve yeniden deneme iradesi, kusursuz görünmeye çalışmaktan daha değerlidir.\n\nSonuç olarak kul hakkı hassasiyeti, bir defada tamamlanan bir görev değil, tekrar tekrar güçlendirilen bir kulluk eğitimidir. Küçük fakat devamlı adımlar, insanın karakterini dönüştürür; kalpteki niyet ile günlük davranış arasındaki mesafeyi azaltır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1042,7 +1042,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.778Z",
         "cachedUntil": "2026-09-06"
       },
       "items": [
@@ -1097,7 +1097,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-23",
           "title": "Hz. Âdem",
-          "turkishText": "Hz. Âdem kıssası, insanın yeryüzündeki sorumluluğunu, imtihanını ve tövbenin değerini hatırlatır. Onun hayatı, hatadan sonra Allah'a yönelmenin ve rahmetten ümit kesmemenin güçlü bir örneğidir.",
+          "turkishText": "Hz. Âdem, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Âdem kıssası, insanın yeryüzündeki sorumluluğunu, imtihanını ve tövbenin değerini hatırlatır. Onun hayatı, hatadan sonra Allah'a yönelmenin ve rahmetten ümit kesmemenin güçlü bir örneğidir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Âdem üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Âdem kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1128,7 +1128,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-07"
       },
       "items": [
@@ -1183,7 +1183,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-24",
           "title": "Hz. İdris",
-          "turkishText": "Hz. İdris, Kur'an'da doğruluk ve yüce makamla anılır. Onun hatırası, bilgi, hikmet ve takva ile yükselen bir hayatın önemini düşündürür.",
+          "turkishText": "Hz. İdris, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. İdris, Kur'an'da doğruluk ve yüce makamla anılır. Onun hatırası, bilgi, hikmet ve takva ile yükselen bir hayatın önemini düşündürür. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. İdris üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. İdris kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1214,7 +1214,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-08"
       },
       "items": [
@@ -1269,7 +1269,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-25",
           "title": "Hz. Nuh",
-          "turkishText": "Hz. Nuh, kavmini Allah'a kulluğa davet ederken büyük zorluklarla karşılaştı. Kıssası, sebatı, duayı, aile imtihanını ve Allah'ın emrine güvenmenin önemini anlatır.",
+          "turkishText": "Hz. Nuh, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Nuh, kavmini Allah'a kulluğa davet ederken büyük zorluklarla karşılaştı. Kıssası, sebatı, duayı, aile imtihanını ve Allah'ın emrine güvenmenin önemini anlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. Nuh üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Nuh kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1300,7 +1300,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-09"
       },
       "items": [
@@ -1355,7 +1355,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-26",
           "title": "Hz. Hûd",
-          "turkishText": "Hz. Hûd, güç ve zenginlikle övünen kavmini Allah'a kulluğa ve adalete davet etti. Onun kıssası, kibir ve inkârın insanı hakikatten uzaklaştırabileceğini hatırlatır.",
+          "turkishText": "Hz. Hûd, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Hûd, güç ve zenginlikle övünen kavmini Allah'a kulluğa ve adalete davet etti. Onun kıssası, kibir ve inkârın insanı hakikatten uzaklaştırabileceğini hatırlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Hûd üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Hûd kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1386,7 +1386,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-10"
       },
       "items": [
@@ -1441,7 +1441,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-27",
           "title": "Hz. Sâlih",
-          "turkishText": "Hz. Sâlih, kavmini zulümden, taşkınlıktan ve inkârdan sakındırdı. Kıssası, ilahi uyarıları küçümsememenin ve emanete saygı göstermenin önemini gösterir.",
+          "turkishText": "Hz. Sâlih, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Sâlih, kavmini zulümden, taşkınlıktan ve inkârdan sakındırdı. Kıssası, ilahi uyarıları küçümsememenin ve emanete saygı göstermenin önemini gösterir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. Sâlih üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Sâlih kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1472,7 +1472,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-11"
       },
       "items": [
@@ -1527,7 +1527,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-28",
           "title": "Hz. İbrahim",
-          "turkishText": "Hz. İbrahim, putperestliğe karşı tevhidi savundu ve Allah'a teslimiyetin en güzel örneklerinden biri oldu. Onun hayatı; akletmeyi, cesareti, misafirperverliği ve dua ile aile inşasını öne çıkarır.",
+          "turkishText": "Hz. İbrahim, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. İbrahim, putperestliğe karşı tevhidi savundu ve Allah'a teslimiyetin en güzel örneklerinden biri oldu. Onun hayatı; akletmeyi, cesareti, misafirperverliği ve dua ile aile inşasını öne çıkarır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. İbrahim üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. İbrahim kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1558,7 +1558,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-12"
       },
       "items": [
@@ -1613,7 +1613,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-29",
           "title": "Hz. Lût",
-          "turkishText": "Hz. Lût, kavmini çirkin davranışlardan, zulümden ve sınır tanımazlıktan sakındırdı. Kıssası, toplum ahlakının korunması ve ilahi emirlerin ciddiye alınması gerektiğini hatırlatır.",
+          "turkishText": "Hz. Lût, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Lût, kavmini çirkin davranışlardan, zulümden ve sınır tanımazlıktan sakındırdı. Kıssası, toplum ahlakının korunması ve ilahi emirlerin ciddiye alınması gerektiğini hatırlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Lût üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Lût kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1644,7 +1644,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-13"
       },
       "items": [
@@ -1699,7 +1699,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-30",
           "title": "Hz. İsmail",
-          "turkishText": "Hz. İsmail, babası Hz. İbrahim ile birlikte teslimiyet ve sadakat örneği sergiledi. Onun hayatı, aile içinde itaat, dua ve Allah için fedakârlık bilincini güçlendirir.",
+          "turkishText": "Hz. İsmail, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. İsmail, babası Hz. İbrahim ile birlikte teslimiyet ve sadakat örneği sergiledi. Onun hayatı, aile içinde itaat, dua ve Allah için fedakârlık bilincini güçlendirir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. İsmail üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. İsmail kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1730,7 +1730,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.292Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-14"
       },
       "items": [
@@ -1785,7 +1785,7 @@
           "type": "knowledge",
           "dateKey": "2026-07-31",
           "title": "Hz. İshak",
-          "turkishText": "Hz. İshak, bereket ve peygamberlik zinciri içinde önemli bir yere sahiptir. Onun hatırası, Allah'ın vaadinin hak olduğunu ve nesiller boyunca hayırlı bir miras bırakmanın değerini düşündürür.",
+          "turkishText": "Hz. İshak, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. İshak, bereket ve peygamberlik zinciri içinde önemli bir yere sahiptir. Onun hatırası, Allah'ın vaadinin hak olduğunu ve nesiller boyunca hayırlı bir miras bırakmanın değerini düşündürür. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. İshak üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. İshak kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1816,7 +1816,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.293Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-15"
       },
       "items": [
@@ -1871,7 +1871,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-01",
           "title": "Hz. Yakub",
-          "turkishText": "Hz. Yakub, evlatlarıyla yaşadığı ağır imtihanlara rağmen Allah'tan ümidini kesmedi. Kıssası, hüzün içinde bile sabrı, duayı ve güzel beklentiyi korumanın önemini gösterir.",
+          "turkishText": "Hz. Yakub, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Yakub, evlatlarıyla yaşadığı ağır imtihanlara rağmen Allah'tan ümidini kesmedi. Kıssası, hüzün içinde bile sabrı, duayı ve güzel beklentiyi korumanın önemini gösterir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Yakub üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Yakub kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1902,7 +1902,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-16"
       },
       "items": [
@@ -1957,7 +1957,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-02",
           "title": "Hz. Yusuf",
-          "turkishText": "Hz. Yusuf, kıskançlık, esaret, iftira ve zindan gibi imtihanlardan geçti. Hayatı, Allah'ın takdirine güvenmeyi, nefsin çağrısına direnebilmeyi ve güce ulaştığında affedici olmayı öğretir.",
+          "turkishText": "Hz. Yusuf, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Yusuf, kıskançlık, esaret, iftira ve zindan gibi imtihanlardan geçti. Hayatı, Allah'ın takdirine güvenmeyi, nefsin çağrısına direnebilmeyi ve güce ulaştığında affedici olmayı öğretir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. Yusuf üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Yusuf kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -1988,7 +1988,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-17"
       },
       "items": [
@@ -2043,7 +2043,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-03",
           "title": "Hz. Eyyûb",
-          "turkishText": "Hz. Eyyûb, ağır imtihanlara rağmen Rabbine bağlılığını korudu. Onun kıssası, zorluk zamanlarında dua etmeyi, sabrı ve Allah'ın rahmetinden umutlu olmayı hatırlatır.",
+          "turkishText": "Hz. Eyyûb, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Eyyûb, ağır imtihanlara rağmen Rabbine bağlılığını korudu. Onun kıssası, zorluk zamanlarında dua etmeyi, sabrı ve Allah'ın rahmetinden umutlu olmayı hatırlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. Eyyûb üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Eyyûb kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2074,7 +2074,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-18"
       },
       "items": [
@@ -2129,7 +2129,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-04",
           "title": "Hz. Şuayb",
-          "turkishText": "Hz. Şuayb, kavmini ticarette hile yapmaktan, insanların hakkını eksiltmekten ve bozgunculuktan sakındırdı. Kıssası, ekonomik hayatın da ahlak ve adaletle yürütülmesi gerektiğini gösterir.",
+          "turkishText": "Hz. Şuayb, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Şuayb, kavmini ticarette hile yapmaktan, insanların hakkını eksiltmekten ve bozgunculuktan sakındırdı. Kıssası, ekonomik hayatın da ahlak ve adaletle yürütülmesi gerektiğini gösterir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Şuayb üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Şuayb kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2160,7 +2160,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-19"
       },
       "items": [
@@ -2215,7 +2215,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-05",
           "title": "Hz. Musa",
-          "turkishText": "Hz. Musa, Allah'ın emriyle Firavun'un zulmüne karşı durdu ve İsrailoğullarını özgürlüğe çağırdı. Onun hayatı, cesareti, sabrı, vahye bağlılığı ve toplumsal sorumluluğu öne çıkarır.",
+          "turkishText": "Hz. Musa, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Musa, Allah'ın emriyle Firavun'un zulmüne karşı durdu ve İsrailoğullarını özgürlüğe çağırdı. Onun hayatı, cesareti, sabrı, vahye bağlılığı ve toplumsal sorumluluğu öne çıkarır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. Musa üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Musa kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2246,7 +2246,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.779Z",
         "cachedUntil": "2026-09-20"
       },
       "items": [
@@ -2301,7 +2301,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-06",
           "title": "Hz. Harun",
-          "turkishText": "Hz. Harun, kardeşi Hz. Musa'nın yanında tebliğ görevinde önemli bir destek oldu. Onun örneği, kardeşlik, yardımcı olmak ve zor görevlerde dayanışma göstermek açısından değerlidir.",
+          "turkishText": "Hz. Harun, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Harun, kardeşi Hz. Musa'nın yanında tebliğ görevinde önemli bir destek oldu. Onun örneği, kardeşlik, yardımcı olmak ve zor görevlerde dayanışma göstermek açısından değerlidir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. Harun üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Harun kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2332,7 +2332,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.780Z",
         "cachedUntil": "2026-09-21"
       },
       "items": [
@@ -2387,7 +2387,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-07",
           "title": "Hz. Dâvûd",
-          "turkishText": "Hz. Dâvûd, adaletle hükmetmesi, güçlü kulluğu ve güzel sesiyle zikriyle bilinir. Kıssası, yönetimde adaletin, ibadette içtenliğin ve nimete şükrün önemini hatırlatır.",
+          "turkishText": "Hz. Dâvûd, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Dâvûd, adaletle hükmetmesi, güçlü kulluğu ve güzel sesiyle zikriyle bilinir. Kıssası, yönetimde adaletin, ibadette içtenliğin ve nimete şükrün önemini hatırlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssanın merkezinde iman ile davranışın birbirinden ayrılmaması vardır. Peygamberler yalnız doğruyu söylememiş, baskı ve zorluk karşısında o doğrunun gereğini yaşamışlardır. Bu yönüyle kıssa, sonuç hemen görünmese bile doğru çizgide kalmanın değerini öğretir.\n\nHz. Dâvûd üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Dâvûd kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2418,7 +2418,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.780Z",
         "cachedUntil": "2026-09-22"
       },
       "items": [
@@ -2473,7 +2473,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-08",
           "title": "Hz. Süleyman",
-          "turkishText": "Hz. Süleyman'a büyük imkânlar verilmiş, o da bu nimetleri Allah'ın lütfu olarak görmüştür. Hayatı, makam ve servetin şükürle, adaletle ve hikmetle kullanılmasını öğretir.",
+          "turkishText": "Hz. Süleyman, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. Süleyman'a büyük imkânlar verilmiş, o da bu nimetleri Allah'ın lütfu olarak görmüştür. Hayatı, makam ve servetin şükürle, adaletle ve hikmetle kullanılmasını öğretir. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nBu hayatı okurken dikkat çeken husus, peygamberlerin insanları zorla değil açık delil, güzel öğüt ve sabırla hakka çağırmalarıdır. Tebliğ vazifesi yapılırken netlik korunmuş; buna karşılık hidayetin Allah'ın takdirinde olduğu bilinci kaybedilmemiştir.\n\nHz. Süleyman üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. Süleyman kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
@@ -2504,7 +2504,7 @@
       "metadata": {
         "source": "firebase-seed",
         "contentVersion": 3,
-        "lastSyncAt": "2026-07-11T14:13:47.294Z",
+        "lastSyncAt": "2026-07-11T16:44:55.780Z",
         "cachedUntil": "2026-09-23"
       },
       "items": [
@@ -2559,7 +2559,7 @@
           "type": "knowledge",
           "dateKey": "2026-08-09",
           "title": "Hz. İlyas",
-          "turkishText": "Hz. İlyas, putperestliğe yönelen kavmini Allah'a kulluğa davet etti. Onun kıssası, hakikati savunurken yalnız kalsak bile doğru yoldan ayrılmamayı hatırlatır.",
+          "turkishText": "Hz. İlyas, Kur'an'da adı veya mücadelesi anılan peygamberlerdendir. Peygamber kıssaları salt bir tarih anlatısı değildir; tevhid, sorumluluk, ahlak ve insanın Allah karşısındaki konumu üzerine düşünmek için aktarılır. Bu nedenle kıssayı okurken olayların yanında verilen mesaja da dikkat etmek gerekir.\n\nHz. İlyas, putperestliğe yönelen kavmini Allah'a kulluğa davet etti. Onun kıssası, hakikati savunurken yalnız kalsak bile doğru yoldan ayrılmamayı hatırlatır. Bu kısa çerçeve, onun tebliğinde öne çıkan yönü gösterir. Kur'an'ın ayrıntı vermediği noktaları kesin bilgiler gibi doldurmak yerine, açıkça bildirilen hakikatlerle yetinmek daha sağlıklı ve ilmî bir tutumdur.\n\nKıssa aynı zamanda nimetin ve sıkıntının iki ayrı imtihan olduğunu gösterir. İmkân verildiğinde şükür ve adalet, zorluk geldiğinde sabır ve dua öne çıkar. Müminin görevi şartlara göre ilkesini değiştirmek değil, her şartta kulluk dengesini korumaktır.\n\nHz. İlyas üzerinden bugüne taşınabilecek en önemli derslerden biri, insanın sorumluluğunu şartlara bağlamamasıdır. Ailede, işte ve toplum içinde doğruyu savunmak; bunu yaparken adaletten, merhametten ve ölçülü dilden ayrılmamak gerekir. Sabır, hiçbir şey yapmadan beklemek değil, doğru yöntemi koruyarak gayrete devam etmektir.\n\nPeygamberleri örnek almak, onların hayatını yalnız hayranlıkla okumak değildir. Kişi kendi putlaştırdığı arzuları, korkuları ve menfaatleri fark etmeli; duasını, kararlarını ve insanlarla ilişkisini tevhid bilinciyle yeniden düzenlemelidir. Hata edildiğinde dönüş kapısının açık olduğunu bilmeli, başarı geldiğinde ise bunu kendi üstünlüğüne değil Allah'ın lütfuna bağlamalıdır.\n\nSonuç olarak Hz. İlyas kıssası, geçmişte kalmış tek bir olaydan çok daha fazlasıdır. Kur'an'ın çizdiği sınırlar içinde okunduğunda insanı ümitsizlikten korur, sorumluluğa çağırır ve kulluğun sabır, güven, dua ve güzel ahlakla birlikte yürüdüğünü hatırlatır.",
           "source": "İslami Cep editör içeriği",
           "category": "Günlük Bilgi",
           "sortOrder": 4,
