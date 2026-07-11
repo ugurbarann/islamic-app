@@ -1,6 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import { rateLimit } from "express-rate-limit";
 
 dotenv.config();
 
@@ -10,8 +11,19 @@ const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
 const cache = new Map();
 const cacheTtlMs = 24 * 60 * 60 * 1000;
 
+app.set("trust proxy", 1);
 app.use(cors());
 app.use(express.json());
+app.use(
+  "/api",
+  rateLimit({
+    windowMs: 60 * 1000,
+    limit: 60,
+    standardHeaders: "draft-8",
+    legacyHeaders: false,
+    message: { error: "rate_limit_exceeded", items: [] },
+  }),
+);
 
 app.get("/health", (req, res) => {
   res.json({ ok: true });
