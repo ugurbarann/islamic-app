@@ -5,6 +5,7 @@
 - Copyright: `2026 Uğur Baran`
 - Privacy Policy URL: `https://ugurbarann.github.io/islamic-app/privacy-policy.html`
 - Support URL: `https://ugurbarann.github.io/islamic-app/`
+- Support email: `admin@ugurbaran.com`
 - Sign-in required: Hayır
 - Release: Onaydan sonra kontrol isteniyorsa `Manually release this version`
 - Build: `1.0.5 (5)`

@@ -89,8 +89,8 @@ class _PolicyText extends StatelessWidget {
         Text('İletişim', style: titleStyle),
         const SizedBox(height: 6),
         Text(
-          'Gizlilik veya destek talepleri için İslami Cep destek sayfasını '
-          'kullanabilirsiniz. Veri uygulamalarımız değişirse bu politika '
+          'Gizlilik veya destek talepleri için admin@ugurbaran.com adresine '
+          'ulaşabilirsiniz. Veri uygulamalarımız değişirse bu politika '
           'güncellenir.',
           style: bodyStyle,
         ),
