@@ -28,6 +28,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Konumunuz; bulunduğunuz il ve ilçenin namaz vakitlerini seçmek, kıble yönünü hesaplamak ve yakınınızdaki camileri göstermek için kullanılır.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Cihaz hareketi, kıble pusulasının yönünü telefonun konumuna göre doğru göstermek için kullanılır.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>

@@ -43,7 +43,7 @@ class _PolicyText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Son güncelleme: 10 Temmuz 2026', style: bodyStyle),
+        Text('Son güncelleme: 12 Temmuz 2026', style: bodyStyle),
         const SizedBox(height: 16),
         Text('Toplanan ve kullanılan veriler', style: titleStyle),
         const SizedBox(height: 6),
@@ -63,6 +63,30 @@ class _PolicyText extends StatelessWidget {
           'Google Maps Platform veya OpenStreetMap tabanlı hizmetler '
           'kullanılabilir. Bu hizmetlere yalnız ilgili özelliğin çalışması '
           'için gerekli istekler gönderilir.',
+          style: bodyStyle,
+        ),
+        const SizedBox(height: 10),
+        Text(
+          'Firebase Analytics uygulamaya eklenmemiştir. Firestore SDK; sürüm '
+          'kullanımını ve ürün kalitesini değerlendirmek için cihaz türü, '
+          'işletim sistemi, uygulama paket kimliği ve geliştirici platformu '
+          'gibi sınırlı tanılama metadatasını varsayılan olarak toplayabilir. '
+          'Bu veri kullanıcıya veya cihaz tanımlayıcısına bağlanmaz ve takip '
+          'amacıyla kullanılmaz.',
+          style: bodyStyle,
+        ),
+        const SizedBox(height: 10),
+        Text(
+          'Hizmet sağlayıcıların aktarılan veriler için bu politikada '
+          'açıklanan korumayla aynı veya eşdeğer düzeyde gizlilik ve güvenlik '
+          'önlemleri sağlaması gerekir.',
+          style: bodyStyle,
+        ),
+        const SizedBox(height: 10),
+        Text(
+          'Kıble pusulası için cihazın hareket sensörü kullanılabilir. '
+          'Hareket verisi yalnız cihaz üzerinde işlenir; sunucuya gönderilmez '
+          've saklanmaz.',
           style: bodyStyle,
         ),
         const SizedBox(height: 16),

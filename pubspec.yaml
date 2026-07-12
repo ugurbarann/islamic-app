@@ -1,5 +1,5 @@
 name: islamic_app
-description: "A new Flutter project."
+description: "Namaz vakitleri, Kur'an, dua, kıble ve günlük İslami içerik uygulaması."
 publish_to: 'none'
 version: 1.0.5+5
 
@@ -22,6 +22,7 @@ dependencies:
   flutter_compass: ^0.8.1
   dio: ^5.9.2
   url_launcher: ^6.3.2
+  share_plus: ^13.2.0
   package_info_plus: ^10.2.0
   intl: ^0.20.2
   firebase_core: ^4.11.0
@@ -45,7 +46,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/turkish_locations.json
-    - assets/data/mock_prayer_times.json
     - assets/data/quran_index.json
     - assets/data/quran_surahs/
     - assets/data/duas_sample.json

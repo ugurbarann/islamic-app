@@ -176,7 +176,7 @@ class _KnowledgeCategoryMeta {
   static _KnowledgeCategoryMeta forId(String id) {
     return switch (id) {
       'daily' => const _KnowledgeCategoryMeta(
-        description: 'Her güne kısa ilham',
+        description: 'Günlük ahlak rehberi',
         icon: AppIllustrationKind.knowledge,
         primary: AppColors.primary,
         accent: AppColors.warning,
@@ -190,7 +190,7 @@ class _KnowledgeCategoryMeta {
         softColor: Color(0xFFEAF5FF),
       ),
       'sahaba' => const _KnowledgeCategoryMeta(
-        description: 'Örnek hayatlar',
+        description: 'Sahabe hayatlarından dersler',
         icon: AppIllustrationKind.crescent,
         primary: Color(0xFF2873D9),
         accent: Color(0xFFF2B544),
@@ -211,7 +211,7 @@ class _KnowledgeCategoryMeta {
         softColor: Color(0xFFF1F5FF),
       ),
       _ => const _KnowledgeCategoryMeta(
-        description: 'Kısa bilgi notları',
+        description: 'İslami bilgi yazıları',
         icon: AppIllustrationKind.knowledge,
         primary: AppColors.primary,
         accent: AppColors.warning,

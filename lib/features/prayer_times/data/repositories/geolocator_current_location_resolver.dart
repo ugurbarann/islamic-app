@@ -13,23 +13,27 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
   const GeolocatorCurrentLocationResolver({
     required this.locationDataSource,
     required this.reverseGeocodeDataSource,
+    this.locationPlatform = const GeolocatorLocationPlatform(),
   });
+
+  static const double _maxCoordinateFallbackDistanceMeters = 100000;
 
   final LocalJsonPrayerLocationDataSource locationDataSource;
   final RemoteReverseGeocodeDataSource reverseGeocodeDataSource;
+  final LocationPlatform locationPlatform;
 
   @override
   Future<CurrentLocationResolution> resolve() async {
-    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    final serviceEnabled = await locationPlatform.isLocationServiceEnabled();
     if (!serviceEnabled) {
       return const CurrentLocationResolution(
         status: CurrentLocationResolutionStatus.serviceDisabled,
       );
     }
 
-    var permission = await Geolocator.checkPermission();
+    var permission = await locationPlatform.checkPermission();
     if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
+      permission = await locationPlatform.requestPermission();
     }
     if (permission == LocationPermission.deniedForever) {
       return const CurrentLocationResolution(
@@ -51,16 +55,27 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
         );
       }
       final locations = await locationDataSource.loadLocations();
-      final googleLocation = await _resolveWithGoogle(
+      if (locations.isEmpty) {
+        return const CurrentLocationResolution(
+          status: CurrentLocationResolutionStatus.unresolved,
+        );
+      }
+
+      final administrativeResolution = await _resolveAdministrativeLocation(
         locations,
         latitude: position.latitude,
         longitude: position.longitude,
       );
-      if (googleLocation != null) {
+      if (administrativeResolution.location != null) {
         return CurrentLocationResolution(
           status: CurrentLocationResolutionStatus.resolved,
-          location: googleLocation,
+          location: administrativeResolution.location,
           usedGoogleAdministrativeLocation: true,
+        );
+      }
+      if (administrativeResolution.wasResolved) {
+        return const CurrentLocationResolution(
+          status: CurrentLocationResolutionStatus.unresolved,
         );
       }
 
@@ -69,6 +84,11 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
         latitude: position.latitude,
         longitude: position.longitude,
       );
+      if (resolvedLocation == null) {
+        return const CurrentLocationResolution(
+          status: CurrentLocationResolutionStatus.unresolved,
+        );
+      }
 
       return CurrentLocationResolution(
         status: CurrentLocationResolutionStatus.resolved,
@@ -83,18 +103,13 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
 
   Future<Position?> _currentOrLastKnownPosition() async {
     try {
-      return await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(
-          accuracy: LocationAccuracy.medium,
-          timeLimit: Duration(seconds: 12),
-        ),
-      );
+      return await locationPlatform.getCurrentPosition();
     } on Object {
-      return Geolocator.getLastKnownPosition();
+      return locationPlatform.getLastKnownPosition();
     }
   }
 
-  Future<SelectedPrayerLocation?> _resolveWithGoogle(
+  Future<_AdministrativeResolution> _resolveAdministrativeLocation(
     List<TurkishLocationModel> locations, {
     required double latitude,
     required double longitude,
@@ -105,16 +120,18 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
         longitude: longitude,
       );
       if (administrativeLocation == null) {
-        return null;
+        return const _AdministrativeResolution.unavailable();
       }
 
-      return _matchSupportedLocation(
-        locations,
-        cityName: administrativeLocation.city,
-        districtName: administrativeLocation.district,
+      return _AdministrativeResolution.resolved(
+        _matchSupportedLocation(
+          locations,
+          cityName: administrativeLocation.city,
+          districtName: administrativeLocation.district,
+        ),
       );
     } on Object {
-      return null;
+      return const _AdministrativeResolution.unavailable();
     }
   }
 
@@ -137,17 +154,23 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
     }
 
     final location = cityMatches.first;
+    if (normalizedDistrict.isEmpty) {
+      return null;
+    }
     final districtMatches = location.districts.where(
       (district) => _normalize(district.name) == normalizedDistrict,
     );
-    final district = districtMatches.isNotEmpty
-        ? districtMatches.first
-        : location.districts.first;
+    if (districtMatches.isEmpty) {
+      return null;
+    }
 
-    return SelectedPrayerLocation(city: location.city, district: district);
+    return SelectedPrayerLocation(
+      city: location.city,
+      district: districtMatches.first,
+    );
   }
 
-  SelectedPrayerLocation _nearestSupportedLocation(
+  SelectedPrayerLocation? _nearestSupportedLocation(
     List<TurkishLocationModel> locations, {
     required double latitude,
     required double longitude,
@@ -170,6 +193,10 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
           nearestDistrict = district;
         }
       }
+    }
+
+    if (nearestDistance > _maxCoordinateFallbackDistanceMeters) {
+      return null;
     }
 
     return SelectedPrayerLocation(
@@ -217,4 +244,53 @@ class GeolocatorCurrentLocationResolver implements CurrentLocationResolver {
         .replaceAll('ç', 'c')
         .replaceAll(RegExp(r'[^a-z0-9]'), '');
   }
+}
+
+abstract interface class LocationPlatform {
+  Future<bool> isLocationServiceEnabled();
+
+  Future<LocationPermission> checkPermission();
+
+  Future<LocationPermission> requestPermission();
+
+  Future<Position> getCurrentPosition();
+
+  Future<Position?> getLastKnownPosition();
+}
+
+class GeolocatorLocationPlatform implements LocationPlatform {
+  const GeolocatorLocationPlatform();
+
+  @override
+  Future<bool> isLocationServiceEnabled() =>
+      Geolocator.isLocationServiceEnabled();
+
+  @override
+  Future<LocationPermission> checkPermission() => Geolocator.checkPermission();
+
+  @override
+  Future<LocationPermission> requestPermission() =>
+      Geolocator.requestPermission();
+
+  @override
+  Future<Position> getCurrentPosition() => Geolocator.getCurrentPosition(
+    locationSettings: const LocationSettings(
+      accuracy: LocationAccuracy.medium,
+      timeLimit: Duration(seconds: 12),
+    ),
+  );
+
+  @override
+  Future<Position?> getLastKnownPosition() => Geolocator.getLastKnownPosition();
+}
+
+class _AdministrativeResolution {
+  const _AdministrativeResolution.resolved(this.location) : wasResolved = true;
+
+  const _AdministrativeResolution.unavailable()
+    : wasResolved = false,
+      location = null;
+
+  final bool wasResolved;
+  final SelectedPrayerLocation? location;
 }

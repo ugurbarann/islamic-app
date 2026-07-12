@@ -4,18 +4,15 @@ import '../../domain/repositories/prayer_times_repository.dart';
 import '../datasources/ezan_vakti_remote_data_source.dart';
 import '../datasources/prayer_times_cache_data_source.dart';
 import '../models/ezan_vakti_prayer_day_model.dart';
-import 'local_mock_prayer_times_repository.dart';
 
 class CachedEzanVaktiPrayerTimesRepository implements PrayerTimesRepository {
   const CachedEzanVaktiPrayerTimesRepository({
     required this.remoteDataSource,
     required this.cacheDataSource,
-    required this.fallbackRepository,
   });
 
   final EzanVaktiRemoteDataSource remoteDataSource;
   final PrayerTimesCacheDataSource cacheDataSource;
-  final LocalMockPrayerTimesRepository fallbackRepository;
 
   @override
   Future<PrayerTimeDay> loadTodayPrayerTimes(
@@ -23,7 +20,11 @@ class CachedEzanVaktiPrayerTimesRepository implements PrayerTimesRepository {
   ) async {
     final districtId = location.district.ezanVaktiDistrictId;
     if (districtId == null) {
-      return fallbackRepository.loadTodayPrayerTimes(location);
+      throw StateError(
+        '${location.city.name} / ${location.district.name} için güncel namaz '
+        'vakitleri alınamadı. İnternet bağlantınızı kontrol edip konumu '
+        'yeniden seçin.',
+      );
     }
 
     final today = _today();
@@ -53,7 +54,10 @@ class CachedEzanVaktiPrayerTimesRepository implements PrayerTimesRepository {
       }
     }
 
-    return fallbackRepository.loadTodayPrayerTimes(location);
+    throw StateError(
+      '${location.city.name} / ${location.district.name} için bugünün namaz '
+      'vakitleri alınamadı. İnternet bağlantınızı kontrol edip yeniden deneyin.',
+    );
   }
 
   DateTime _today() {

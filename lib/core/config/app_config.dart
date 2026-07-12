@@ -2,8 +2,8 @@ class AppConfig {
   const AppConfig._();
 
   static const privacyPolicyUrl =
-      'https://ugurbarann.github.io/islamic-app/privacy-policy.html';
-  static const supportUrl = 'https://ugurbarann.github.io/islamic-app/';
+      'https://ugurbarann.github.io/islamic-app/docs/privacy-policy.html';
+  static const supportUrl = 'https://ugurbarann.github.io/islamic-app/docs/';
 
   static const mosqueBackendBaseUrl = String.fromEnvironment(
     'MOSQUE_BACKEND_BASE_URL',

@@ -46,6 +46,17 @@ class SourcesLicensesScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           _SourceCard(
+            title: 'İslami bilgiler ve tarih yazıları',
+            description:
+                'Peygamberler, sahabe ve İslam tarihi yazıları hazırlanırken '
+                'Kur’an-ı Kerim, Diyanet yayınları ve TDV İslâm '
+                'Ansiklopedisi’nin genel ilmî çerçevesi gözetilmiştir. '
+                'Tartışmalı rivayetler kesin bilgi gibi sunulmaz.',
+            linkLabel: 'TDV İslâm Ansiklopedisi’ni aç',
+            url: 'https://islamansiklopedisi.org.tr/',
+          ),
+          const SizedBox(height: 12),
+          _SourceCard(
             title: 'Açık kaynak yazılım lisansları',
             description:
                 'Uygulamada kullanılan Flutter ve diğer açık kaynak '

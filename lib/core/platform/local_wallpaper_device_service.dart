@@ -1,8 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:path/path.dart' as path;
-import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'wallpaper_device_service.dart';
 
@@ -37,28 +36,12 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
       }
     }
 
-    final bytes = await rootBundle.load(assetPath);
-    final documentsDirectory = await getApplicationDocumentsDirectory();
-    final wallpaperDirectory = Directory(
-      path.join(documentsDirectory.path, 'wallpapers'),
-    );
-    if (!await wallpaperDirectory.exists()) {
-      await wallpaperDirectory.create(recursive: true);
-    }
-
-    final extension = path.extension(assetPath).isEmpty
-        ? '.jpg'
-        : path.extension(assetPath);
-    final safeFileName = _safeFileName(fileName);
-    final outputFile = File(
-      path.join(wallpaperDirectory.path, '$safeFileName$extension'),
-    );
-    await outputFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
-
-    return WallpaperDeviceActionResult(
-      success: true,
-      message: 'Duvar kağıdı cihaza kaydedildi.',
-      savedPath: outputFile.path,
+    return _shareAsset(
+      assetPath: assetPath,
+      title: fileName,
+      successMessage:
+          'Paylaşım ekranı açıldı. “Görüntüyü Kaydet” ile Fotoğraflar’a '
+          'ekleyebilirsiniz.',
     );
   }
 
@@ -68,9 +51,10 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
     required String title,
   }) async {
     if (!Platform.isAndroid) {
-      return const WallpaperDeviceActionResult(
-        success: false,
-        message: 'Paylaşma bu cihazda desteklenmiyor.',
+      return _shareAsset(
+        assetPath: assetPath,
+        title: title,
+        successMessage: 'Paylaşım ekranı açıldı.',
       );
     }
 
@@ -128,5 +112,44 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
         .replaceAll(RegExp(r'[^a-z0-9ğüşıöç]+', caseSensitive: false), '_')
         .replaceAll(RegExp('_+'), '_')
         .replaceAll(RegExp(r'^_|_$'), '');
+  }
+
+  Future<WallpaperDeviceActionResult> _shareAsset({
+    required String assetPath,
+    required String title,
+    required String successMessage,
+  }) async {
+    try {
+      final data = await rootBundle.load(assetPath);
+      final extension = assetPath.toLowerCase().endsWith('.png')
+          ? 'png'
+          : 'jpg';
+      final mimeType = extension == 'png' ? 'image/png' : 'image/jpeg';
+      final fileName = '${_safeFileName(title)}.$extension';
+      final result = await SharePlus.instance.share(
+        ShareParams(
+          title: title,
+          files: [
+            XFile.fromData(data.buffer.asUint8List(), mimeType: mimeType),
+          ],
+          fileNameOverrides: [fileName],
+        ),
+      );
+      if (result.status == ShareResultStatus.unavailable) {
+        return const WallpaperDeviceActionResult(
+          success: false,
+          message: 'Paylaşım ekranı açılamadı.',
+        );
+      }
+      return WallpaperDeviceActionResult(
+        success: true,
+        message: successMessage,
+      );
+    } on Object {
+      return const WallpaperDeviceActionResult(
+        success: false,
+        message: 'Duvar kağıdı paylaşım için hazırlanamadı.',
+      );
+    }
   }
 }

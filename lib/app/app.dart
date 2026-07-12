@@ -37,7 +37,7 @@ class _IslamicAppState extends ConsumerState<IslamicApp> {
     });
 
     return MaterialApp.router(
-      title: 'İslami Asistan',
+      title: 'İslami Cep',
       debugShowCheckedModeBanner: false,
       locale: const Locale('tr', 'TR'),
       supportedLocales: const [Locale('tr', 'TR')],

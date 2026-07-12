@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -632,11 +633,8 @@ class _AllWallpapersScreen extends ConsumerWidget {
                     onFavorite: () => ref
                         .read(favoriteWallpapersControllerProvider.notifier)
                         .toggleFavorite(wallpaper.id),
-                    onDownload: () => _downloadFromGrid(
-                      context,
-                      ref,
-                      wallpaper,
-                    ),
+                    onDownload: () =>
+                        _downloadFromGrid(context, ref, wallpaper),
                   );
                 },
               ),
@@ -717,8 +715,12 @@ class _WallpaperTile extends StatelessWidget {
               right: 8,
               bottom: 8,
               child: _RoundOverlayButton(
-                tooltip: 'Galeriye kaydet',
-                icon: Icons.download_rounded,
+                tooltip: Platform.isIOS
+                    ? 'Paylaş veya Fotoğraflar’a kaydet'
+                    : 'Galeriye kaydet',
+                icon: Platform.isIOS
+                    ? Icons.ios_share_rounded
+                    : Icons.download_rounded,
                 onPressed: isWorking ? null : onDownload,
               ),
             ),
@@ -810,8 +812,12 @@ class _WallpaperGridCard extends StatelessWidget {
             right: 9,
             bottom: 9,
             child: _RoundOverlayButton(
-              tooltip: 'Galeriye kaydet',
-              icon: Icons.download_rounded,
+              tooltip: Platform.isIOS
+                  ? 'Paylaş veya Fotoğraflar’a kaydet'
+                  : 'Galeriye kaydet',
+              icon: Platform.isIOS
+                  ? Icons.ios_share_rounded
+                  : Icons.download_rounded,
               onPressed: isWorking ? null : onDownload,
             ),
           ),

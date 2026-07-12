@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -93,7 +95,12 @@ class WallpaperDetailScreen extends ConsumerWidget {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          'Galeriye kaydedebilir, paylaşabilir veya ana ekran duvar kağıdı olarak uygulayabilirsiniz.',
+                          Platform.isIOS
+                              ? 'Paylaşım ekranından görüntüyü Fotoğraflar’a '
+                                    'kaydedebilir, ardından iPhone Ayarları’ndan '
+                                    'duvar kağıdı yapabilirsiniz.'
+                              : 'Galeriye kaydedebilir, paylaşabilir veya ana '
+                                    'ekran duvar kağıdı olarak uygulayabilirsiniz.',
                           style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                                 color: AppColors.muted,
@@ -115,41 +122,51 @@ class WallpaperDetailScreen extends ConsumerWidget {
                                     _showResult(context, result.message);
                                   }
                                 },
-                          icon: const Icon(Icons.download_rounded),
+                          icon: Icon(
+                            Platform.isIOS
+                                ? Icons.ios_share_rounded
+                                : Icons.download_rounded,
+                          ),
                           label: Text(
-                            isWorking ? 'İşleniyor' : 'Galeriye Kaydet',
+                            isWorking
+                                ? 'İşleniyor'
+                                : Platform.isIOS
+                                ? 'Paylaş / Fotoğraflara Kaydet'
+                                : 'Galeriye Kaydet',
                           ),
                         ),
-                        const SizedBox(height: 10),
-                        OutlinedButton.icon(
-                          onPressed: isWorking
-                              ? null
-                              : () => _showWallpaperTargetSheet(
-                                  context,
-                                  ref,
-                                  wallpaper,
-                                ),
-                          icon: const Icon(Icons.wallpaper_rounded),
-                          label: const Text('Duvar Kağıdı Yap'),
-                        ),
-                        const SizedBox(height: 10),
-                        OutlinedButton.icon(
-                          onPressed: isWorking
-                              ? null
-                              : () async {
-                                  final result = await ref
-                                      .read(
-                                        wallpaperDeviceActionControllerProvider
-                                            .notifier,
-                                      )
-                                      .share(wallpaper);
-                                  if (context.mounted) {
-                                    _showResult(context, result.message);
-                                  }
-                                },
-                          icon: const Icon(Icons.ios_share_rounded),
-                          label: const Text('Paylaş'),
-                        ),
+                        if (!Platform.isIOS) ...[
+                          const SizedBox(height: 10),
+                          OutlinedButton.icon(
+                            onPressed: isWorking
+                                ? null
+                                : () => _showWallpaperTargetSheet(
+                                    context,
+                                    ref,
+                                    wallpaper,
+                                  ),
+                            icon: const Icon(Icons.wallpaper_rounded),
+                            label: const Text('Duvar Kağıdı Yap'),
+                          ),
+                          const SizedBox(height: 10),
+                          OutlinedButton.icon(
+                            onPressed: isWorking
+                                ? null
+                                : () async {
+                                    final result = await ref
+                                        .read(
+                                          wallpaperDeviceActionControllerProvider
+                                              .notifier,
+                                        )
+                                        .share(wallpaper);
+                                    if (context.mounted) {
+                                      _showResult(context, result.message);
+                                    }
+                                  },
+                            icon: const Icon(Icons.ios_share_rounded),
+                            label: const Text('Paylaş'),
+                          ),
+                        ],
                       ],
                     ),
                   ),

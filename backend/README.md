@@ -59,13 +59,13 @@ Generate a 30-day daily content seed from the app's bundled verified content.
 When no date is supplied, generation starts from the current UTC date:
 
 ```bash
-npm run generate:daily-content -- 2026-07-11 30 --update-local
+npm run generate:daily-content -- 2026-07-12 30 --update-local
 ```
 
 This writes:
 
 ```text
-backend/seeds/daily_content_2026-07-11_30_days.json
+backend/seeds/daily_content_2026-07-12_30_days.json
 ```
 
 `--update-local` also refreshes the app's bundled offline fallback. Keep only

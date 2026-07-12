@@ -9,7 +9,7 @@ class PrayerTimesCacheDataSource {
   const PrayerTimesCacheDataSource();
 
   static const _districtsPrefix = 'ezan_vakti_districts_v1';
-  static const _prayerTimesPrefix = 'ezan_vakti_prayer_times_v1';
+  static const _prayerTimesPrefix = 'ezan_vakti_prayer_times_v2';
 
   Future<List<EzanVaktiDistrictModel>?> loadDistricts(String cityId) async {
     final prefs = await SharedPreferences.getInstance();

@@ -1,10 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/datasources/ezan_vakti_remote_data_source.dart';
-import '../../data/datasources/local_json_prayer_times_data_source.dart';
 import '../../data/datasources/prayer_times_cache_data_source.dart';
 import '../../data/repositories/cached_ezan_vakti_prayer_times_repository.dart';
-import '../../data/repositories/local_mock_prayer_times_repository.dart';
 import '../../domain/entities/next_prayer_info.dart';
 import '../../domain/entities/prayer_time_day.dart';
 import '../../domain/repositories/prayer_times_repository.dart';
@@ -15,9 +13,6 @@ final prayerTimesRepositoryProvider = Provider<PrayerTimesRepository>((ref) {
   return CachedEzanVaktiPrayerTimesRepository(
     remoteDataSource: EzanVaktiRemoteDataSource(),
     cacheDataSource: const PrayerTimesCacheDataSource(),
-    fallbackRepository: const LocalMockPrayerTimesRepository(
-      dataSource: LocalJsonPrayerTimesDataSource(),
-    ),
   );
 });
 

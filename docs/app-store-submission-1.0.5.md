@@ -3,8 +3,8 @@
 ## App Store Connect alanları
 
 - Copyright: `2026 Uğur Baran`
-- Privacy Policy URL: `https://ugurbarann.github.io/islamic-app/privacy-policy.html`
-- Support URL: `https://ugurbarann.github.io/islamic-app/`
+- Privacy Policy URL: `https://ugurbarann.github.io/islamic-app/docs/privacy-policy.html`
+- Support URL: `https://ugurbarann.github.io/islamic-app/docs/`
 - Support email: `admin@ugurbaran.com`
 - Sign-in required: Hayır
 - Release: Onaydan sonra kontrol isteniyorsa `Manually release this version`
@@ -18,6 +18,7 @@
 - User account: Yok
 - Advertising: Yok
 - Precise Location: Toplanır/kullanılır; kullanıcıyla ilişkilendirilmez; takip için kullanılmaz; amaç `App Functionality`
+- Diagnostics > Other Diagnostic Data: Toplanır; kullanıcıyla ilişkilendirilmez; takip için kullanılmaz; amaç `Analytics` (Firestore SDK kullanıcı aracısı/tanılama metadatası)
 - Konum kullanım amacı: namaz vakti il/ilçe seçimi, kıble ve yakındaki camiler
 - Üçüncü taraflar: Firebase/Firestore, Google Maps Platform, OpenStreetMap tabanlı servisler ve Ezan Vakti servisi
 
@@ -25,7 +26,7 @@ App Store Connect beyanı, uygulamadaki ve üçüncü taraf SDK’lardaki gerçe
 
 ## Review Notes önerisi
 
-> İslami Cep kullanıcı hesabı veya giriş gerektirmez. İlk açılışta konum izni yalnız namaz vakitleri için il/ilçe seçmek, kıble yönünü hesaplamak ve yakındaki camileri göstermek amacıyla istenir. İzin verilmezse uygulama varsayılan/seçilmiş il ve ilçeyle çalışmaya devam eder. Konum daha sonra Ayarlar > Geçerli Konumu Kullan alanından tekrar etkinleştirilebilir. Günlük içerikler çevrimiçi olduğunda sonraki 30 gün için cihazda önbelleğe alınır ve internet olmadan açılabilir.
+> İslami Cep kullanıcı hesabı veya giriş gerektirmez. İlk açılışta konum izni yalnız namaz vakitleri için il/ilçe seçmek, kıble yönünü hesaplamak ve yakındaki camileri göstermek amacıyla istenir. Namaz vakti konum eşlemesi Türkiye'deki il ve ilçelerle sınırlıdır; desteklenmeyen bir konumda veya izin verilmediğinde uygulama varsayılan/seçilmiş il ve ilçeyle çalışmaya devam eder. Konum daha sonra Ayarlar > Geçerli Konumu Kullan alanından tekrar etkinleştirilebilir. Günlük içerikler çevrimiçi olduğunda sonraki 30 gün için cihazda önbelleğe alınır ve internet olmadan açılabilir.
 
 ## Gönderimden önce manuel kontroller
 
@@ -33,6 +34,7 @@ App Store Connect beyanı, uygulamadaki ve üçüncü taraf SDK’lardaki gerçe
 - Age Rating anketini içerikle uyumlu tamamla; `Unrated` bırakma.
 - Fiyat ücretsizse `Free` ve dağıtım ülkelerini seç.
 - DSA trader/non-trader durumunu tamamla.
+- Content Rights beyanını Kur'an, hadis, harita ve diğer üçüncü taraf içeriklerinin kullanım hakları/lisanslarıyla uyumlu tamamla.
 - App Privacy cevaplarını yayımla.
 - Support ve Privacy URL’lerinin oturum açmadan açıldığını doğrula.
 - Gerçek cihazda konum `Allow Once`, `While Using`, `Don’t Allow` ve kalıcı reddetme akışlarını dene.

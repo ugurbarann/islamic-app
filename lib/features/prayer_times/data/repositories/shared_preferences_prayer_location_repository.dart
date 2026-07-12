@@ -45,6 +45,11 @@ class SharedPreferencesPrayerLocationRepository
       return location.districts;
     }
 
+    final cachedDistricts = await cacheDataSource.loadDistricts(cityId);
+    if (cachedDistricts != null && cachedDistricts.isNotEmpty) {
+      return _mapRemoteDistricts(location, cachedDistricts);
+    }
+
     try {
       final remoteDistricts = await remoteDataSource.loadDistricts(
         ezanVaktiCityId,
@@ -55,10 +60,6 @@ class SharedPreferencesPrayerLocationRepository
       );
       return _mapRemoteDistricts(location, remoteDistricts);
     } on Object {
-      final cachedDistricts = await cacheDataSource.loadDistricts(cityId);
-      if (cachedDistricts != null && cachedDistricts.isNotEmpty) {
-        return _mapRemoteDistricts(location, cachedDistricts);
-      }
       return location.districts;
     }
   }
@@ -78,21 +79,25 @@ class SharedPreferencesPrayerLocationRepository
       ),
     );
 
-    final localDistrict = location.districts.where(
+    final localDistrictMatches = location.districts.where(
       (item) => item.id == districtId,
     );
-    if (localDistrict.isNotEmpty) {
-      return SelectedPrayerLocation(
-        city: location.city,
-        district: localDistrict.first,
-      );
-    }
+    final localDistrict = localDistrictMatches.isEmpty
+        ? null
+        : localDistrictMatches.first;
 
     final districts = await loadDistricts(location.city.id);
-    final district = districts.firstWhere(
-      (item) => item.id == districtId,
-      orElse: () => districts.first,
-    );
+    final idMatches = districts.where((item) => item.id == districtId);
+    final nameMatches = localDistrict == null
+        ? const <TurkishDistrict>[]
+        : districts
+              .where((item) => _sameName(item.name, localDistrict.name))
+              .toList(growable: false);
+    final district = idMatches.isNotEmpty
+        ? idMatches.first
+        : nameMatches.isNotEmpty
+        ? nameMatches.first
+        : districts.first;
 
     return SelectedPrayerLocation(city: location.city, district: district);
   }
@@ -142,6 +147,18 @@ class SharedPreferencesPrayerLocationRepository
   }
 
   bool _sameName(String first, String second) {
-    return first.toLowerCase() == second.toLowerCase();
+    return _normalize(first) == _normalize(second);
+  }
+
+  String _normalize(String value) {
+    return value
+        .toLowerCase()
+        .replaceAll('ı', 'i')
+        .replaceAll('ğ', 'g')
+        .replaceAll('ü', 'u')
+        .replaceAll('ş', 's')
+        .replaceAll('ö', 'o')
+        .replaceAll('ç', 'c')
+        .replaceAll(RegExp(r'[^a-z0-9]'), '');
   }
 }

@@ -62,8 +62,14 @@ class EzanVaktiPrayerDayModel {
   static DateTime _parseDate(Map<String, dynamic> json) {
     final isoValue = json['MiladiTarihUzunIso8601'] as String?;
     if (isoValue != null && isoValue.isNotEmpty) {
-      final parsed = DateTime.parse(isoValue);
-      return DateTime(parsed.year, parsed.month, parsed.day);
+      final match = RegExp(r'^(\d{4})-(\d{2})-(\d{2})').firstMatch(isoValue);
+      if (match != null) {
+        return DateTime(
+          int.parse(match.group(1)!),
+          int.parse(match.group(2)!),
+          int.parse(match.group(3)!),
+        );
+      }
     }
 
     final shortValue =
