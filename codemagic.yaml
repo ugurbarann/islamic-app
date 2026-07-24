@@ -88,7 +88,7 @@ workflows:
           source: true
       cancel_previous_builds: true
     integrations:
-      app_store_connect: test1
+      app_store_connect: ugurdev
     environment:
       flutter: stable
       xcode: latest
