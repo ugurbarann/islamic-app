@@ -96,9 +96,9 @@ class WallpaperDetailScreen extends ConsumerWidget {
                         const SizedBox(height: 6),
                         Text(
                           Platform.isIOS
-                              ? 'Paylaşım ekranından görüntüyü Fotoğraflar’a '
-                                    'kaydedebilir, ardından iPhone Ayarları’ndan '
-                                    'duvar kağıdı yapabilirsiniz.'
+                              ? 'Görüntüyü doğrudan Fotoğraflar’a kaydedebilir '
+                                    'veya paylaşabilirsiniz. Ardından iPhone '
+                                    'Ayarları’ndan duvar kağıdı yapabilirsiniz.'
                               : 'Galeriye kaydedebilir, paylaşabilir veya ana '
                                     'ekran duvar kağıdı olarak uygulayabilirsiniz.',
                           style: Theme.of(context).textTheme.bodyMedium
@@ -124,14 +124,14 @@ class WallpaperDetailScreen extends ConsumerWidget {
                                 },
                           icon: Icon(
                             Platform.isIOS
-                                ? Icons.ios_share_rounded
+                                ? Icons.save_alt_rounded
                                 : Icons.download_rounded,
                           ),
                           label: Text(
                             isWorking
                                 ? 'İşleniyor'
                                 : Platform.isIOS
-                                ? 'Paylaş / Fotoğraflara Kaydet'
+                                ? 'Fotoğraflara Kaydet'
                                 : 'Galeriye Kaydet',
                           ),
                         ),
@@ -148,25 +148,25 @@ class WallpaperDetailScreen extends ConsumerWidget {
                             icon: const Icon(Icons.wallpaper_rounded),
                             label: const Text('Duvar Kağıdı Yap'),
                           ),
-                          const SizedBox(height: 10),
-                          OutlinedButton.icon(
-                            onPressed: isWorking
-                                ? null
-                                : () async {
-                                    final result = await ref
-                                        .read(
-                                          wallpaperDeviceActionControllerProvider
-                                              .notifier,
-                                        )
-                                        .share(wallpaper);
-                                    if (context.mounted) {
-                                      _showResult(context, result.message);
-                                    }
-                                  },
-                            icon: const Icon(Icons.ios_share_rounded),
-                            label: const Text('Paylaş'),
-                          ),
                         ],
+                        const SizedBox(height: 10),
+                        OutlinedButton.icon(
+                          onPressed: isWorking
+                              ? null
+                              : () async {
+                                  final result = await ref
+                                      .read(
+                                        wallpaperDeviceActionControllerProvider
+                                            .notifier,
+                                      )
+                                      .share(wallpaper);
+                                  if (context.mounted && !result.success) {
+                                    _showResult(context, result.message);
+                                  }
+                                },
+                          icon: const Icon(Icons.ios_share_rounded),
+                          label: const Text('Paylaş'),
+                        ),
                       ],
                     ),
                   ),

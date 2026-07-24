@@ -36,12 +36,28 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
       }
     }
 
-    return _shareAsset(
-      assetPath: assetPath,
-      title: fileName,
-      successMessage:
-          'Paylaşım ekranı açıldı. “Görüntüyü Kaydet” ile Fotoğraflar’a '
-          'ekleyebilirsiniz.',
+    if (Platform.isIOS) {
+      try {
+        final savedIdentifier = await _channel.invokeMethod<String>(
+          'saveToPhotos',
+          {'assetPath': assetPath, 'title': fileName},
+        );
+        return WallpaperDeviceActionResult(
+          success: true,
+          message: 'Duvar kağıdı Fotoğraflar’a kaydedildi.',
+          savedPath: savedIdentifier,
+        );
+      } on PlatformException catch (error) {
+        return WallpaperDeviceActionResult(
+          success: false,
+          message: error.message ?? 'Duvar kağıdı Fotoğraflar’a kaydedilemedi.',
+        );
+      }
+    }
+
+    return const WallpaperDeviceActionResult(
+      success: false,
+      message: 'Fotoğraflara kaydetme bu cihazda desteklenmiyor.',
     );
   }
 
@@ -51,11 +67,7 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
     required String title,
   }) async {
     if (!Platform.isAndroid) {
-      return _shareAsset(
-        assetPath: assetPath,
-        title: title,
-        successMessage: 'Paylaşım ekranı açıldı.',
-      );
+      return _shareAsset(assetPath: assetPath, title: title);
     }
 
     try {
@@ -63,10 +75,7 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
         'assetPath': assetPath,
         'title': title,
       });
-      return const WallpaperDeviceActionResult(
-        success: true,
-        message: 'Paylaşım ekranı açıldı.',
-      );
+      return const WallpaperDeviceActionResult(success: true, message: '');
     } on PlatformException catch (error) {
       return WallpaperDeviceActionResult(
         success: false,
@@ -117,7 +126,6 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
   Future<WallpaperDeviceActionResult> _shareAsset({
     required String assetPath,
     required String title,
-    required String successMessage,
   }) async {
     try {
       final data = await rootBundle.load(assetPath);
@@ -141,10 +149,7 @@ class LocalWallpaperDeviceService implements WallpaperDeviceService {
           message: 'Paylaşım ekranı açılamadı.',
         );
       }
-      return WallpaperDeviceActionResult(
-        success: true,
-        message: successMessage,
-      );
+      return const WallpaperDeviceActionResult(success: true, message: '');
     } on Object {
       return const WallpaperDeviceActionResult(
         success: false,
