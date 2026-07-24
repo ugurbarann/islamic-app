@@ -95,10 +95,8 @@ workflows:
       groups:
         - ugur
       ios_signing:
-        certificates:
-          - u
-        provisioning_profiles:
-          - ios_app_store_profile
+        distribution_type: app_store
+        bundle_identifier: com.islamicep.app
       # Required:
       # IOS_GOOGLE_SERVICE_INFO_PLIST_B64 -> ios/Runner/GoogleService-Info.plist
       #
