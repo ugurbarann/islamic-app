@@ -700,7 +700,7 @@ class _QiblaFallback extends ConsumerWidget {
                   ref.invalidate(compassReadingProvider);
                 },
                 icon: const Icon(Icons.tune_rounded),
-                label: const Text('Ayarları Aç'),
+                label: const Text('Ayarlar’dan Konum İzni Ver'),
               ),
             ],
           ),

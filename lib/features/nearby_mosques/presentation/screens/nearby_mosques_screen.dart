@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,17 +20,40 @@ class NearbyMosquesScreen extends ConsumerStatefulWidget {
       _NearbyMosquesScreenState();
 }
 
-class _NearbyMosquesScreenState extends ConsumerState<NearbyMosquesScreen> {
+class _NearbyMosquesScreenState extends ConsumerState<NearbyMosquesScreen>
+    with WidgetsBindingObserver {
   static const _limit = 5;
   int _radiusMeters = 5000;
   int _refreshToken = 0;
   bool _showFallbackWarning = true;
+  bool _refreshAfterReturningFromSettings = false;
 
   NearbyMosqueQuery get _query => NearbyMosqueQuery(
     radiusMeters: _radiusMeters,
     limit: _limit,
     refreshToken: _refreshToken,
   );
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed &&
+        _refreshAfterReturningFromSettings) {
+      _refreshAfterReturningFromSettings = false;
+      _refreshNow();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +82,7 @@ class _NearbyMosquesScreenState extends ConsumerState<NearbyMosquesScreen> {
                   },
                   onRefresh: _refreshNow,
                   onFilter: _showFilterSheet,
+                  onOpenLocationSettings: _openLocationSettings,
                 ),
                 loading: () => const PremiumStateView(
                   title: 'Yakındaki camiler aranıyor',
@@ -140,6 +165,18 @@ class _NearbyMosquesScreenState extends ConsumerState<NearbyMosquesScreen> {
       _refreshToken++;
     });
   }
+
+  Future<void> _openLocationSettings(
+    NearbyMosqueLocationStatus locationStatus,
+  ) async {
+    _refreshAfterReturningFromSettings = true;
+    final opened = locationStatus == NearbyMosqueLocationStatus.serviceDisabled
+        ? await Geolocator.openLocationSettings()
+        : await Geolocator.openAppSettings();
+    if (!opened) {
+      _refreshAfterReturningFromSettings = false;
+    }
+  }
 }
 
 class _MosqueList extends StatelessWidget {
@@ -151,6 +188,7 @@ class _MosqueList extends StatelessWidget {
     required this.onRetry,
     required this.onRefresh,
     required this.onFilter,
+    required this.onOpenLocationSettings,
   });
 
   final NearbyMosqueResult result;
@@ -160,15 +198,26 @@ class _MosqueList extends StatelessWidget {
   final VoidCallback onRetry;
   final VoidCallback onRefresh;
   final VoidCallback onFilter;
+  final void Function(NearbyMosqueLocationStatus) onOpenLocationSettings;
 
   @override
   Widget build(BuildContext context) {
     final mosques = result.mosques.take(5).toList();
     if (mosques.isEmpty) {
-      return const PremiumStateView(
-        title: 'Yakınlarda cami bulunamadı',
-        message: 'Konumunuzu veya seçili şehir bilgisini kontrol edin.',
-        icon: Icons.mosque_outlined,
+      return ListView(
+        padding: const EdgeInsets.fromLTRB(18, 24, 18, 120),
+        children: [
+          const PremiumStateView(
+            title: 'Yakınlarda cami bulunamadı',
+            message: 'Konumunuzu veya seçili şehir bilgisini kontrol edin.',
+            icon: Icons.mosque_outlined,
+          ),
+          if (_requiresLocationSettings)
+            _LocationAccessBanner(
+              status: result.locationStatus,
+              onOpenSettings: onOpenLocationSettings,
+            ),
+        ],
       );
     }
 
@@ -178,6 +227,12 @@ class _MosqueList extends StatelessWidget {
       children: [
         _MosqueHeader(onFilter: onFilter),
         const SizedBox(height: 8),
+        if (_requiresLocationSettings)
+          _LocationAccessBanner(
+            status: result.locationStatus,
+            onOpenSettings: onOpenLocationSettings,
+          ),
+        if (_requiresLocationSettings) const SizedBox(height: 8),
         if (result.usedFallback)
           _RetryBanner(radiusMeters: radiusMeters, onRetry: onRetry),
         if (result.usedFallback) const SizedBox(height: 8),
@@ -208,6 +263,10 @@ class _MosqueList extends StatelessWidget {
       ],
     );
   }
+
+  bool get _requiresLocationSettings =>
+      result.locationStatus == NearbyMosqueLocationStatus.permissionDenied ||
+      result.locationStatus == NearbyMosqueLocationStatus.serviceDisabled;
 }
 
 class _MosqueHeader extends StatelessWidget {
@@ -355,6 +414,66 @@ class _RetryBanner extends StatelessWidget {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
             child: const Text('Tekrar Dene'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LocationAccessBanner extends StatelessWidget {
+  const _LocationAccessBanner({
+    required this.status,
+    required this.onOpenSettings,
+  });
+
+  final NearbyMosqueLocationStatus status;
+  final void Function(NearbyMosqueLocationStatus) onOpenSettings;
+
+  @override
+  Widget build(BuildContext context) {
+    final serviceDisabled =
+        status == NearbyMosqueLocationStatus.serviceDisabled;
+    return GlassPanel(
+      borderRadius: 24,
+      padding: const EdgeInsets.all(14),
+      shadow: false,
+      color: const Color(0xFFFFF8E7),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                serviceDisabled
+                    ? Icons.location_off_outlined
+                    : Icons.location_searching_rounded,
+                color: AppColors.primary,
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  serviceDisabled
+                      ? 'Yakınınızdaki camileri gösterebilmek için iPhone Konum Servislerini açın.'
+                      : 'Yakınınızdaki camileri gösterebilmek için Ayarlar’dan İslami Cep konum iznini “Uygulamayı Kullanırken” olarak açın.',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: AppColors.ink,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          FilledButton.icon(
+            onPressed: () => onOpenSettings(status),
+            icon: const Icon(Icons.settings_outlined),
+            label: Text(
+              serviceDisabled
+                  ? 'Konum Servislerini Aç'
+                  : 'Ayarlar’dan Konum İzni Ver',
+            ),
           ),
         ],
       ),

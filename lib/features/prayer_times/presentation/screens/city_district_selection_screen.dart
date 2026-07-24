@@ -137,9 +137,9 @@ class _CityDistrictSelectionScreenState
         }
         return '${location.city.name} / ${location.district.name} seçildi.';
       case CurrentLocationResolutionStatus.permissionDenied:
-        return 'Konum izni verilmedi. Tekrar deneyebilir veya şehir seçebilirsiniz.';
+        return 'Konum izni verilmedi. Aşağıdaki düğmeyle İslami Cep ayarlarından konum iznini açabilirsiniz.';
       case CurrentLocationResolutionStatus.permissionPermanentlyDenied:
-        return 'Konum izni daha önce kapatılmış. iPhone Ayarları’ndan İslami Cep için konumu açın.';
+        return 'Konum izni kapalı. Aşağıdaki düğmeyle İslami Cep ayarlarından konum iznini açabilirsiniz.';
       case CurrentLocationResolutionStatus.serviceDisabled:
         return 'Konum servisleri kapalı. Şehir seçerek devam edebilirsiniz.';
       case CurrentLocationResolutionStatus.unresolved:
@@ -202,12 +202,13 @@ class _LocationPromptCard extends StatelessWidget {
               const SizedBox(height: 12),
               Text(message!),
             ],
-            if (status ==
-                CurrentLocationResolutionStatus.permissionPermanentlyDenied)
+            if (status == CurrentLocationResolutionStatus.permissionDenied ||
+                status ==
+                    CurrentLocationResolutionStatus.permissionPermanentlyDenied)
               TextButton.icon(
                 onPressed: Geolocator.openAppSettings,
                 icon: const Icon(Icons.settings_outlined),
-                label: const Text('Uygulama Ayarlarını Aç'),
+                label: const Text('Ayarlar’dan Konum İzni Ver'),
               )
             else if (status == CurrentLocationResolutionStatus.serviceDisabled)
               TextButton.icon(

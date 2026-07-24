@@ -22,14 +22,35 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1364354409125473</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<true/>
+	<key>FacebookAppID</key>
+	<string>1364354409125473</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<true/>
+	<key>FacebookClientToken</key>
+	<string>6a4c74f6c1c8d559ab4abd7adbdba0de</string>
+	<key>FacebookDisplayName</key>
+	<string>İslami Cep</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Konumunuz; bulunduğunuz il ve ilçenin namaz vakitlerini seçmek, kıble yönünü hesaplamak ve yakınınızdaki camileri göstermek için kullanılır.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Cihaz hareketi, kıble pusulasının yönünü telefonun konumuna göre doğru göstermek için kullanılır.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Reklamların etkinliğini ölçmek ve uygulama deneyimini geliştirmek için cihazınızdaki etkinliklerin takip edilmesine izin verebilirsiniz.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>

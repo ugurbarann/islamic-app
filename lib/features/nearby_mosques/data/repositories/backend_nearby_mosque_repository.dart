@@ -59,6 +59,7 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
           fetchedAt: cachedResult.fetchedAt,
           nextRefreshAllowedAt: nextRefreshAllowedAt,
           refreshLimited: true,
+          locationStatus: origin.locationStatus,
           message:
               'Yenilemek için ${_formatRemaining(nextRefreshAllowedAt.difference(now))} bekleyin.',
         );
@@ -73,7 +74,7 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         nextRefreshAllowedAt: nextRefreshAllowedAt,
       );
       if (cachedResult != null) {
-        return cachedResult;
+        return cachedResult.withLocationStatus(origin.locationStatus);
       }
     }
 
@@ -86,7 +87,12 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         usesDeviceLocation: origin.usesDeviceLocation,
       );
       if (remoteMosques.isEmpty) {
-        return _fallbackResult(fallbackLocation, radiusMeters, limit);
+        return _fallbackResult(
+          fallbackLocation,
+          radiusMeters,
+          limit,
+          locationStatus: origin.locationStatus,
+        );
       }
       final mosques = remoteMosques.take(limit).toList();
       await _saveCachedResult(
@@ -104,6 +110,7 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         nextRefreshAllowedAt: forceRefresh
             ? now.add(_manualRefreshCooldown)
             : nextRefreshAllowedAt,
+        locationStatus: origin.locationStatus,
       );
     } on Object {
       final cachedResult = _loadCachedResult(
@@ -117,11 +124,17 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
           servedFromCache: true,
           fetchedAt: cachedResult.fetchedAt,
           nextRefreshAllowedAt: nextRefreshAllowedAt,
+          locationStatus: origin.locationStatus,
           message:
               'Canlı liste alınamadı. Kaydedilen son sonuçlar gösteriliyor.',
         );
       }
-      return _fallbackResult(fallbackLocation, radiusMeters, limit);
+      return _fallbackResult(
+        fallbackLocation,
+        radiusMeters,
+        limit,
+        locationStatus: origin.locationStatus,
+      );
     }
   }
 
@@ -254,8 +267,9 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
   Future<NearbyMosqueResult> _fallbackResult(
     SelectedPrayerLocation fallbackLocation,
     int radiusMeters,
-    int limit,
-  ) async {
+    int limit, {
+    required NearbyMosqueLocationStatus locationStatus,
+  }) async {
     final localResult = await localRepository.loadNearbyMosques(
       fallbackLocation,
       radiusMeters: radiusMeters,
@@ -264,6 +278,7 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
     return NearbyMosqueResult(
       mosques: localResult.mosques.take(limit).toList(),
       usedFallback: true,
+      locationStatus: locationStatus,
       message:
           'Canlı cami araması şu anda kullanılamıyor. Kayıtlı camiler gösteriliyor.',
     );
@@ -277,7 +292,10 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         fallbackLocation,
       ).timeout(const Duration(seconds: 4));
     } on Object {
-      return _MosqueOrigin.fromFallback(fallbackLocation);
+      return _MosqueOrigin.fromFallback(
+        fallbackLocation,
+        status: NearbyMosqueLocationStatus.unavailable,
+      );
     }
   }
 
@@ -286,7 +304,10 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
   ) async {
     final serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return _MosqueOrigin.fromFallback(fallbackLocation);
+      return _MosqueOrigin.fromFallback(
+        fallbackLocation,
+        status: NearbyMosqueLocationStatus.serviceDisabled,
+      );
     }
 
     var permission = await Geolocator.checkPermission();
@@ -297,7 +318,10 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
     if (permission == LocationPermission.denied ||
         permission == LocationPermission.deniedForever ||
         permission == LocationPermission.unableToDetermine) {
-      return _MosqueOrigin.fromFallback(fallbackLocation);
+      return _MosqueOrigin.fromFallback(
+        fallbackLocation,
+        status: NearbyMosqueLocationStatus.permissionDenied,
+      );
     }
 
     try {
@@ -307,6 +331,7 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
           latitude: lastKnownPosition.latitude,
           longitude: lastKnownPosition.longitude,
           usesDeviceLocation: true,
+          locationStatus: NearbyMosqueLocationStatus.available,
         );
       }
 
@@ -320,9 +345,13 @@ class BackendNearbyMosqueRepository implements NearbyMosqueRepository {
         latitude: position.latitude,
         longitude: position.longitude,
         usesDeviceLocation: true,
+        locationStatus: NearbyMosqueLocationStatus.available,
       );
     } on Object {
-      return _MosqueOrigin.fromFallback(fallbackLocation);
+      return _MosqueOrigin.fromFallback(
+        fallbackLocation,
+        status: NearbyMosqueLocationStatus.unavailable,
+      );
     }
   }
 }
@@ -332,17 +361,23 @@ class _MosqueOrigin {
     required this.latitude,
     required this.longitude,
     required this.usesDeviceLocation,
+    required this.locationStatus,
   });
 
-  factory _MosqueOrigin.fromFallback(SelectedPrayerLocation location) {
+  factory _MosqueOrigin.fromFallback(
+    SelectedPrayerLocation location, {
+    required NearbyMosqueLocationStatus status,
+  }) {
     return _MosqueOrigin(
       latitude: location.district.latitude,
       longitude: location.district.longitude,
       usesDeviceLocation: false,
+      locationStatus: status,
     );
   }
 
   final double latitude;
   final double longitude;
   final bool usesDeviceLocation;
+  final NearbyMosqueLocationStatus locationStatus;
 }

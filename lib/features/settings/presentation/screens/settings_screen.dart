@@ -254,19 +254,19 @@ class SettingsScreen extends ConsumerWidget {
           ),
         );
       case CurrentLocationResolutionStatus.permissionDenied:
-        messenger.showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Konum izni verilmedi. Tekrar dokunarak izin isteyebilirsiniz.',
-            ),
-          ),
+        await _showLocationSettingsDialog(
+          context,
+          title: 'Konum izni verilmedi',
+          message:
+              'İslami Cep’in konumunuza erişebilmesi için uygulama ayarlarından Konum iznini “Uygulamayı Kullanırken” olarak açın.',
+          onOpen: Geolocator.openAppSettings,
         );
       case CurrentLocationResolutionStatus.permissionPermanentlyDenied:
         await _showLocationSettingsDialog(
           context,
           title: 'Konum izni kapalı',
           message:
-              'iPhone Ayarları’nda İslami Cep için Konum iznini “Uygulamayı Kullanırken” olarak açın.',
+              'İslami Cep’in konumunuza erişebilmesi için uygulama ayarlarından Konum iznini “Uygulamayı Kullanırken” olarak açın.',
           onOpen: Geolocator.openAppSettings,
         );
       case CurrentLocationResolutionStatus.serviceDisabled:
