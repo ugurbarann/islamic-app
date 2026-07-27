@@ -43,6 +43,10 @@
 	<string>6a4c74f6c1c8d559ab4abd7adbdba0de</string>
 	<key>FacebookDisplayName</key>
 	<string>İslami Cep</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-5683728284748855~6500635176</string>
+	<key>GADDelayAppMeasurementInit</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/ads/ad_privacy_options_button.dart';
 import '../../../../core/config/app_config.dart';
 import '../../../../shared/widgets/app_components.dart';
 import '../../../../shared/widgets/premium_scaffold.dart';
@@ -25,6 +26,8 @@ class PrivacyPolicyScreen extends StatelessWidget {
             icon: const Icon(Icons.open_in_new_rounded),
             label: const Text('Web Sürümünü Aç'),
           ),
+          const SizedBox(height: 10),
+          const AdPrivacyOptionsButton(),
         ],
       ),
     );
@@ -43,12 +46,14 @@ class _PolicyText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Son güncelleme: 24 Temmuz 2026', style: bodyStyle),
+        Text('Son güncelleme: 28 Temmuz 2026', style: bodyStyle),
         const SizedBox(height: 16),
         Text('Toplanan ve kullanılan veriler', style: titleStyle),
         const SizedBox(height: 6),
         Text(
-          'İslami Cep hesap oluşturmaz ve uygulama içinde reklam göstermez. '
+          'İslami Cep hesap oluşturmaz. Uygulama, belirlenen sıklık sınırları '
+          'içinde Google Mobile Ads üzerinden uygulama açılış reklamları '
+          'gösterebilir. '
           'İzin verdiğinizde hassas konum; namaz vakti için il/ilçe seçmek, '
           'kıble yönünü hesaplamak ve yakındaki camileri göstermek amacıyla '
           'kullanılır. Konum izni isteğe bağlıdır.',
@@ -63,7 +68,10 @@ class _PolicyText extends StatelessWidget {
           'Google Maps Platform veya OpenStreetMap tabanlı hizmetler '
           'kullanılabilir. Meta App Events; uygulamanın açılması ve kurulumu '
           'gibi sınırlı uygulama etkinliklerini reklam etkinliğini ölçmek ve '
-          'uygulama deneyimini geliştirmek için işleyebilir.',
+          'uygulama deneyimini geliştirmek için işleyebilir. Google Mobile Ads; '
+          'reklam sunumu, sıklık kontrolü, dolandırıcılığın önlenmesi ve izin '
+          'verildiğinde reklam kişiselleştirmesi için cihaz ve reklam etkileşim '
+          'verilerini işleyebilir.',
           style: bodyStyle,
         ),
         const SizedBox(height: 10),
@@ -108,8 +116,10 @@ class _PolicyText extends StatelessWidget {
         Text(
           'Seçtiğiniz şehir/ilçe, tema ve bildirim tercihleri, favoriler, '
           'okuma konumu ile çevrimdışı kullanılacak içerik ve cami önbelleği '
-          'cihazınızda saklanır. Bunları uygulamayı kaldırarak veya ilgili '
-          'önbellek temizleme seçeneğiyle silebilirsiniz.',
+          'cihazınızda saklanır. Reklamların sıklık sınırını uygulamak için son '
+          'gösterim zamanı ve sınırlı gösterim sayaçları da cihazda tutulur. '
+          'Bunları uygulamayı kaldırarak veya ilgili önbellek temizleme '
+          'seçeneğiyle silebilirsiniz.',
           style: bodyStyle,
         ),
         const SizedBox(height: 16),

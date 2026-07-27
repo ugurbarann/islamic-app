@@ -203,11 +203,30 @@ import UIKit
       return
     }
 
+    guard !isPresentingModalContent else {
+      scheduleTrackingAuthorizationRequestIfNeeded()
+      return
+    }
+
     ATTrackingManager.requestTrackingAuthorization { [weak self] _ in
       DispatchQueue.main.async {
         self?.syncMetaAdvertiserTrackingStatus()
       }
     }
+  }
+
+  private var isPresentingModalContent: Bool {
+    for case let scene as UIWindowScene in UIApplication.shared.connectedScenes {
+      guard scene.activationState == .foregroundActive else {
+        continue
+      }
+      for window in scene.windows where window.isKeyWindow {
+        if window.rootViewController?.presentedViewController != nil {
+          return true
+        }
+      }
+    }
+    return false
   }
 
   private func syncMetaAdvertiserTrackingStatus() {
