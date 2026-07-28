@@ -5,7 +5,7 @@ class AdFrequencyPolicy {
     this.minimumInterval = const Duration(minutes: 10),
     this.hourlyLimit = 4,
     this.dailyLimit = 8,
-    this.adFreeLaunches = 2,
+    this.adFreeLaunches = 0,
   });
 
   final Duration minimumInterval;

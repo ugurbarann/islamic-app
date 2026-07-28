@@ -6,7 +6,8 @@ import UIKit
 
 @main
 @objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
-  private static let trackingPromptDelay: TimeInterval = 8
+  // Keep ATT from racing the UMP form or the first app-open ad presentation.
+  private static let trackingPromptDelay: TimeInterval = 35
   private static let wallpaperChannelName = "com.islamicep.app/wallpaper"
 
   private var trackingAuthorizationRequestScheduled = false

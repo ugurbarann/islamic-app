@@ -12,7 +12,6 @@ import '../features/prayer_times/presentation/controllers/prayer_notification_co
 import '../features/daily_content/presentation/controllers/daily_content_controller.dart';
 import '../features/settings/presentation/controllers/app_theme_controller.dart';
 import 'router/app_router.dart';
-import 'theme/app_design_system.dart';
 import 'theme/app_theme.dart';
 
 class IslamicApp extends ConsumerStatefulWidget {
@@ -24,22 +23,20 @@ class IslamicApp extends ConsumerStatefulWidget {
 
 class _IslamicAppState extends ConsumerState<IslamicApp> {
   AppOpenAdManager? _appOpenAdManager;
-  bool _showStartupAdGate = true;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(initialPrayerLocationBootstrapProvider.future);
-      ref.read(dailyContentBootstrapProvider.future);
+      if (!mounted) {
+        return;
+      }
       _appOpenAdManager = ref.read(appOpenAdManagerProvider);
+      unawaited(_startAdsAndPermissionBootstraps(_appOpenAdManager!));
       unawaited(
-        _appOpenAdManager!.start(
-          onStartupComplete: () {
-            if (mounted) {
-              setState(() => _showStartupAdGate = false);
-            }
-          },
+        _runBootstrap(
+          ref.read(dailyContentBootstrapProvider.future),
+          'Daily content',
         ),
       );
     });
@@ -58,9 +55,16 @@ class _IslamicAppState extends ConsumerState<IslamicApp> {
   Widget build(BuildContext context) {
     final router = ref.watch(appRouterProvider);
     final themePreference = ref.watch(appThemeControllerProvider).asData?.value;
-    ref.watch(notificationBootstrapProvider);
-    ref.listen(selectedPrayerLocationControllerProvider, (_, _) {
-      ref.read(prayerNotificationControllerProvider.notifier).reschedule();
+    ref.listen(selectedPrayerLocationControllerProvider, (previous, next) {
+      final previousLocation = previous?.asData?.value;
+      final nextLocation = next.asData?.value;
+      if (previousLocation == null ||
+          nextLocation == null ||
+          (previousLocation.city.id == nextLocation.city.id &&
+              previousLocation.district.id == nextLocation.district.id)) {
+        return;
+      }
+      unawaited(_reschedulePrayerNotifications());
     });
 
     return MaterialApp.router(
@@ -79,47 +83,48 @@ class _IslamicAppState extends ConsumerState<IslamicApp> {
           ? ThemeMode.dark
           : ThemeMode.light,
       routerConfig: router,
-      builder: (context, child) {
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            child ?? const SizedBox.shrink(),
-            if (_showStartupAdGate) const _StartupAdGate(),
-          ],
-        );
-      },
     );
   }
-}
 
-class _StartupAdGate extends StatelessWidget {
-  const _StartupAdGate();
+  Future<void> _reschedulePrayerNotifications() async {
+    try {
+      await ref.read(notificationBootstrapProvider.future);
+      await ref
+          .read(prayerNotificationControllerProvider.notifier)
+          .reschedule();
+    } catch (error) {
+      debugPrint('Prayer notification reschedule failed: $error');
+    }
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      label: 'Uygulama hazırlanıyor',
-      child: Material(
-        color: AppColors.sky,
-        child: DecoratedBox(
-          decoration: const BoxDecoration(gradient: AppGradients.page),
-          child: SafeArea(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset('assets/app/logo.png', width: 82, height: 82),
-                  const SizedBox(height: 20),
-                  const SizedBox.square(
-                    dimension: 24,
-                    child: CircularProgressIndicator(strokeWidth: 3),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+  Future<void> _startAdsAndPermissionBootstraps(
+    AppOpenAdManager manager,
+  ) async {
+    await _runBootstrap(manager.start(), 'App Open ad');
+    await manager.startupInteractionComplete;
+    if (!mounted) {
+      return;
+    }
+
+    unawaited(
+      _runBootstrap(
+        ref.read(notificationBootstrapProvider.future),
+        'Notifications',
       ),
     );
+    unawaited(
+      _runBootstrap(
+        ref.read(initialPrayerLocationBootstrapProvider.future),
+        'Prayer location',
+      ),
+    );
+  }
+
+  Future<void> _runBootstrap(Future<void> operation, String name) async {
+    try {
+      await operation;
+    } catch (error) {
+      debugPrint('$name bootstrap failed: $error');
+    }
   }
 }

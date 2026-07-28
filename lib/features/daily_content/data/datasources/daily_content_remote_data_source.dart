@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import '../models/daily_content_bundle_model.dart';
 
@@ -12,14 +13,15 @@ abstract class DailyContentRemoteDataSource {
 class FirebaseDailyContentDataSource implements DailyContentRemoteDataSource {
   const FirebaseDailyContentDataSource();
 
-  FirebaseFirestore get _db => FirebaseFirestore.instance;
+  static Future<FirebaseApp>? _initialization;
 
   @override
   Future<List<DailyContentBundleModel>> loadWindow({
     required String startDateKey,
     required String endDateKey,
   }) async {
-    final snapshot = await _db
+    final db = await _firestore();
+    final snapshot = await db
         .collection('daily_content')
         .where(FieldPath.documentId, isGreaterThanOrEqualTo: startDateKey)
         .where(FieldPath.documentId, isLessThanOrEqualTo: endDateKey)
@@ -34,6 +36,19 @@ class FirebaseDailyContentDataSource implements DailyContentRemoteDataSource {
       }
     }
     return bundles;
+  }
+
+  Future<FirebaseFirestore> _firestore() async {
+    if (Firebase.apps.isEmpty) {
+      final initialization = _initialization ??= Firebase.initializeApp();
+      try {
+        await initialization;
+      } catch (_) {
+        _initialization = null;
+        rethrow;
+      }
+    }
+    return FirebaseFirestore.instance;
   }
 
   DailyContentBundleModel? _bundleFromDocument(

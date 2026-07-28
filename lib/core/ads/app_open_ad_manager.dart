@@ -11,7 +11,16 @@ class AppOpenAdManager {
   AppOpenAdManager(this._consentService, this._frequencyStore);
 
   static const _maximumAdAge = Duration(hours: 4);
-  static const _startupLoadBudget = Duration(seconds: 2);
+  static const _startupDelay = Duration(seconds: 10);
+  static const _startupGracePeriod = Duration(seconds: 20);
+  static const _initializationRetryDelay = Duration(seconds: 30);
+  static const _loadRetryDelays = <Duration>[
+    Duration(seconds: 5),
+    Duration(seconds: 15),
+    Duration(seconds: 30),
+    Duration(minutes: 1),
+    Duration(minutes: 5),
+  ];
 
   final AdConsentService _consentService;
   final AdFrequencyStore _frequencyStore;
@@ -19,73 +28,134 @@ class AppOpenAdManager {
   AppOpenAd? _appOpenAd;
   DateTime? _loadedAt;
   StreamSubscription<AppState>? _appStateSubscription;
-  Timer? _startupLoadTimer;
+  Timer? _startupShowTimer;
+  Timer? _startupExpiryTimer;
+  Timer? _initializationRetryTimer;
+  Timer? _loadRetryTimer;
   Future<void> _pendingFrequencyWrite = Future.value();
-  VoidCallback? _onStartupComplete;
+  final Completer<void> _startupInteractionCompleter = Completer<void>();
 
   int _launchCount = 0;
+  int _loadRetryAttempt = 0;
   bool _started = false;
   bool _stopped = false;
+  bool _isInitializing = false;
   bool _sdkInitialized = false;
+  bool _lifecycleListening = false;
+  bool _isAppForeground = true;
   bool _isLoadingAd = false;
   bool _isShowingAd = false;
   bool _isHandlingForeground = false;
-  bool _showOnStartupLoad = false;
-  bool _startupCompleted = false;
+  bool _hasBackgroundedSinceStart = false;
+  bool _startupDelayElapsed = false;
+  bool _startupShowPending = false;
+  bool _startupAttemptCompleted = false;
 
-  Future<void> start({required VoidCallback onStartupComplete}) async {
+  Future<void> get startupInteractionComplete =>
+      _startupInteractionCompleter.future;
+
+  Future<void> start() async {
     if (_started) {
-      onStartupComplete();
       return;
     }
     _started = true;
     _stopped = false;
-    _onStartupComplete = onStartupComplete;
 
     if (!AdConfig.isSupported) {
-      _completeStartup();
+      _log('Ads are disabled for this platform/build mode');
+      _finishStartupInteraction();
       return;
     }
+
+    _log('Starting (${AdConfig.usesTestAds ? 'test' : 'production'} ad unit)');
+    _scheduleStartupAttempt();
 
     try {
       _launchCount = await _frequencyStore.registerLaunch();
-    } catch (_) {
-      _completeStartup();
+      _log('Launch registered: $_launchCount');
+    } catch (error) {
+      // Local frequency storage should never permanently disable monetization.
+      _launchCount = 1;
+      _log('Launch registration failed; continuing safely: $error');
+    }
+    if (_stopped) {
+      _finishStartupInteraction();
       return;
     }
 
-    final initiallyEligible = await _isEligible();
-    if (initiallyEligible) {
-      _showOnStartupLoad = true;
-      _startupLoadTimer = Timer(_startupLoadBudget, () {
-        _showOnStartupLoad = false;
-        _completeStartup();
-      });
-    } else {
-      _completeStartup();
-    }
-
-    final canRequestAds = await _consentService
-        .updateAndRequestConsentIfNeeded();
-    if (!canRequestAds || _stopped) {
-      _completeStartup();
+    await _startLifecycleListener();
+    if (_stopped) {
+      _finishStartupInteraction();
       return;
     }
+    await _initializeAds();
+  }
 
+  Future<void> _startLifecycleListener() async {
     try {
-      await MobileAds.instance.initialize();
-      _sdkInitialized = true;
       await AppStateEventNotifier.startListening();
+      if (_stopped) {
+        try {
+          await AppStateEventNotifier.stopListening();
+        } catch (_) {
+          // The native listener may already have stopped during teardown.
+        }
+        return;
+      }
+      _lifecycleListening = true;
       _appStateSubscription = AppStateEventNotifier.appStateStream.listen((
         state,
       ) {
-        if (state == AppState.foreground) {
+        if (state == AppState.background) {
+          _isAppForeground = false;
+          _hasBackgroundedSinceStart = true;
+          _log('App backgrounded');
+          return;
+        }
+
+        _isAppForeground = true;
+        _log('App foregrounded; checking eligibility');
+        if (_sdkInitialized) {
           unawaited(_handleForeground());
+        } else {
+          unawaited(_initializeAds());
         }
       });
-    } catch (_) {
-      _completeStartup();
+    } catch (error) {
+      // A cold-start attempt can still work even if lifecycle listening fails.
+      _log('Lifecycle listener failed: $error');
+    }
+  }
+
+  Future<void> _initializeAds() async {
+    if (_stopped || _sdkInitialized || _isInitializing) {
       return;
+    }
+
+    _isInitializing = true;
+    try {
+      final canRequestAds = await _consentService
+          .updateAndRequestConsentIfNeeded();
+      if (!canRequestAds || _stopped) {
+        _log('Consent state does not allow ad requests yet');
+        _scheduleInitializationRetry();
+        return;
+      }
+
+      final status = await MobileAds.instance.initialize();
+      if (_stopped) {
+        return;
+      }
+      _sdkInitialized = true;
+      _initializationRetryTimer?.cancel();
+      _initializationRetryTimer = null;
+      _log('Mobile Ads SDK initialized: ${status.adapterStatuses.keys}');
+    } catch (error) {
+      _log('Mobile Ads initialization failed: $error');
+      _scheduleInitializationRetry();
+      return;
+    } finally {
+      _isInitializing = false;
     }
 
     _loadAd();
@@ -93,18 +163,59 @@ class AppOpenAdManager {
 
   Future<void> stop() async {
     _stopped = true;
-    _startupLoadTimer?.cancel();
-    _startupLoadTimer = null;
+    _startupShowTimer?.cancel();
+    _startupShowTimer = null;
+    _startupExpiryTimer?.cancel();
+    _startupExpiryTimer = null;
+    _initializationRetryTimer?.cancel();
+    _initializationRetryTimer = null;
+    _loadRetryTimer?.cancel();
+    _loadRetryTimer = null;
+    _finishStartupInteraction();
     await _appStateSubscription?.cancel();
     _appStateSubscription = null;
     _disposeLoadedAd();
-    if (_sdkInitialized && AdConfig.isSupported) {
+    if (_lifecycleListening && AdConfig.isSupported) {
       try {
         await AppStateEventNotifier.stopListening();
+        _lifecycleListening = false;
       } catch (_) {
         // The platform listener may already be stopped during app teardown.
       }
     }
+  }
+
+  void _scheduleStartupAttempt() {
+    _startupShowTimer = Timer(_startupDelay, () {
+      if (_stopped || _startupAttemptCompleted) {
+        return;
+      }
+      _startupDelayElapsed = true;
+      _startupShowPending = true;
+      _log('10-second startup point reached');
+      unawaited(_tryShowStartupAd());
+    });
+
+    _startupExpiryTimer = Timer(_startupDelay + _startupGracePeriod, () {
+      if (_stopped || _startupAttemptCompleted) {
+        return;
+      }
+      _completeStartupAttempt();
+      _finishStartupInteraction();
+      _log('Startup show window expired; keeping the ad for a later resume');
+    });
+  }
+
+  void _scheduleInitializationRetry() {
+    if (_stopped ||
+        _sdkInitialized ||
+        _initializationRetryTimer?.isActive == true) {
+      return;
+    }
+    _initializationRetryTimer = Timer(_initializationRetryDelay, () {
+      _initializationRetryTimer = null;
+      unawaited(_initializeAds());
+    });
   }
 
   void _loadAd() {
@@ -112,7 +223,10 @@ class AppOpenAdManager {
       return;
     }
 
+    _loadRetryTimer?.cancel();
+    _loadRetryTimer = null;
     _isLoadingAd = true;
+    _log('Loading ad: ${AdConfig.appOpenAdUnitId}');
     unawaited(
       AppOpenAd.load(
         adUnitId: AdConfig.appOpenAdUnitId,
@@ -126,26 +240,73 @@ class AppOpenAdManager {
             }
             _appOpenAd = ad;
             _loadedAt = DateTime.now().toUtc();
-            if (_showOnStartupLoad && !_startupCompleted) {
-              unawaited(_tryShowAd(isStartup: true));
+            _loadRetryAttempt = 0;
+            _log('Ad loaded');
+            if (_startupShowPending && _isAppForeground) {
+              unawaited(_tryShowStartupAd());
             }
           },
-          onAdFailedToLoad: (_) {
-            _handleLoadFailure();
+          onAdFailedToLoad: (error) {
+            _isLoadingAd = false;
+            _log(
+              'Ad failed to load: code=${error.code}, '
+              'domain=${error.domain}, message=${error.message}, '
+              'responseInfo=${error.responseInfo}',
+            );
+            _scheduleLoadRetry();
           },
         ),
-      ).catchError((_) {
-        _handleLoadFailure();
+      ).catchError((Object error) {
+        _isLoadingAd = false;
+        _log('Ad load call failed: $error');
+        _scheduleLoadRetry();
       }),
     );
   }
 
-  void _handleLoadFailure() {
-    _isLoadingAd = false;
-    if (_showOnStartupLoad && !_startupCompleted) {
-      _showOnStartupLoad = false;
-      _completeStartup();
+  void _scheduleLoadRetry() {
+    if (_stopped || !_sdkInitialized || _loadRetryTimer?.isActive == true) {
+      return;
     }
+
+    final retryIndex = _loadRetryAttempt < _loadRetryDelays.length
+        ? _loadRetryAttempt
+        : _loadRetryDelays.length - 1;
+    final delay = _loadRetryDelays[retryIndex];
+    _loadRetryAttempt++;
+    _log('Retrying ad load in ${delay.inSeconds} seconds');
+    _loadRetryTimer = Timer(delay, () {
+      _loadRetryTimer = null;
+      _loadAd();
+    });
+  }
+
+  Future<void> _tryShowStartupAd() async {
+    if (_stopped ||
+        _startupAttemptCompleted ||
+        !_startupShowPending ||
+        !_isAppForeground ||
+        _isShowingAd) {
+      return;
+    }
+
+    if (!_sdkInitialized || !_hasFreshAd) {
+      _log('Startup ad is waiting for a loaded creative');
+      _loadAd();
+      return;
+    }
+
+    final eligible = await _isEligible(trigger: 'startup');
+    if (!eligible) {
+      _completeStartupAttempt();
+      _finishStartupInteraction();
+      return;
+    }
+    if (!_isAppForeground) {
+      return;
+    }
+
+    await _showLoadedAd(trigger: 'startup');
   }
 
   Future<void> _handleForeground() async {
@@ -155,14 +316,31 @@ class AppOpenAdManager {
 
     _isHandlingForeground = true;
     try {
-      final eligible = await _isEligible();
+      if (_startupShowPending) {
+        await _tryShowStartupAd();
+        return;
+      }
+      if (!_startupAttemptCompleted && !_startupDelayElapsed) {
+        _log('Foreground arrived before the 10-second startup point');
+        _loadAd();
+        return;
+      }
+      if (!_hasBackgroundedSinceStart) {
+        return;
+      }
+
+      final eligible = await _isEligible(trigger: 'foreground');
       if (!eligible) {
         _loadAd();
         return;
       }
+      if (!_isAppForeground) {
+        return;
+      }
       if (_hasFreshAd) {
-        await _tryShowAd(isStartup: false);
+        await _showLoadedAd(trigger: 'foreground');
       } else {
+        _log('No cached ad on foreground; preloading for the next resume');
         _loadAd();
       }
     } finally {
@@ -170,54 +348,48 @@ class AppOpenAdManager {
     }
   }
 
-  Future<void> _tryShowAd({required bool isStartup}) async {
-    if (_stopped || _isShowingAd || !_hasFreshAd) {
-      if (isStartup) {
-        _completeStartup();
-      }
-      return;
-    }
-
-    final eligible = await _isEligible();
-    if (!eligible) {
-      if (isStartup) {
-        _completeStartup();
-      }
+  Future<void> _showLoadedAd({required String trigger}) async {
+    if (_stopped ||
+        _isShowingAd ||
+        !_isAppForeground ||
+        !_hasFreshAd ||
+        (trigger == 'startup' && _startupAttemptCompleted)) {
       return;
     }
 
     final ad = _appOpenAd;
     if (ad == null) {
-      if (isStartup) {
-        _completeStartup();
-      }
       return;
     }
 
     _isShowingAd = true;
-    _showOnStartupLoad = false;
-    _startupLoadTimer?.cancel();
-    _startupLoadTimer = null;
     ad.fullScreenContentCallback = FullScreenContentCallback<AppOpenAd>(
       onAdShowedFullScreenContent: (_) {
+        if (trigger == 'startup') {
+          _completeStartupAttempt();
+        }
+        _log('Ad showed ($trigger)');
         _queueFrequencyWrite(_frequencyStore.recordImpression);
       },
-      onAdFailedToShowFullScreenContent: (failedAd, _) {
+      onAdFailedToShowFullScreenContent: (failedAd, error) {
+        _log('Ad failed to show: $error');
         failedAd.dispose();
         _clearAdReference(failedAd);
         _isShowingAd = false;
-        if (isStartup) {
-          _completeStartup();
+        if (trigger == 'startup' && _startupAttemptCompleted) {
+          _finishStartupInteraction();
         }
         _loadAd();
       },
       onAdDismissedFullScreenContent: (dismissedAd) {
+        _log('Ad dismissed');
         dismissedAd.dispose();
         _clearAdReference(dismissedAd);
         _isShowingAd = false;
         _queueFrequencyWrite(_frequencyStore.recordDismissal);
-        if (isStartup) {
-          _completeStartup();
+        if (trigger == 'startup') {
+          _completeStartupAttempt();
+          _finishStartupInteraction();
         }
         _loadAd();
       },
@@ -225,22 +397,38 @@ class AppOpenAdManager {
 
     try {
       await ad.show();
-    } catch (_) {
+    } catch (error) {
+      _log('Ad show call failed: $error');
       ad.dispose();
       _clearAdReference(ad);
       _isShowingAd = false;
-      if (isStartup) {
-        _completeStartup();
-      }
       _loadAd();
     }
   }
 
-  Future<bool> _isEligible() async {
+  void _completeStartupAttempt() {
+    _startupShowPending = false;
+    _startupAttemptCompleted = true;
+    _startupShowTimer?.cancel();
+    _startupShowTimer = null;
+    _startupExpiryTimer?.cancel();
+    _startupExpiryTimer = null;
+  }
+
+  void _finishStartupInteraction() {
+    if (!_startupInteractionCompleter.isCompleted) {
+      _startupInteractionCompleter.complete();
+    }
+  }
+
+  Future<bool> _isEligible({required String trigger}) async {
     try {
       await _pendingFrequencyWrite;
-      return await _frequencyStore.canShow(launchCount: _launchCount);
-    } catch (_) {
+      final eligible = await _frequencyStore.canShow(launchCount: _launchCount);
+      _log('Eligibility ($trigger): $eligible');
+      return eligible;
+    } catch (error) {
+      _log('Eligibility check failed: $error');
       return false;
     }
   }
@@ -287,16 +475,7 @@ class AppOpenAdManager {
     _loadedAt = null;
   }
 
-  void _completeStartup() {
-    if (_startupCompleted) {
-      return;
-    }
-    _startupCompleted = true;
-    _showOnStartupLoad = false;
-    _startupLoadTimer?.cancel();
-    _startupLoadTimer = null;
-    final callback = _onStartupComplete;
-    _onStartupComplete = null;
-    callback?.call();
+  void _log(String message) {
+    debugPrint('[AppOpenAd] $message');
   }
 }

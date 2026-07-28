@@ -7,13 +7,9 @@ void main() {
     const policy = AdFrequencyPolicy();
     final now = DateTime.utc(2026, 7, 28, 12);
 
-    test('keeps the first two launches ad-free', () {
+    test('allows the first launch when no frequency cap applies', () {
       expect(
-        policy.canShow(now: now, launchCount: 2, impressions: const []),
-        isFalse,
-      );
-      expect(
-        policy.canShow(now: now, launchCount: 3, impressions: const []),
+        policy.canShow(now: now, launchCount: 1, impressions: const []),
         isTrue,
       );
     });
@@ -25,7 +21,7 @@ void main() {
       expect(
         policy.canShow(
           now: now,
-          launchCount: 3,
+          launchCount: 1,
           impressions: [impression],
           lastDismissedAt: dismissal,
         ),
@@ -34,7 +30,7 @@ void main() {
       expect(
         policy.canShow(
           now: now.add(const Duration(minutes: 1)),
-          launchCount: 3,
+          launchCount: 1,
           impressions: [impression],
           lastDismissedAt: dismissal,
         ),
@@ -51,7 +47,7 @@ void main() {
       ];
 
       expect(
-        policy.canShow(now: now, launchCount: 3, impressions: impressions),
+        policy.canShow(now: now, launchCount: 1, impressions: impressions),
         isFalse,
       );
     });
@@ -63,7 +59,7 @@ void main() {
       );
 
       expect(
-        policy.canShow(now: now, launchCount: 3, impressions: impressions),
+        policy.canShow(now: now, launchCount: 1, impressions: impressions),
         isFalse,
       );
     });
@@ -74,8 +70,6 @@ void main() {
     var now = DateTime.utc(2026, 7, 28, 12);
     final firstStore = AdFrequencyStore(now: () => now);
 
-    await firstStore.registerLaunch();
-    await firstStore.registerLaunch();
     final launchCount = await firstStore.registerLaunch();
     expect(await firstStore.canShow(launchCount: launchCount), isTrue);
 

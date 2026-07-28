@@ -11,13 +11,30 @@ class FlutterLocalNotificationService implements AppNotificationService {
 
   final FlutterLocalNotificationsPlugin _plugin;
   bool _initialized = false;
+  Future<void>? _initialization;
 
   @override
   Future<void> initialize() async {
     if (_initialized) {
       return;
     }
+    final pendingInitialization = _initialization;
+    if (pendingInitialization != null) {
+      await pendingInitialization;
+      return;
+    }
 
+    final initialization = _initialize();
+    _initialization = initialization;
+    try {
+      await initialization;
+    } catch (_) {
+      _initialization = null;
+      rethrow;
+    }
+  }
+
+  Future<void> _initialize() async {
     timezone_data.initializeTimeZones();
     timezone.setLocalLocation(timezone.getLocation('Europe/Istanbul'));
 
