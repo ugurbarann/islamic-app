@@ -1,7 +1,7 @@
 name: islamic_app
 description: "Namaz vakitleri, Kur'an, dua, kıble ve günlük İslami içerik uygulaması."
 publish_to: 'none'
-version: 1.0.7+2
+version: 1.0.7+3
 
 environment:
   sdk: ^3.12.2
@@ -27,6 +27,7 @@ dependencies:
   intl: ^0.20.2
   firebase_core: ^4.11.0
   cloud_firestore: ^6.6.0
+  firebase_analytics: ^12.4.5
   google_mobile_ads: ^9.0.0
   flutter_localizations:
     sdk: flutter

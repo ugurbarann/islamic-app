@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../analytics/app_analytics.dart';
 import 'ad_config.dart';
 import 'ad_consent_service.dart';
 import 'ad_frequency_store.dart';
 
 class AppOpenAdManager {
-  AppOpenAdManager(this._consentService, this._frequencyStore);
+  AppOpenAdManager(this._consentService, this._frequencyStore, this._analytics);
 
   static const _maximumAdAge = Duration(hours: 4);
   static const _startupDelay = Duration(seconds: 10);
@@ -24,6 +25,7 @@ class AppOpenAdManager {
 
   final AdConsentService _consentService;
   final AdFrequencyStore _frequencyStore;
+  final AppAnalytics _analytics;
 
   AppOpenAd? _appOpenAd;
   DateTime? _loadedAt;
@@ -41,6 +43,7 @@ class AppOpenAdManager {
   bool _stopped = false;
   bool _isInitializing = false;
   bool _sdkInitialized = false;
+  bool _adRequestsAllowed = false;
   bool _lifecycleListening = false;
   bool _isAppForeground = true;
   bool _isLoadingAd = false;
@@ -115,7 +118,7 @@ class AppOpenAdManager {
 
         _isAppForeground = true;
         _log('App foregrounded; checking eligibility');
-        if (_sdkInitialized) {
+        if (_adRequestsAllowed) {
           unawaited(_handleForeground());
         } else {
           unawaited(_initializeAds());
@@ -138,11 +141,17 @@ class AppOpenAdManager {
           .updateAndRequestConsentIfNeeded();
       if (!canRequestAds || _stopped) {
         _log('Consent state does not allow ad requests yet');
+        _event('app_open_ad_consent_blocked');
         _scheduleInitializationRetry();
         return;
       }
 
-      final status = await MobileAds.instance.initialize();
+      _adRequestsAllowed = true;
+      final initialization = MobileAds.instance.initialize();
+      // Google Mobile Ads can initialize from the first request. Starting the
+      // load here avoids losing the startup window while adapters initialize.
+      _loadAd();
+      final status = await initialization;
       if (_stopped) {
         return;
       }
@@ -203,6 +212,7 @@ class AppOpenAdManager {
       _completeStartupAttempt();
       _finishStartupInteraction();
       _log('Startup show window expired; keeping the ad for a later resume');
+      _event('app_open_ad_startup_expired');
     });
   }
 
@@ -219,7 +229,7 @@ class AppOpenAdManager {
   }
 
   void _loadAd() {
-    if (_stopped || !_sdkInitialized || _isLoadingAd || _hasFreshAd) {
+    if (_stopped || !_adRequestsAllowed || _isLoadingAd || _hasFreshAd) {
       return;
     }
 
@@ -227,6 +237,7 @@ class AppOpenAdManager {
     _loadRetryTimer = null;
     _isLoadingAd = true;
     _log('Loading ad: ${AdConfig.appOpenAdUnitId}');
+    _event('app_open_ad_request');
     unawaited(
       AppOpenAd.load(
         adUnitId: AdConfig.appOpenAdUnitId,
@@ -242,6 +253,7 @@ class AppOpenAdManager {
             _loadedAt = DateTime.now().toUtc();
             _loadRetryAttempt = 0;
             _log('Ad loaded');
+            _event('app_open_ad_loaded');
             if (_startupShowPending && _isAppForeground) {
               unawaited(_tryShowStartupAd());
             }
@@ -252,6 +264,13 @@ class AppOpenAdManager {
               'Ad failed to load: code=${error.code}, '
               'domain=${error.domain}, message=${error.message}, '
               'responseInfo=${error.responseInfo}',
+            );
+            _event(
+              'app_open_ad_load_failed',
+              parameters: {
+                'error_code': error.code,
+                'error_domain': error.domain,
+              },
             );
             _scheduleLoadRetry();
           },
@@ -265,7 +284,7 @@ class AppOpenAdManager {
   }
 
   void _scheduleLoadRetry() {
-    if (_stopped || !_sdkInitialized || _loadRetryTimer?.isActive == true) {
+    if (_stopped || !_adRequestsAllowed || _loadRetryTimer?.isActive == true) {
       return;
     }
 
@@ -290,7 +309,7 @@ class AppOpenAdManager {
       return;
     }
 
-    if (!_sdkInitialized || !_hasFreshAd) {
+    if (!_hasFreshAd) {
       _log('Startup ad is waiting for a loaded creative');
       _loadAd();
       return;
@@ -310,7 +329,10 @@ class AppOpenAdManager {
   }
 
   Future<void> _handleForeground() async {
-    if (_stopped || !_sdkInitialized || _isShowingAd || _isHandlingForeground) {
+    if (_stopped ||
+        !_adRequestsAllowed ||
+        _isShowingAd ||
+        _isHandlingForeground) {
       return;
     }
 
@@ -369,10 +391,15 @@ class AppOpenAdManager {
           _completeStartupAttempt();
         }
         _log('Ad showed ($trigger)');
+        _event('app_open_ad_show', parameters: {'trigger': trigger});
         _queueFrequencyWrite(_frequencyStore.recordImpression);
       },
       onAdFailedToShowFullScreenContent: (failedAd, error) {
         _log('Ad failed to show: $error');
+        _event(
+          'app_open_ad_show_failed',
+          parameters: {'trigger': trigger, 'error_code': error.code},
+        );
         failedAd.dispose();
         _clearAdReference(failedAd);
         _isShowingAd = false;
@@ -383,6 +410,7 @@ class AppOpenAdManager {
       },
       onAdDismissedFullScreenContent: (dismissedAd) {
         _log('Ad dismissed');
+        _event('app_open_ad_dismissed', parameters: {'trigger': trigger});
         dismissedAd.dispose();
         _clearAdReference(dismissedAd);
         _isShowingAd = false;
@@ -477,5 +505,9 @@ class AppOpenAdManager {
 
   void _log(String message) {
     debugPrint('[AppOpenAd] $message');
+  }
+
+  void _event(String name, {Map<String, Object>? parameters}) {
+    unawaited(_analytics.logEvent(name, parameters: parameters));
   }
 }

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 
+import '../../../../core/firebase/firebase_app_initializer.dart';
 import '../models/daily_content_bundle_model.dart';
 
 abstract class DailyContentRemoteDataSource {
@@ -12,8 +12,6 @@ abstract class DailyContentRemoteDataSource {
 
 class FirebaseDailyContentDataSource implements DailyContentRemoteDataSource {
   const FirebaseDailyContentDataSource();
-
-  static Future<FirebaseApp>? _initialization;
 
   @override
   Future<List<DailyContentBundleModel>> loadWindow({
@@ -39,15 +37,7 @@ class FirebaseDailyContentDataSource implements DailyContentRemoteDataSource {
   }
 
   Future<FirebaseFirestore> _firestore() async {
-    if (Firebase.apps.isEmpty) {
-      final initialization = _initialization ??= Firebase.initializeApp();
-      try {
-        await initialization;
-      } catch (_) {
-        _initialization = null;
-        rethrow;
-      }
-    }
+    await FirebaseAppInitializer.ensureInitialized();
     return FirebaseFirestore.instance;
   }
 

@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/analytics/app_analytics.dart';
 import '../../features/daily_content/presentation/screens/daily_content_screen.dart';
 import '../../features/duas/presentation/screens/dua_detail_screen.dart';
 import '../../features/duas/presentation/screens/dua_list_screen.dart';
@@ -35,7 +38,7 @@ import '../../shared/widgets/app_scaffold.dart';
 import '../../shared/widgets/placeholder_feature_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
-  return GoRouter(
+  final router = GoRouter(
     initialLocation: '/',
     routes: [
       StatefulShellRoute.indexedStack(
@@ -238,4 +241,23 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       icon: Icons.error_outline,
     ),
   );
+
+  final analytics = ref.read(appAnalyticsProvider);
+  String? lastPath;
+  void logCurrentScreen() {
+    final path = router.routeInformationProvider.value.uri.path;
+    if (path == lastPath) {
+      return;
+    }
+    lastPath = path;
+    unawaited(analytics.logScreenView(path));
+  }
+
+  router.routeInformationProvider.addListener(logCurrentScreen);
+  ref.onDispose(() {
+    router.routeInformationProvider.removeListener(logCurrentScreen);
+    router.dispose();
+  });
+  scheduleMicrotask(logCurrentScreen);
+  return router;
 });

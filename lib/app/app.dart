@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'bootstrap/notification_bootstrap_provider.dart';
 import '../core/ads/ad_providers.dart';
 import '../core/ads/app_open_ad_manager.dart';
+import '../core/analytics/app_analytics.dart';
 import '../features/prayer_times/presentation/controllers/prayer_location_controller.dart';
 import '../features/prayer_times/presentation/controllers/prayer_notification_controller.dart';
 import '../features/daily_content/presentation/controllers/daily_content_controller.dart';
@@ -31,6 +32,12 @@ class _IslamicAppState extends ConsumerState<IslamicApp> {
       if (!mounted) {
         return;
       }
+      unawaited(
+        _runBootstrap(
+          ref.read(appAnalyticsProvider).logEvent('app_started'),
+          'Analytics',
+        ),
+      );
       _appOpenAdManager = ref.read(appOpenAdManagerProvider);
       unawaited(_startAdsAndPermissionBootstraps(_appOpenAdManager!));
       unawaited(

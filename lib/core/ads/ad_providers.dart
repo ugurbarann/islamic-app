@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../analytics/app_analytics.dart';
 import 'ad_consent_service.dart';
 import 'ad_frequency_store.dart';
 import 'app_open_ad_manager.dart';
@@ -16,5 +17,6 @@ final appOpenAdManagerProvider = Provider<AppOpenAdManager>((ref) {
   return AppOpenAdManager(
     ref.watch(adConsentServiceProvider),
     ref.watch(adFrequencyStoreProvider),
+    ref.watch(appAnalyticsProvider),
   );
 });

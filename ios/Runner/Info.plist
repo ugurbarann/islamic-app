@@ -6,6 +6,10 @@
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>tr</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>İslami Cep</string>
 	<key>CFBundleExecutable</key>
@@ -49,6 +53,8 @@
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Konumunuz; bulunduğunuz il ve ilçenin namaz vakitlerini güncel tutmak, kıble yönünü hesaplamak ve yakındaki camileri göstermek için kullanılır.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Konumunuz; bulunduğunuz il ve ilçenin namaz vakitlerini seçmek, kıble yönünü hesaplamak ve yakınınızdaki camileri göstermek için kullanılır.</string>
 	<key>NSMotionUsageDescription</key>
